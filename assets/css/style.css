@@ -1,0 +1,32 @@
+.qib-button {
+    display: inline;
+}
+.qib-button .qib-button, .qib-button .quantity {
+    display: inline-block;
+}
+.single-product div.product form.cart .quantity {
+    float: none;
+    margin-right: 0;
+}
+
+.single-product div.product form.cart .quantity input[type=number]::-webkit-inner-spin-button, 
+.single-product div.product form.cart .quantity input[type=number]::-webkit-outer-spin-button,
+
+.qib-button .quantity input[type=number]::-webkit-inner-spin-button, 
+.qib-button .quantity input[type=number]::-webkit-outer-spin-button,
+
+.single-product div.product form.cart .quantity input[type=number]::-moz-inner-spin-button, 
+.single-product div.product form.cart .quantity input[type=number]::-moz-outer-spin-button,
+
+.qib-button .quantity input[type=number]::-moz-inner-spin-button, 
+.qib-button .quantity input[type=number]::-moz-outer-spin-button{ 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+.single-product div.product form.cart .quantity input[type=number], 
+.single-product div.product form.cart .quantity input[type=number],
+
+.qib-button .quantity input[type=number], 
+.qib-button .quantity input[type=number]{ 
+-moz-appearance:textfield; /* Firefox */
+}
