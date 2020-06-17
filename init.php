@@ -39,6 +39,7 @@ class WQPMB_Button {
     private static $_instance;
     
     /**
+     * Trying to commit and push something
      * Minimum PHP Version
      *
      * @since 1.0.0
