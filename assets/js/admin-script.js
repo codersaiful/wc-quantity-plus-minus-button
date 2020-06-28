@@ -5,12 +5,12 @@ jQuery(document).ready(function($){
     var myOptions = {
         // you can declare a default color here,
         // or in the data-default-color attribute on the input
-        defaultColor: '#002fff',
+        defaultColor: false,
         // a callback to fire whenever the color changes to a valid color
         change: function(event, ui){},
         // a callback to fire when the input is emptied or an invalid color
         clear: function() {
-            alert('Empty/invalid color');
+            //alert('Empty/invalid color');
         },
         // hide the color picker controls on load
         hide: true,

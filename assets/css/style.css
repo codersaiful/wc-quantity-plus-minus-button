@@ -1,33 +1,44 @@
-.qib-button {
+.qib-button-wrapper button.qib-button{
+    padding: 6px 12px 8px;
+    height: 41px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    width: 41px;
+}
+.qib-button-wrapper .quantity {
     display: inline;
 }
-.qib-button .qib-button, .qib-button .quantity {
-    display: inline-block;
-}
-.single-product div.product form.cart .quantity {
-    float: none;
-    margin-right: 0;
+.qib-button-wrapper{
+    margin: 3px auto;
 }
 
-.single-product div.product form.cart .quantity input[type=number]::-webkit-inner-spin-button, 
-.single-product div.product form.cart .quantity input[type=number]::-webkit-outer-spin-button,
+/*
 
-.qib-button .quantity input[type=number]::-webkit-inner-spin-button, 
-.qib-button .quantity input[type=number]::-webkit-outer-spin-button,
-
-.single-product div.product form.cart .quantity input[type=number]::-moz-inner-spin-button, 
-.single-product div.product form.cart .quantity input[type=number]::-moz-outer-spin-button,
-
-.qib-button .quantity input[type=number]::-moz-inner-spin-button, 
-.qib-button .quantity input[type=number]::-moz-outer-spin-button{ 
-  -webkit-appearance: none; 
-  margin: 0; 
+*/
+.qib-button-wrapper .quantity input.input-text.qty.text {
+    height: 41px;
+    padding: 6px 12px 8px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    font-size: 20px;
+    line-height: 20px;
+    box-shadow: none;
 }
-.single-product div.product form.cart .quantity input[type=number], 
-.single-product div.product form.cart .quantity input[type=number],
 
-.qib-button .quantity input[type=number], 
-.qib-button .quantity input[type=number]{ 
--moz-appearance:textfield; /* Firefox */
+span.wqpmb_plain_input.hidden{display: none;}
+
+
+.qib-button-wrapper input::-webkit-outer-spin-button,
+.qib-button-wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; 
 }
-.wqpmb_plain_input{display: none;}
+.qib-button-wrapper input[type=number]
+{
+  -moz-appearance: textfield;
+}

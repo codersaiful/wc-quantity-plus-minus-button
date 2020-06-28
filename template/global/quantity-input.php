@@ -41,7 +41,7 @@ if ( $max_value && $min_value === $max_value ) {
 	}
 
 	?>
-	<div class="qib-button wqpmb_qit_button_wrapper">
+	<div class="qib-button qib-button-wrapper">
 	
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
 		

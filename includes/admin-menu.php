@@ -40,8 +40,6 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         do_action( 'wqpmb_save_data', $datas );
         
         $our_data = get_option( 'wqpmb_configs');
-        var_dump($our_data);
-
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
     
@@ -54,13 +52,22 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     
     
     
-    <h1 class="wp-heading-inline"></h1>
+    <h1 class="wp-heading-inline"><?php echo WQPMB_NAME; ?></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
+            <?php
+            $wqpmb_forms_validation = apply_filters( 'wqpmb_default_form_panel_validation', true, $our_data, $datas );
+            if( $wqpmb_forms_validation ){
+                
             
+            ?>
             <div class="section ultraaddons-panel">
-                <h2 class="with-background"><?php echo WQPMB_NAME; ?></h2>
+                <h2 class="with-background">Quantity Button Settings</h2>
                 <table class="ultraaddons-table">
+                    <?php
+                    $css_for_row = apply_filters( 'wqpmb_choxbox_row_validation', true, $our_data, $datas );
+                    if( $css_for_row ){
+                    ?>
                     <tr>
                         <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
                         <td>
@@ -78,6 +85,13 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     </tr>
                     
                     <?php
+                    } //End of Checkbox Row Validation
+                    do_action( 'wqpmb_checkbox_row', $our_data, $datas );
+                    
+                    
+                    $css_for_row = apply_filters( 'wqpmb_css_row_validation', true, $our_data, $datas );
+                    if( $css_for_row ){
+
                     $css = isset( $our_data['data']['css'] ) && is_array( $our_data['data']['css'] ) ? $our_data['data']['css'] : array();
                     ?>
                     <tr>
@@ -120,8 +134,29 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                                    class="ua_input" />
                         </td>
                     </tr>
+                    
+                    <?php                     
+                    } //End of CSS Row Validation
+                    
+                    /**
+                     * To add New CSS row, use following @Hook 
+                     */
+                    do_action( 'wqpmb_css_row' );
+                    
+                    /**
+                     * To add New any Row, use following Hook
+                     */
+                    do_action( 'wqpmb_form_row' );
+                    ?>
                 </table>
             </div>
+            <?php
+            } //End of Default Form Validation
+            /**
+             * To add New Form Panel, We will use this Action
+             */
+            do_action( 'wqpmb_form_panel', $our_data, $datas );
+            ?>
             <div class="section ultraaddons-button-wrapper ultraaddons-panel no-background">
                 <button name="configure_submit" class=".button-primary button-primary primary button">Save Change</button>
                 <button name="reset_button" class="button button-default" onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">Reset Default</button>
