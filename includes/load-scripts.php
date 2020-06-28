@@ -14,6 +14,12 @@ add_action( 'wp_enqueue_scripts', 'wcqbtn_style_js_adding', 99 );
 
 add_action( 'admin_enqueue_scripts', 'wqpmb_admin_script_loader' );
 function wqpmb_admin_script_loader( $hook_suffix ) {
+    /**
+     * Including UltraAddons CSS form Style
+     */
+    wp_enqueue_style( 'ultraaddons-css', WQPMB_Button::getPath('BASE_URL') . 'assets/css/admin-common.css', array(), '1.0.0', 'all' );
+    wp_enqueue_style('ultraaddons-css');
+    
     wp_enqueue_style( $hook_suffix, WQPMB_Button::getPath('BASE_URL') . 'assets/css/admin-style.css', array(), '1.0.0', 'all' );
     // first check that $hook_suffix is appropriate for your admin page
     wp_enqueue_style( 'wp-color-picker' );

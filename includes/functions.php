@@ -51,7 +51,57 @@ if( !function_exists( 'wcqbtn_admin_body_class' ) ){
      * @return String
      */
     function wcqbtn_admin_body_class(){
-        return 'ultraaddons';
+        return ' ultraaddons ';
     }
     add_filter( 'admin_body_class', 'wcqbtn_admin_body_class' );
 }
+
+
+if( !function_exists( 'wcqbtn_submit_form' ) ){
+    /**
+     * Form Submit based on Action Hook
+     * 
+     * @param type $classes
+     * @return Void
+     */
+    function wqpmb_form_submit( $datas ){
+        
+        if( NULL !== filter_input( INPUT_POST, 'configure_submit' ) && !empty( $datas ) ){
+            $datas = apply_filters( 'wqpmb_data_on_save', $datas );
+            update_option( 'wqpmb_configs', $datas );
+            //For Button CSS Style
+            $selector = apply_filters( 'wqpmb_default_css_selector', '.wqpmb_abbs', $datas  );
+            if( isset( $datas['data']['css'] ) && is_array( $datas['data']['css'] ) ){
+                $style = "\n";
+                foreach( $datas['data']['css'] as $property=>$value ){
+                    
+                    $style .= !is_array( $value ) ? $property . ': ' . $value . ";\n" : '';
+                }
+                $css = $selector . "{" . $style . "}";
+                $css = apply_filters( 'wqpmb_css_on_save', $css, $datas );
+                update_option( 'wqpmb_css', $css);
+            }
+        }
+        if( NULL !== filter_input( INPUT_POST, 'reset_button' ) ){
+            $default_data['data']['on_off'] = 'on';
+            $default_data['data']['css'] = false;
+            /*
+            array(
+            'background-color' => '#bada55',
+            'border-color'  => '#bada55',
+            'color'         => '#bada55',
+            'border-width'  => '1px',
+            'border-radious'=> '6px',
+            )
+            */
+            
+            $r_data = apply_filters( 'wqpmb_data_on_reset', $default_data, $datas );
+            update_option( 'wqpmb_configs' , $r_data);
+            
+            $css = apply_filters( 'wqpmb_css_on_reset', '', $datas );
+            update_option( 'wqpmb_css', $css);
+        }
+    }
+    add_filter( 'wqpmb_save_data', 'wqpmb_form_submit' );
+}
+

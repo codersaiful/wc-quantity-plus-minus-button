@@ -36,17 +36,14 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
      */
     function wqpmb_enable_quantity_button(){
         
-        $arr = filter_input_array(INPUT_POST);
-        echo '<pre>';
-        var_dump($arr);
-        var_dump(filter_input(INPUT_POST, 'wqpmb-enable-quantity-button'));
-        echo '</pre>';
+        $datas = filter_input_array(INPUT_POST);
+        do_action( 'wqpmb_save_data', $datas );
         
-        if(NULL !== filter_input(INPUT_POST, 'configure_submit')){
-            echo 'true';
-        }
+        $our_data = get_option( 'wqpmb_configs');
+        var_dump($our_data);
+
         ?>
-<div class="wqpmb wqpmb-wrapper ultraaddons">
+<div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
     
     
     
@@ -57,17 +54,21 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     
     
     
-    <h1 class="wp-heading-inline"><?php echo WQPMB_NAME; ?></h1>
+    <h1 class="wp-heading-inline"></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
-
-            <div class="section section-button-cunsomize">
-                <table>
+            
+            <div class="section ultraaddons-panel">
+                <h2 class="with-background"><?php echo WQPMB_NAME; ?></h2>
+                <table class="ultraaddons-table">
                     <tr>
                         <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
                         <td>
+                            <?php
+                            $checkbox = isset( $our_data['data']['on_off'] ) ? 'checked' : '';
+                            ?>
                             <label class="switch">
-                                <input  name="data[on_of]" type="checkbox" id="wqpmb-enable-quantity-button">
+                                <input  name="data[on_off]" type="checkbox" id="wqpmb-enable-quantity-button" <?php echo esc_attr( $checkbox ); ?>>
                                 <div class="slider round"><!--ADDED HTML -->
                                     <span class="on">ON</span><span class="off">OFF</span><!--END-->
                                 </div>
@@ -75,47 +76,55 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                             
                         </td>
                     </tr>
+                    
+                    <?php
+                    $css = isset( $our_data['data']['css'] ) && is_array( $our_data['data']['css'] ) ? $our_data['data']['css'] : array();
+                    ?>
                     <tr>
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-bg-color" name="data[css][background-color]" value="#bada55" class="ua_color_picker" />
+                            <input type="text" id="wqpmb-btn-bg-color" name="data[css][background-color]" 
+                                   value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
+                                   class="ua_color_picker" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-border-color" name="data[css][border-color]" value="#bada55" class="ua_color_picker" />
+                            <input type="text" id="wqpmb-btn-border-color" name="data[css][border-color]" 
+                                   value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
+                                   class="ua_color_picker" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" value="#bada55" class="ua_color_picker" />
-                        </td>
-                    </tr>
-                    <tr>
-                        <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
-                        <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" value="#bada55" class="ua_color_picker" />
+                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" 
+                                   value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
+                                   class="ua_color_picker" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="">Border Width</label></th>
                         <td>
-                            <input type="text" id="" name="data[css][border-width]" value="1px" class="ua_input" />
+                            <input type="text" id="" name="data[css][border-width]" 
+                                   value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '1px' ?>" 
+                                   class="ua_input" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="">Border Radious</label></th>
                         <td>
-                            <input type="text" id="" name="data[css][border-radious]" value="6px" class="ua_input" />
+                            <input type="text" id="" name="data[css][border-radious]" 
+                                   value="<?php echo isset( $css['border-radious'] ) ? $css['border-radious'] : 'unset' ?>" 
+                                   class="ua_input" />
                         </td>
                     </tr>
                 </table>
             </div>
-            <div class="section section-background">
-                <button name="configure_submit" class="button-primary primary button btn-info">Submit</button>
-                <button name="reset_button" class="button">Reset</button>
+            <div class="section ultraaddons-button-wrapper ultraaddons-panel no-background">
+                <button name="configure_submit" class=".button-primary button-primary primary button">Save Change</button>
+                <button name="reset_button" class="button button-default" onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">Reset Default</button>
             </div>
         </form>
     </div>

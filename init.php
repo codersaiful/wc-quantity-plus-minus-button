@@ -235,11 +235,29 @@ class WQPMB_Button {
 
     }
     
+    public static function defaultDatas() {
+        $default_data = array(
+            'data' => array(
+                'on_off' => 'on',
+                /*
+                 'css'   =>  array(
+                'background-color' => '#bada55',
+                'border-color'  => '#bada55',
+                'color'         => '#bada55',
+                'border-width'  => '1px',
+                'border-radious'=> '6px',
+                ),
+                 */
+            ),
+        );
+    }
     /**
      * Activation Hook for WordPress
      */
     public static function install() {
-        //Nothing for now
+        $default_data = self::defaultDatas();
+        update_option( 'wqpmb_configs', $default_data);
+        update_option( 'wqpmb_css', '');
     }
     
     
