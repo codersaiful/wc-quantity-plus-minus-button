@@ -37,6 +37,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     function wqpmb_enable_quantity_button(){
         
         $arr = filter_input_array(INPUT_POST);
+        var_dump($arr);
         echo '<pre>';
         var_dump($arr);
         var_dump(filter_input(INPUT_POST, 'wqpmb-enable-quantity-button'));
