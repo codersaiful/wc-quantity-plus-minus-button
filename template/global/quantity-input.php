@@ -41,20 +41,21 @@ if ( $max_value && $min_value === $max_value ) {
 	}
 
 	?>
-	<div class="qib-button">
+	<div class="qib-button wqpmb_qit_button_wrapper">
 	
-		<label class="screen-reader-text" for="acwcqbtn"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
+		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
 		
                 <button type="button" class="minus qib-button">-</button>
-                <div class="quantity">
-                    <input type="number" id="acwcqbtn" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" 
+                <div class="quantity wqpmb_quantity">
+                    <input type="number" id="<?php echo esc_attr( $input_id ); ?>" step="<?php echo esc_attr( $step ); ?>" min="<?php echo esc_attr( $min_value ); ?>" 
                     <?php if ( isset( $max_value ) && 0 < $max_value ) : ?>
                             max="<?php echo esc_attr( $max_value ); ?>"
                     <?php endif; ?>
                     name="<?php echo esc_attr( $input_name ); ?>" value="<?php echo esc_attr( $input_value ); ?>"
                     title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'wqpmb' ); ?>"
-                    class="input-text qty text" inputmode="<?php echo esc_attr( $inputmode ); ?>" />
+                    class="input-text qty text wqpmb_input_text" inputmode="<?php echo esc_attr( $inputmode ); ?>" />
                 </div>
+                <span class="wqpmb_plain_input hidden"><?php echo esc_html( $input_value ); ?></span>
 		
                 <button type="button" class="plus qib-button">+</button>
 	
