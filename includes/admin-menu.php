@@ -37,7 +37,6 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     function wqpmb_enable_quantity_button(){
         
         $arr = filter_input_array(INPUT_POST);
-        var_dump($arr);
         echo '<pre>';
         var_dump($arr);
         var_dump(filter_input(INPUT_POST, 'wqpmb-enable-quantity-button'));
@@ -47,36 +46,69 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
             echo 'true';
         }
         ?>
-<div class="wqpmb wqpmb-wrapper">
+<div class="wqpmb wqpmb-wrapper ultraaddons">
+    
+    
+    
+    
+
+    
+    
+    
+    
+    
     <h1 class="wp-heading-inline"><?php echo WQPMB_NAME; ?></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
-            <div class="section section-background">
-                <table>
-                    <tr>
-                        <th><label for="wqpmb-enable-quantity-button">Enable/Disable Quantity Button</label></th>
-                        <td><input type="checkbox" name="wqpmb-enable-quantity-button" id="wqpmb-enable-quantity-button" /></td>
-                    </tr>
-                </table>
-            </div>
+
             <div class="section section-button-cunsomize">
                 <table>
                     <tr>
+                        <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
+                        <td>
+                            <label class="switch">
+                                <input  name="data[on_of]" type="checkbox" id="wqpmb-enable-quantity-button">
+                                <div class="slider round"><!--ADDED HTML -->
+                                    <span class="on">ON</span><span class="off">OFF</span><!--END-->
+                                </div>
+                            </label>
+                            
+                        </td>
+                    </tr>
+                    <tr>
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-bg-color" name="wqpmb-btn-bg-color" value="#bada55" class="autocircle-color-field" />
+                            <input type="text" id="wqpmb-btn-bg-color" name="data[css][background-color]" value="#bada55" class="ua_color_picker" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-border-color" name="wqpmb-btn-border-color" value="#bada55" class="autocircle-color-field" />
+                            <input type="text" id="wqpmb-btn-border-color" name="data[css][border-color]" value="#bada55" class="ua_color_picker" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="wqpmb-btn-font-color" value="#bada55" class="autocircle-color-field" />
+                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" value="#bada55" class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" value="#bada55" class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="">Border Width</label></th>
+                        <td>
+                            <input type="text" id="" name="data[css][border-width]" value="1px" class="ua_input" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="">Border Radious</label></th>
+                        <td>
+                            <input type="text" id="" name="data[css][border-radious]" value="6px" class="ua_input" />
                         </td>
                     </tr>
                 </table>

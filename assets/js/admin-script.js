@@ -18,10 +18,12 @@ jQuery(document).ready(function($){
         // or, supply an array of colors to customize further
         palettes: true
     };
-    $('.autocircle-color-field').wpColorPicker(myOptions);
+    $('.ua_color_picker').wpColorPicker(myOptions);
     
-
+    
+    /*
     $("#wqpmb-enable-quantity-button").change(function() {
         $('.section-button-cunsomize').toggleClass('show', this.checked);
     }).change();
+    */
 });

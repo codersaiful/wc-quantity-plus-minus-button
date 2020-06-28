@@ -1,5 +1,9 @@
+body.ultraaddons{
+    background: white;
+}
+
 .section-button-cunsomize {
-    display: none;
+
 }
 .section-button-cunsomize.show{
     display: block;
@@ -8,3 +12,106 @@
     text-align: left;
     padding: 10px 100px 20px 0;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*******For Radio Button And Checkbox***********/
+.ultraaddons .switch {
+  position: relative;
+  display: inline-block;
+  width: 66px;
+  height: 27px;
+}
+
+.ultraaddons .switch input {display:none;}
+
+.ultraaddons .slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #eaeaea;
+  -webkit-transition: .4s;
+  transition: .4s;
+  border: 1px solid #bdbdbd;
+}
+
+.ultraaddons .slider:before {
+  position: absolute;
+  content: "";
+  height: 16px;
+  width: 16px;
+  left: 5px;
+  bottom: 5px;
+  background-color: white;
+  -webkit-transition: .4s;
+  transition: .4s;
+}
+
+.ultraaddons input:checked + .slider {
+  background-color: #2ab934a6;
+  border: 1px solid #2ab934;
+}
+
+.ultraaddons input:focus + .slider {
+  box-shadow: 0 0 1px #2196F3;
+}
+
+.ultraaddons input:checked + .slider:before {
+  -webkit-transform: translateX(39px);
+  -ms-transform: translateX(39px);
+  transform: translateX(39px);
+}
+
+/*------ ADDED CSS ---------*/
+.ultraaddons .on
+{
+  display: none;
+}
+
+.ultraaddons .on, .ultraaddons .off
+{
+  color: white;
+  position: absolute;
+  transform: translate(-50%,-50%);
+  top: 50%;
+  left: 50%;
+  font-size: 10px;
+  font-family: Verdana, sans-serif;
+}
+.ultraaddons .off {
+    color: #403434;
+    font-weight: bold;
+    left: 60%;
+}
+.ultraaddons .on {
+    
+}
+
+.ultraaddons input:checked+ .slider .on
+{display: block;}
+
+.ultraaddons input:checked + .slider .off
+{display: none;}
+
+/*--------- END --------*/
+
+/* Rounded sliders */
+.ultraaddons .slider.round {
+  border-radius: 39px;
+}
+
+.ultraaddons .slider.round:before {
+  border-radius: 50%;}
