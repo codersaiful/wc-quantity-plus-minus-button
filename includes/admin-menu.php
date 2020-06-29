@@ -122,15 +122,15 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="">Border Width</label></th>
                         <td>
                             <input type="text" id="" name="data[css][border-width]" 
-                                   value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '1px' ?>" 
+                                   value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
                                    class="ua_input" />
                         </td>
                     </tr>
                     <tr>
                         <th><label for="">Border Radious</label></th>
                         <td>
-                            <input type="text" id="" name="data[css][border-radious]" 
-                                   value="<?php echo isset( $css['border-radious'] ) ? $css['border-radious'] : 'unset' ?>" 
+                            <input type="text" id="" name="data[css][border-radius]" 
+                                   value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
                                    class="ua_input" />
                         </td>
                     </tr>
