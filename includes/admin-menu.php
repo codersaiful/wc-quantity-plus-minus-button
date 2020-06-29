@@ -202,7 +202,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
             do_action( 'wqpmb_form_panel', $our_data, $datas );
             ?>
             <div class="section ultraaddons-button-wrapper ultraaddons-panel no-background">
-                <button name="configure_submit" class=".button-primary button-primary primary button">Save Change</button>
+                <button name="configure_submit" class="button-primary button-primary primary button">Save Change</button>
                 <button name="reset_button" class="button button-default" onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">Reset Default</button>
             </div>
         </form>

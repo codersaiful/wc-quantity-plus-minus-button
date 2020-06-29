@@ -2,7 +2,7 @@
 
 if( !function_exists( 'wqpmb_locate_template' ) ){
     /**
-     * Template selection for Qty Button
+     * Template selection for Quantity Button
      * 
      * @global type $woocommerce
      * @return type Template
@@ -14,7 +14,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         
         /**
          * @Hook Filter: wqpmb_show_validation
-         * To set any validaton, Based on your saved datas
+         * To set any validation, Based on your saved data
          * use following Filter Hook.
          * @return bool Need True false Validation
          */
@@ -45,7 +45,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
          * @Hook Filter: wqpmb_template_base_dir
          * To Change Template Base Directory, Use following Hook
          * In that directory, template files folder will be locate
-         * @return string Need a String of your tempaltes folder directory. default is: this_plugin_dir/templates/
+         * @return string Need a String of your templates folder directory. default is: this_plugin_dir/templates/
          */
         $template_base_dir = apply_filters( 'wqpmb_template_base_dir', $template_base_dir, $datas, $template, $template_name, $template_path );
         $plugin_path   = $template_base_dir;
@@ -106,7 +106,7 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
              * @Hook Filter: wqpmb_data_on_save
              * Populate data where data will save and pass data condition
              * 
-             * @return Array When submnit form, user able to modify by this filter
+             * @return Array When submit form, user able to modify by this filter
              */
             $datas = apply_filters( 'wqpmb_data_on_save', $datas );
             update_option( 'wqpmb_configs', $datas );
