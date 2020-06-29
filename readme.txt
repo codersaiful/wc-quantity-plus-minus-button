@@ -11,10 +11,10 @@ WC tested up to: 4.2.2
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Replace beautifully designed quantity buttons on WooCommerce product page which also support for decimal quantity.
+Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
 
 == Description ==
-WC Quantity Plus Minus Button adds beautifully designed quantity buttons on the WooCommerce product page which also support for decimal quantity.
+*WC Quantity Plus Minus Button* plugin adds beautifully designed quantity buttons on the WooCommerce product page which also support for decimal quantity.
 
 
 === Compatible with ===
