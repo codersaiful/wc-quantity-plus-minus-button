@@ -122,13 +122,16 @@
     color: #515151;
 }
 
-.wp-core-ui .ultraaddons-button-wrapper .button-primary{
+.wp-core-ui .ultraaddons-button-wrapper .button-primary,
+.wp-core-ui .ultraaddons-button-primary
+{
     background-color: #007694;
     color: #fff;
     
 }
 
-.wp-core-ui .ultraaddons-button-wrapper .button-primary:hover {
+.wp-core-ui .ultraaddons-button-wrapper .button-primary:hover,
+.wp-core-ui .ultraaddons-button-primary:hover{
     background-color: #375f6b;
     color: #fff;
     cursor: pointer;
