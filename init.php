@@ -2,7 +2,7 @@
 
 /**
  * Plugin Name: WC Quantity Plus Minus Button
- * Plugin URI: 
+ * Plugin URI: https://wcquantity.com/wc-quantity-plus-minus-button/
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology
  * Author URI: https://profiles.wordpress.org/codersaiful/#content-plugins
@@ -26,6 +26,15 @@ if (!defined('WQPMB_VERSION')) {
 if (!defined('WQPMB_NAME')) {
     define('WQPMB_NAME', 'WC Quantity Plus Minus Button');
 }
+
+if (!defined('WQPMB_BASE_URL')) {
+    define( "WQPMB_BASE_URL", plugins_url() . '/'. plugin_basename( dirname( __FILE__ ) ) . '/' );
+}
+
+if (!defined('WQPMB_BASE_DIR')) {
+    define( "WQPMB_BASE_DIR", str_replace( '\\', '/', dirname( __FILE__ ) ) );
+}
+
 include_once( ABSPATH . 'wp-admin/includes/plugin.php' );
 
 WQPMB_Button::getInstance();

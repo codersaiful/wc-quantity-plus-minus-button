@@ -22,6 +22,33 @@
     border-bottom: 1px solid #ecececc9;
 }
 
+/*For Input Box and Select Tag*/
+.ultraaddons .ua_input,
+.ultraaddons .ua_select,
+.ultraaddons-wrapper .ua_input,
+.ultraaddons-wrapper .ua_select
+
+{
+	width: 100%;
+        max-width: 400px;
+	border: 1px solid #d8d8d8;
+	border-radius: 8px;
+	padding: 4px 10px;
+	height: 38px;
+	min-width: 90px;
+	box-shadow: none;
+	color: #716269;
+}
+
+.ultraaddons .ua_input:focus,
+.ultraaddons .ua_select:focus,
+.ultraaddons-wrapper .ua_input:focus,
+.ultraaddons-wrapper .ua_select:focus
+{
+    border: 1px solid #a7d9ec;
+    box-shadow: none;
+}
+
 
 
 /**********UltraAddons Panel and Wrapper*************/
@@ -127,7 +154,7 @@
 .ultraaddons .switch {
   position: relative;
   display: inline-block;
-  width: 66px;
+  width: 68px;
   height: 27px;
 }
 
@@ -152,7 +179,7 @@
   height: 16px;
   width: 16px;
   left: 5px;
-  bottom: 5px;
+  bottom: 4px;
   background-color: white;
   -webkit-transition: .4s;
   transition: .4s;

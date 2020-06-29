@@ -1,4 +1,42 @@
 <?php
+
+if( !function_exists( 'wqpmb_plugin_actions' ) ){
+    /**
+     * For showing configure or add new link on plugin page
+     * It was actually an individual file, now combine at 4.1.1
+     * @param type $links
+     * @return type
+     */
+    function wqpmb_plugin_actions( $actions ) {
+        $links[] = '<a href="' . admin_url( 'admin.php?page=wqpmb-settings' ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
+        $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '" target="_blank">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
+        $links[] = '<a href="https://wcquantity.com/product/head-phone/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
+        $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
+        return array_merge( $links, $actions );
+    }
+    add_filter('plugin_action_links_wc-quantity-plus-minus-btn/init.php', 'wqpmb_plugin_actions' );
+}
+
+if( !function_exists( 'wqpmb_plugin_meta' ) ){
+    /**
+     * For showing configure or add new link on plugin page
+     * It was actually an individual file, now combine at 4.1.1
+     * @param type $links
+     * @return type
+     */
+    function wqpmb_plugin_meta( $plugin_meta, $plugin_file ) {
+        
+        if( $plugin_file == 'wc-quantity-plus-minus-btn/init.php' ){
+            $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
+            $plugin_meta[] = '<a href="https://wcquantity.com/product/head-phone/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
+            $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wqpmb' ).'</a>';
+
+        }
+        return $plugin_meta;
+    }
+    add_filter('plugin_row_meta', 'wqpmb_plugin_meta',10, 2 );
+}
+
 if( !function_exists( 'wqpmb_admin_menu' ) ){
     
     /**
@@ -8,8 +46,15 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
      * @link https://developer.wordpress.org/reference/functions/add_submenu_page/ From WordPress Codex
      */
     function wqpmb_admin_menu(){
-        add_submenu_page('woocommerce', WQPMB_NAME, __( '(+-) Plus Minus button', 'wqpmb' ), 'manage_woocommerce', 'wqpmb-settings', 'wqpmb_menupage_content');
-        //add_submenu_page($parent_slug, $page_title, $menu_title, $capability, $menu_slug, $function);
+        global $admin_page_hooks;
+        
+        if( !isset( $admin_page_hooks['ultraaddons'] ) ){
+            $icon_url = WQPMB_BASE_URL . 'assets/images/icon.png';//Our Custom Icon will be add
+            $UltraAddons = __( 'UltraAddons', 'wqpmb' );
+            add_menu_page( $UltraAddons, $UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
+        }
+        add_submenu_page('ultraaddons', WQPMB_NAME, __( '(+-) Plus Minus button', 'wqpmb' ), 'manage_woocommerce', 'wqpmb-settings', 'wqpmb_menupage_content');
+        remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
     add_action( 'admin_menu', 'wqpmb_admin_menu' );
 }
@@ -43,7 +88,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 
-    <h1 class="wp-heading-inline"><?php echo WQPMB_NAME; ?></h1>
+    <h1 class="wp-heading-inline"><?php echo esc_html( WQPMB_NAME ); ?></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
             <?php

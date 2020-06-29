@@ -15,6 +15,7 @@
 }
 .qib-button-wrapper{
     margin: 3px auto;
+    white-space: nowrap;
 }
 
 .qib-button-wrapper button.qib-button, .qib-button-wrapper div.quantity.wqpmb_quantity {
