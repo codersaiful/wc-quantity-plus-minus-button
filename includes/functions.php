@@ -1,8 +1,5 @@
 <?php
 
-
-        
-
 if( !function_exists( 'wqpmb_locate_template' ) ){
     /**
      * Template selection for Qty Button
@@ -15,6 +12,12 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         
         $validation = isset( $datas['data']['on_off'] ) && $datas['data']['on_off'] == 'on' ? true : false;
         
+        /**
+         * @Hook Filter: wqpmb_show_validation
+         * To set any validaton, Based on your saved datas
+         * use following Filter Hook.
+         * @return bool Need True false Validation
+         */
         $validation = apply_filters( 'wqpmb_show_validation', $validation, $datas );
         
         if ( false === $validation ) {
@@ -39,13 +42,23 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         $template_base_dir = untrailingslashit( WQPMB_Button::getPath('BASE_DIR') ) . '/template/';
         
         /**
-         * To Change Templae Base Directory, Use following Hook
+         * @Hook Filter: wqpmb_template_base_dir
+         * To Change Template Base Directory, Use following Hook
          * In that directory, template files folder will be locate
-         * 
+         * @return string Need a String of your tempaltes folder directory. default is: this_plugin_dir/templates/
          */
         $template_base_dir = apply_filters( 'wqpmb_template_base_dir', $template_base_dir, $datas, $template, $template_name, $template_path );
         $plugin_path   = $template_base_dir;
         $template_path = ( ! $template_path ) ? $woocommerce->template_url : null;
+        
+        /**
+         * @Hook Filter: wqpmb_template_name
+         * To change Default Template Name, use following Hook
+         * Currently default template name is: global/quantity-input.php
+         * By this Filter, you able to change that template name. default is: global/quantity-input.php
+         */
+        $template_name = apply_filters( 'wqpmb_template_name', $template_name, $datas, $template, $template_path );
+        
         $template      = locate_template( array( $template_path . $template_name, $template_name ) );
 
         if ( ! $template && file_exists( $plugin_path . $template_name ) ) {
@@ -55,7 +68,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         if ( ! $template ) {
                 $template = $_template;
         }
-
+        
         return $template;
     }
     add_filter( 'woocommerce_locate_template', 'wqpmb_locate_template',1,3 );
@@ -85,9 +98,20 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
     function wqpmb_form_submit( $datas ){
         
         if( NULL !== filter_input( INPUT_POST, 'configure_submit' ) && !empty( $datas ) ){
+            /**
+             * @Hook Filter: wqpmb_data_on_save
+             * Populate data where data will save and pass data condition
+             * 
+             * @return Array When submnit form, user able to modify by this filter
+             */
             $datas = apply_filters( 'wqpmb_data_on_save', $datas );
             update_option( 'wqpmb_configs', $datas );
-            //For Button CSS Style
+            
+            /**
+             * @Hook Filter: wqpmb_default_css_selector
+             * to change selector of css selector, Currently set for qty button and input box
+             * @return String 
+             */
             $selector = apply_filters( 'wqpmb_default_css_selector', '.qib-button-wrapper button.qib-button,.qib-button-wrapper .quantity input.input-text.qty.text', $datas  );
             if( isset( $datas['data']['css'] ) && is_array( $datas['data']['css'] ) ){
                 $style = "\n";

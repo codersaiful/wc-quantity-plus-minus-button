@@ -1,11 +1,11 @@
 <?php
 
 /**
- * Plugin Name: AAAA WC Quantity Plus Minus Button
+ * Plugin Name: WC Quantity Plus Minus Button
  * Plugin URI: 
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology
- * Author URI: https://devhelp.us/
+ * Author URI: https://profiles.wordpress.org/codersaiful/#content-plugins
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
@@ -13,7 +13,7 @@
  * Requires at least:    4.0.0
  * Tested up to:         5.4.2
  * WC requires at least: 3.7
- * WC tested up to:      4.2.0
+ * WC tested up to:      4.2.2
  */
 if (!defined('ABSPATH')) {
     die();

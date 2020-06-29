@@ -42,16 +42,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         $our_data = get_option( 'wqpmb_configs');
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
-    
-    
-    
-    
 
-    
-    
-    
-    
-    
     <h1 class="wp-heading-inline"><?php echo WQPMB_NAME; ?></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
@@ -65,8 +56,13 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                 <h2 class="with-background">Quantity Button Settings</h2>
                 <table class="ultraaddons-table">
                     <?php
-                    $css_for_row = apply_filters( 'wqpmb_choxbox_row_validation', true, $our_data, $datas );
-                    if( $css_for_row ){
+                    /**
+                     * @Hook Filter: wqpmb_checkbox_row_validation
+                     * To set validation for Quantity Button On/Off Checkbox
+                     * @return bool Need true for enable/ otherwise false to disable
+                     */
+                    $checkbox_for_row = apply_filters( 'wqpmb_checkbox_row_validation', true, $our_data, $datas );
+                    if( $checkbox_for_row ){
                     ?>
                     <tr>
                         <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
@@ -127,7 +123,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="">Border Radious</label></th>
+                        <th><label for="">Border Radius</label></th>
                         <td>
                             <input type="text" id="" name="data[css][border-radius]" 
                                    value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
@@ -139,11 +135,13 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     } //End of CSS Row Validation
                     
                     /**
+                     * @Hook Action: wqpmb_css_row
                      * To add New CSS row, use following @Hook 
                      */
                     do_action( 'wqpmb_css_row' );
                     
                     /**
+                     * @Hook Action: wqpmb_form_row
                      * To add New any Row, use following Hook
                      */
                     do_action( 'wqpmb_form_row' );
