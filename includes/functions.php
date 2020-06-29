@@ -16,6 +16,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         $validation = isset( $datas['data']['on_off'] ) && $datas['data']['on_off'] == 'on' ? true : false;
         
         $validation = apply_filters( 'wqpmb_show_validation', $validation, $datas );
+        
         if ( false === $validation ) {
                 return $template;
         }
