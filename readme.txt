@@ -1,30 +1,62 @@
 === WC Quantity Plus Minus Button ===
+
 Contributors: codersaiful, codeastrology
 Tags: woocommerce quantity, plus minus button, quantity, qty button
-
 Version: 1.0.0
 Requires at least: 4.0.0
 Tested up to: 5.4.2
-Requires PHP: 5.2.4
+Requires PHP: 5.6
 WC requires at least: 3.7
 WC tested up to: 4.2.2
+Stable tag: 1.0.0
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
+Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Quantity button design features available. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
 
 == Description ==
-*WC Quantity Plus Minus Button* plugin adds beautifully designed quantity buttons on the WooCommerce product page which also support for decimal quantity.
 
+*WC Quantity Plus Minus Button* plugin adds beautifully designed quantity buttons on the WooCommerce product page which also support for decimal quantity. Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
 
-=== Compatible with ===
+**Features**
 
-* [WooCommerce Minimum and Maximum Quantity](https://wordpress.org/plugins/woo-min-max-quantity-limit/)
-* [WooCommerce Min Max Quantity & Step Control Single](https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/)
-* [WooCommerce Min/Max Quantities](https://woocommerce.com/products/minmax-quantities/)
+* Quantity step supported
+* Decimal quantity supported
+* Customizable button design
+* You can customize button background color
+* You can customize button text color
+* You can customize border color
+* You can customize border width
+* You can set custom border radius
+* Well documented
+* Well commented
+* Clean code
+* Compatible with all themes
+* Compatible with all plugins
+* Compatible with Woo Product Table
+* Compatible with the latest version of WordPress
+* Compatible with the latest version of WooCommerce
+
+**[Plugin's Home Page](https://wcquantity.com/wc-quantity-plus-minus-button/)**
+**[Demo Link](https://wcquantity.com/product/head-phone/)**
+
+== Frequently Asked Questions ==
+
+= Does this plugin support StoreFront theme? =
+
+Yes this plugin is supports all themes.
+
+= Where is the settings page? =
+
+You can find it under UltraAddons -> Plus Minus Button
+
+= Does this plugin supports decimal value as quantity? =
+
+Yes, this plugin supports decimal value as product quantity.
 
 
 == Filter ==
+
 You can validate form data using this filter
 `
 add_filter( 'wqpmb_default_form_panel_validation', '__return_true' );
@@ -62,6 +94,7 @@ add_filter('wqpmb_template_base_dir', $template_base_dir);
 `
 
 == Action ==
+
 You can use this action for append something new after the checkbox
 `
 do_action( 'wqpmb_checkbox_row', $our_data, $datas );
@@ -86,10 +119,19 @@ do_action( 'wqpmb_form_row' );
 
 == Screenshots ==
 
-1. WooCommerce Quantity Buttons on product page
-2. WooCommerce Quantity Buttons on cart page
+1. Quantity button in WooCommerce cart page
+2. Quantity button setting page with custom color selection
+3. Quantity button in single product page
+4. Quantity button in WooCommerce cart page
+5. Quantity button in single product page
+6. Quantity button in WooCommerce cart page
+7. Quantity button in single product page
+8. Quantity button in WooCommerce cart page
+9. Quantity button setting page with custom color selection
+10. Quantity button in WooCommerce cart page
 
 == Change log ==
 
 = 1.0 =
+
 * Initial release

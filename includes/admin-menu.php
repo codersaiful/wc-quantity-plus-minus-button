@@ -47,6 +47,7 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
      */
     function wqpmb_admin_menu(){
         global $admin_page_hooks;
+        $capability = apply_filters( 'wqpmb_menu_capability', 'manage_woocommerce' );
         
         if( !isset( $admin_page_hooks['ultraaddons'] ) ){
             $icon_url = WQPMB_BASE_URL . 'assets/images/icon.png';//Our Custom Icon will be add
