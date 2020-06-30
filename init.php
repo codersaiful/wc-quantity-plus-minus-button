@@ -51,10 +51,22 @@ class WQPMB_Button {
      */
     private static $_instance;
     
+    /**
+     * Option names Array, We have used to option key for WP Option table
+     *
+     * @var type Array
+     */
     public static $option = array(
         'option' => 'wqpmb_configs',
         'css'       => 'wqpmb_css',
     );
+    
+    /**
+     * CSS selector for Plus Minus Button tag
+     *
+     * @var type String
+     */
+    public static $css_selector = '.qib-button-wrapper button.qib-button,.qib-button-wrapper .quantity input.input-text.qty.text';
 
     /**
      * Trying to commit and push something
@@ -255,8 +267,8 @@ class WQPMB_Button {
     
     public static function defaultDatas() {
         $default_data = array(
-            'data' => array(
-                'on_off' => 'on',
+                'on_off'    => 'on',
+                'css'       => false,
                 /*
                  'css'   =>  array(
                 'background-color' => '#bada55',
@@ -266,8 +278,7 @@ class WQPMB_Button {
                 'border-radious'=> '6px',
                 ),
                  */
-            ),
-        );
+            );
         return  $default_data;
     }
     /**

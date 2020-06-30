@@ -87,7 +87,6 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         
         $option_key = WQPMB_Button::$option['option'];
         $our_data = get_option( $option_key);
-        var_dump($our_data);
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 
@@ -116,10 +115,10 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
                         <td>
                             <?php
-                            $checkbox = isset( $our_data['data']['on_off'] ) ? 'checked' : '';
+                            $checkbox = isset( $our_data['on_off'] ) ? 'checked' : '';
                             ?>
                             <label class="switch">
-                                <input  name="data[on_off]" type="checkbox" id="wqpmb-enable-quantity-button" <?php echo esc_attr( $checkbox ); ?>>
+                                <input  name="on_off" type="checkbox" id="wqpmb-enable-quantity-button" <?php echo esc_attr( $checkbox ); ?>>
                                 <div class="slider round"><!--ADDED HTML -->
                                     <span class="on">ON</span><span class="off">OFF</span><!--END-->
                                 </div>
@@ -136,12 +135,12 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     $css_for_row = apply_filters( 'wqpmb_css_row_validation', true, $our_data, $datas );
                     if( $css_for_row ){
 
-                    $css = isset( $our_data['data']['css'] ) && is_array( $our_data['data']['css'] ) ? $our_data['data']['css'] : array();
+                    $css = isset( $our_data['css'] ) && is_array( $our_data['css'] ) ? $our_data['css'] : array();
                     ?>
                     <tr>
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-bg-color" name="data[css][background-color]" 
+                            <input type="text" id="wqpmb-btn-bg-color" name="css[background-color]" 
                                    value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
@@ -149,7 +148,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     <tr>
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-border-color" name="data[css][border-color]" 
+                            <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
                                    value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
@@ -157,7 +156,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     <tr>
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="data[css][color]" 
+                            <input type="text" id="wqpmb-btn-font-color" name="css" 
                                    value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
@@ -165,7 +164,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     <tr>
                         <th><label for="">Border Width</label></th>
                         <td>
-                            <input type="text" id="" name="data[css][border-width]" 
+                            <input type="text" id="" name="css[border-width]" 
                                    value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
                                    class="ua_input" />
                         </td>
@@ -173,7 +172,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     <tr>
                         <th><label for="">Border Radius</label></th>
                         <td>
-                            <input type="text" id="" name="data[css][border-radius]" 
+                            <input type="text" id="" name="css[border-radius]" 
                                    value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
                                    class="ua_input" />
                         </td>

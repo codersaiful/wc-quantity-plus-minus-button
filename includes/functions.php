@@ -11,7 +11,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         $option_key = WQPMB_Button::$option['option'];
         $datas = get_option( $option_key, false );
         
-        $validation = isset( $datas['data']['on_off'] ) && $datas['data']['on_off'] == 'on' ? true : false;
+        $validation = isset( $datas['on_off'] ) && $datas['on_off'] == 'on' ? true : false;
         
         /**
          * @Hook Filter: wqpmb_show_validation
@@ -113,15 +113,16 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             $datas = apply_filters( 'wqpmb_data_on_save', $datas );
             update_option( $option_key, $datas );
             
+            $selector = WQPMB_Button::$css_selector;
             /**
              * @Hook Filter: wqpmb_default_css_selector
              * to change selector of css selector, Currently set for qty button and input box
              * @return String 
              */
-            $selector = apply_filters( 'wqpmb_default_css_selector', '.qib-button-wrapper button.qib-button,.qib-button-wrapper .quantity input.input-text.qty.text', $datas  );
-            if( isset( $datas['data']['css'] ) && is_array( $datas['data']['css'] ) ){
+            $selector = apply_filters( 'wqpmb_default_css_selector', $selector, $datas  );
+            if( isset( $datas['css'] ) && is_array( $datas['css'] ) ){
                 $style = "\n";
-                foreach( $datas['data']['css'] as $property=>$value ){
+                foreach( $datas['css'] as $property => $value ){
                     
                     $style .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . ";\n" : '';
                 }
@@ -131,22 +132,12 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             }
         }
         if( NULL !== filter_input( INPUT_POST, 'reset_button' ) ){
-            $default_data['data']['on_off'] = 'on';
-            $default_data['data']['css'] = false;
-            /*
-            array(
-            'background-color' => '#bada55',
-            'border-color'  => '#bada55',
-            'color'         => '#bada55',
-            'border-width'  => '1px',
-            'border-radious'=> '6px',
-            )
-            */
+            $default_data = WQPMB_Button::defaultDatas();
             
             $r_data = apply_filters( 'wqpmb_data_on_reset', $default_data, $datas );
             update_option( $option_key , $r_data);
             
-            $css = apply_filters( 'wqpmb_css_on_reset', '', $datas );
+            $css = apply_filters( 'wqpmb_css_on_reset', false, $datas );
             update_option( $css_key, $css);
         }
     }
