@@ -21,6 +21,31 @@
     padding-left: 43px;
     border-bottom: 1px solid #ecececc9;
 }
+.ultraaddons h2.with-background.light-background, 
+.ultraaddons-panel h2.with-background.light-background, 
+.ultraaddons-panel h1.with-background.light-background{
+    background: #eaeaea26;
+    color: black;
+}
+.ultraaddons h2.with-background.red-background, 
+.ultraaddons-panel h2.with-background.red-background, 
+.ultraaddons-panel h1.with-background.red-background{
+    background: #F44336;
+    color: #ffffff;
+}
+.ultraaddons h2.with-background.black-background, 
+.ultraaddons-panel h2.with-background.black-background, 
+.ultraaddons-panel h1.with-background.black-background{
+    background: #000000;
+    color: #73d17a;
+}
+.ultraaddons h2.with-background.gradient-background, 
+.ultraaddons-panel h2.with-background.gradient-background, 
+.ultraaddons-panel h1.with-background.gradient-background{
+    background: linear-gradient(65deg, #007693 0%, rgb(0, 118, 147) 50%, #29000e 100%);
+    color: #ffffff;
+    border-bottom: 1px solid #260514;
+}
 
 /*For Input Box and Select Tag*/
 .ultraaddons .ua_input,
@@ -147,7 +172,24 @@
     background: #ffffff;
     color: gray;
 }
+.wp-core-ui .ultraaddons .wp-picker-container .button.button-small,
+.wp-core-ui .ultraaddons-panel .wp-picker-container .button.button-small,
+.wp-core-ui .ultraaddons .wp-picker-container .button.button-small
+{
+    min-height: 30px;
+    margin: 0 5px;
+    background-color: #cacaca;
+    border-color: #cacaca;
+    color: #515151;
+    font-weight: bold;
+    padding: 0 25px;
+}
 
+.wp-core-ui .ultraaddons .wp-picker-container .button.button-small:focus {
+    box-shadow: 0 0 0 1px #868686;
+    outline: 0 solid transparent;
+    outline-offset: 0;
+}
 
 
 

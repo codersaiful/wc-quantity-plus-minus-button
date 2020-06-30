@@ -100,7 +100,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
             
             ?>
             <div class="section ultraaddons-panel">
-                <h2 class="with-background">Quantity Button Settings</h2>
+                <h2 class="with-background light-background">Quantity Button Settings</h2>
                 <table class="ultraaddons-table">
                     <?php
                     /**
@@ -156,7 +156,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     <tr>
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="css" 
+                            <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
                                    value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
