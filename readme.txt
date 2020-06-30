@@ -1,4 +1,4 @@
-=== WC Quantity Plus Minus Button ===
+=== Quantity Plus/Minus Button for WooCommerce ===
 
 Contributors: codersaiful, codeastrology
 Tags: woocommerce quantity, plus minus button, quantity, qty button
@@ -16,7 +16,8 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 
 == Description ==
 
-*WC Quantity Plus Minus Button* plugin adds beautifully designed quantity buttons on the WooCommerce product page which also support for decimal quantity. Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
+*Quantity Plus/Minus Button for WooCommerce* plugin add beautifully designed quantity buttons for WooCommerce quantity input box on the  product page which also support for decimal quantity. Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
+User able to get custom/own color for his plus or minus button.
 
 **Features**
 
