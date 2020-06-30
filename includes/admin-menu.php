@@ -14,7 +14,7 @@ if( !function_exists( 'wqpmb_plugin_actions' ) ){
         $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
         return array_merge( $links, $actions );
     }
-    add_filter('plugin_action_links_wc-quantity-plus-minus-btn/init.php', 'wqpmb_plugin_actions' );
+    add_filter('plugin_action_links_' . WQPMB_BASE_NAME, 'wqpmb_plugin_actions' );
 }
 
 if( !function_exists( 'wqpmb_plugin_meta' ) ){
@@ -26,7 +26,7 @@ if( !function_exists( 'wqpmb_plugin_meta' ) ){
      */
     function wqpmb_plugin_meta( $plugin_meta, $plugin_file ) {
         
-        if( $plugin_file == 'wc-quantity-plus-minus-btn/init.php' ){
+        if( $plugin_file == WQPMB_BASE_NAME ){
             $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
             $plugin_meta[] = '<a href="https://wcquantity.com/product/head-phone/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
             $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wqpmb' ).'</a>';

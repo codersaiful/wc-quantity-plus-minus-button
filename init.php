@@ -15,23 +15,27 @@
  * WC requires at least: 3.7
  * WC tested up to:      4.2.2
  */
-if (!defined('ABSPATH')) {
+if ( !defined( 'ABSPATH' ) ) {
     die();
 }
 
-if (!defined('WQPMB_VERSION')) {
-    define('WQPMB_VERSION', '1.0.0');
+if ( !defined( 'WQPMB_VERSION' ) ) {
+    define( 'WQPMB_VERSION', '1.0.0');
 }
 
-if (!defined('WQPMB_NAME')) {
-    define('WQPMB_NAME', 'Quantity Plus/Minus Button');
+if ( !defined( 'WQPMB_NAME' ) ) {
+    define( 'WQPMB_NAME', 'Quantity Plus/Minus Button');
 }
 
-if (!defined('WQPMB_BASE_URL')) {
+if ( !defined( 'WQPMB_BASE_NAME' ) ) {
+    define( 'WQPMB_BASE_NAME', plugin_basename( __FILE__ ) );
+}
+
+if ( !defined( 'WQPMB_BASE_URL' ) ) {
     define( "WQPMB_BASE_URL", plugins_url() . '/'. plugin_basename( dirname( __FILE__ ) ) . '/' );
 }
 
-if (!defined('WQPMB_BASE_DIR')) {
+if ( !defined( 'WQPMB_BASE_DIR' ) ) {
     define( "WQPMB_BASE_DIR", str_replace( '\\', '/', dirname( __FILE__ ) ) );
 }
 
