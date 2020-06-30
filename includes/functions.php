@@ -8,7 +8,8 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
      * @return type Template
      */
     function wqpmb_locate_template( $template, $template_name, $template_path ){
-        $datas = get_option( 'wqpmb_configs', false );
+        $option_key = WQPMB_Button::$option['option'];
+        $datas = get_option( $option_key, false );
         
         $validation = isset( $datas['data']['on_off'] ) && $datas['data']['on_off'] == 'on' ? true : false;
         
@@ -100,7 +101,8 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
      * @return Void
      */
     function wqpmb_form_submit( $datas ){
-        
+        $option_key = WQPMB_Button::$option['option'];
+        $css_key = WQPMB_Button::$option['css'];
         if( NULL !== filter_input( INPUT_POST, 'configure_submit' ) && !empty( $datas ) ){
             /**
              * @Hook Filter: wqpmb_data_on_save
@@ -109,7 +111,7 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
              * @return Array When submit form, user able to modify by this filter
              */
             $datas = apply_filters( 'wqpmb_data_on_save', $datas );
-            update_option( 'wqpmb_configs', $datas );
+            update_option( $option_key, $datas );
             
             /**
              * @Hook Filter: wqpmb_default_css_selector
@@ -125,7 +127,7 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
                 }
                 $css = $selector . "{" . $style . "}";
                 $css = apply_filters( 'wqpmb_css_on_save', $css, $datas );
-                update_option( 'wqpmb_css', $css);
+                update_option( $css_key, $css);
             }
         }
         if( NULL !== filter_input( INPUT_POST, 'reset_button' ) ){
@@ -142,10 +144,10 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             */
             
             $r_data = apply_filters( 'wqpmb_data_on_reset', $default_data, $datas );
-            update_option( 'wqpmb_configs' , $r_data);
+            update_option( $option_key , $r_data);
             
             $css = apply_filters( 'wqpmb_css_on_reset', '', $datas );
-            update_option( 'wqpmb_css', $css);
+            update_option( $css_key, $css);
         }
     }
     add_filter( 'wqpmb_save_data', 'wqpmb_form_submit' );
@@ -160,7 +162,8 @@ if( !function_exists( 'wqpmb_header_css' ) ){
      */
     function wqpmb_header_css(){
         $style = false;
-        $css = get_option( 'wqpmb_css' );
+        $css_key = WQPMB_Button::$option['css'];
+        $css = get_option( $css_key );
         if( !empty( $css ) && is_string( $css ) ){
             $style .= "<style type='text/css' id='wqpmb_internal_css'>";
             $style .= $css;

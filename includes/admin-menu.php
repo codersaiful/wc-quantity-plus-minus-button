@@ -85,7 +85,9 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         $datas = filter_input_array(INPUT_POST);
         do_action( 'wqpmb_save_data', $datas );
         
-        $our_data = get_option( 'wqpmb_configs');
+        $option_key = WQPMB_Button::$option['option'];
+        $our_data = get_option( $option_key);
+        var_dump($our_data);
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 

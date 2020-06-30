@@ -51,6 +51,11 @@ class WQPMB_Button {
      */
     private static $_instance;
     
+    public static $option = array(
+        'option' => 'wqpmb_configs',
+        'css'       => 'wqpmb_css',
+    );
+
     /**
      * Trying to commit and push something
      * Minimum PHP Version
@@ -163,7 +168,7 @@ class WQPMB_Button {
     }
 
     public function __construct() {
-
+        
         if (!is_plugin_active('woocommerce/woocommerce.php')) {
             add_action('admin_notices', [$this, 'admin_notice_missing_main_plugin']);
             return;
@@ -263,14 +268,20 @@ class WQPMB_Button {
                  */
             ),
         );
+        return  $default_data;
     }
     /**
      * Activation Hook for WordPress
      */
     public static function install() {
         $default_data = self::defaultDatas();
-        update_option( 'wqpmb_configs', $default_data);
-        update_option( 'wqpmb_css', '');
+        
+        $option_key = self::$option['option'];
+        $css_key = self::$option['css'];
+        $saved_data = get_option( $option_key );
+        if( !empty( $saved_data ) ){
+            update_option( $option_key, $default_data);
+        }
     }
     
     
