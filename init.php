@@ -31,6 +31,10 @@ if ( !defined( 'WQPMB_BASE_NAME' ) ) {
     define( 'WQPMB_BASE_NAME', plugin_basename( __FILE__ ) );
 }
 
+if ( !defined( 'WQPMB_MENU_SLUG' ) ) {
+    define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+}
+
 if ( !defined( 'WQPMB_BASE_URL' ) ) {
     define( "WQPMB_BASE_URL", plugins_url() . '/'. plugin_basename( dirname( __FILE__ ) ) . '/' );
 }

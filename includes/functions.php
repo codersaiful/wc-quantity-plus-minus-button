@@ -84,8 +84,8 @@ if( !function_exists( 'wqpmb_admin_body_class' ) ){
      */
     function wqpmb_admin_body_class(){
         global $current_screen;
-        if( isset( $current_screen->id ) && $current_screen->id == 'ultraaddons_page_wqpmb-settings' ){
-            return ' ultraaddons wqpmb-plugin ';
+        if( isset( $current_screen->id ) && $current_screen->id == 'ultraaddons_page_' . FSC_MENU_SLUG ){
+            return ' ultraaddons ' . FSC_MENU_SLUG . ' ';
         }
         return;
     }

@@ -54,7 +54,7 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
             $UltraAddons = __( 'UltraAddons', 'wqpmb' );
             add_menu_page( $UltraAddons, $UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
         }
-        add_submenu_page('ultraaddons', WQPMB_NAME, __( '(+-) Plus Minus button', 'wqpmb' ), 'manage_woocommerce', 'wqpmb-settings', 'wqpmb_menupage_content');
+        add_submenu_page('ultraaddons', WQPMB_NAME, __( '(+-) Plus Minus button', 'wqpmb' ), 'manage_woocommerce', FSC_MENU_SLUG, 'wqpmb_menupage_content');
         remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
     add_action( 'admin_menu', 'wqpmb_admin_menu' );
