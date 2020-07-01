@@ -19,6 +19,10 @@ if ( !defined( 'ABSPATH' ) ) {
     die();
 }
 
+if ( !defined( 'UltraAddons' ) ) {
+    define( 'UltraAddons', __( 'UltraAddons', 'wqpmb' ));
+}
+
 if ( !defined( 'WQPMB_VERSION' ) ) {
     define( 'WQPMB_VERSION', '1.0.0');
 }
@@ -33,6 +37,10 @@ if ( !defined( 'WQPMB_BASE_NAME' ) ) {
 
 if ( !defined( 'WQPMB_MENU_SLUG' ) ) {
     define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+}
+
+if ( !defined( 'WQPMB_MENU_NAME' ) ) {
+    define( 'WQPMB_MENU_NAME', __( '(+-) Plus Minus button', 'wqpmb' ) );
 }
 
 if ( !defined( 'WQPMB_BASE_URL' ) ) {

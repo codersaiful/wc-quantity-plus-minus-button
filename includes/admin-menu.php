@@ -51,10 +51,10 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
         
         if( !isset( $admin_page_hooks['ultraaddons'] ) ){
             $icon_url = WQPMB_BASE_URL . 'assets/images/icon.png';//Our Custom Icon will be add
-            $UltraAddons = __( 'UltraAddons', 'wqpmb' );
-            add_menu_page( $UltraAddons, $UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
+            add_menu_page( UltraAddons, UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
         }
-        add_submenu_page('ultraaddons', WQPMB_NAME, __( '(+-) Plus Minus button', 'wqpmb' ), 'manage_woocommerce', FSC_MENU_SLUG, 'wqpmb_menupage_content');
+        
+        add_submenu_page('ultraaddons', WQPMB_NAME, WQPMB_MENU_NAME, 'manage_woocommerce', WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
         remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
     add_action( 'admin_menu', 'wqpmb_admin_menu' );
