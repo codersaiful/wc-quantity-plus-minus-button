@@ -302,7 +302,7 @@ class WQPMB_Button {
         $option_key = self::$option['option'];
         $css_key = self::$option['css'];
         $saved_data = get_option( $option_key );
-        if( !empty( $saved_data ) ){
+        if( empty( $saved_data ) ){
             update_option( $option_key, $default_data);
         }
     }
