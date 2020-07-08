@@ -5,14 +5,16 @@
  */
 
 /**Heading**/
-.ultraaddons h2, .ultraaddons-panel h2, .ultraaddons-panel h1 {
+.ultraaddons h2, 
+.ultraaddons-panel h2, 
+.ultraaddons-panel h1 {
     color: #2a8db0;
     font-size: 18px;
     text-transform: uppercase;
     padding: 0;
     margin: 0 0 25px 0;
 }
-.ultraaddons h2.with-background, .ultraaddons-panel h2.with-background, .ultraaddons-panel h1.with-background {
+.ultraaddons .with-background, .ultraaddons-panel .with-background {
     background: #ececec7a;
     padding: 33px;
     margin-top: -40px;
@@ -21,27 +23,44 @@
     padding-left: 43px;
     border-bottom: 1px solid #ecececc9;
 }
-.ultraaddons h2.with-background.light-background, 
-.ultraaddons-panel h2.with-background.light-background, 
-.ultraaddons-panel h1.with-background.light-background{
+.ultraaddons .no-border-bottom, .ultraaddons-panel .no-border-bottom {
+    border-bottom: 0 none;
+}
+.ultraaddons .with-background.no-top, .ultraaddons-panel .with-background.no-top {margin-top: 0;}
+.ultraaddons .plugin-name, .ultraaddons-panel .plugin-name {font-size: 2.4em;}
+
+.ultraaddons .plugin-version, .ultraaddons-panel .plugin-version {
+    color: #007694;
+    background: #a9a9a92e;
+    display: inline-block;
+    padding: 2px 13px;
+    border-radius: 15px;
+    border: 2px solid #007694;
+    font-size: 60%;
+}
+.ultraaddons .with-background.slim-title, .ultraaddons-panel .with-background.slim-title {
+    font-size: 13px;
+    padding-top: 14px;
+    padding-bottom: 15px;
+}
+
+.ultraaddons .with-background.light-background, 
+.ultraaddons-panel .with-background.light-background{
     background: #eaeaea26;
     color: black;
 }
-.ultraaddons h2.with-background.red-background, 
-.ultraaddons-panel h2.with-background.red-background, 
-.ultraaddons-panel h1.with-background.red-background{
+.ultraaddons .with-background.red-background, 
+.ultraaddons-panel .with-background.red-background{
     background: #F44336;
     color: #ffffff;
 }
-.ultraaddons h2.with-background.black-background, 
-.ultraaddons-panel h2.with-background.black-background, 
-.ultraaddons-panel h1.with-background.black-background{
+.ultraaddons .with-background.black-background, 
+.ultraaddons-panel .with-background.black-background{
     background: #000000;
     color: #73d17a;
 }
-.ultraaddons h2.with-background.gradient-background, 
-.ultraaddons-panel h2.with-background.gradient-background, 
-.ultraaddons-panel h1.with-background.gradient-background{
+.ultraaddons .with-background.gradient-background, 
+.ultraaddons-panel .with-background.gradient-background{
     background: linear-gradient(65deg, #007693 0%, rgb(0, 118, 147) 50%, #29000e 100%);
     color: #ffffff;
     border-bottom: 1px solid #260514;
@@ -88,7 +107,7 @@
     width: calc(100% - 60px);
     position: relative;
     margin-bottom: 38px;
-    padding:35px 20px;
+    padding:40px 20px;
     overflow: hidden;
 }
 
@@ -99,11 +118,20 @@
 }
 
 /********Panel Table Default*******/
-.ultraaddons-panel table{}
+.ultraaddons-panel table {
+    width: 100%;
+}
 .ultraaddons-panel table tr th{
-    min-width: 300px;
+    min-width: 200px;
+    max-height: 600px;
+    width: 275px;
+    padding-right: 10px;
+    word-break: break-word;
     text-align: left;
-    font-weight: 400;}
+    font-weight: 500;
+    color: #004354;
+    }
+.ultraaddons-panel table tr th label{font-weight: 500;}
 .ultraaddons-panel table tr th,
 .ultraaddons-panel table tr td{
     padding: 16px 0 28px 0;
@@ -270,11 +298,9 @@
     
 }
 
-.ultraaddons input:checked+ .slider .on
-{display: block;}
+.ultraaddons input:checked+ .slider .on{display: block;}
 
-.ultraaddons input:checked + .slider .off
-{display: none;}
+.ultraaddons input:checked + .slider .off{display: none;}
 
 /*--------- END --------*/
 
@@ -284,4 +310,5 @@
 }
 
 .ultraaddons .slider.round:before {
-  border-radius: 50%;}
+  border-radius: 50%;
+}
