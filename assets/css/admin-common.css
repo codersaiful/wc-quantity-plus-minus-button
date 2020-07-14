@@ -1,7 +1,10 @@
 /**
  * Common Form And input button CSS Style
  * for All type UltraAddons Plugin
- * Version: 1.0.0
+ * Version: 1.0.2
+ * Working based on Date:
+7/9/2020 - Overflow hidden removed from ultraaddons-panel
+13/7/2020 - Features panel added
  */
 
 /**Heading**/
@@ -18,9 +21,9 @@
     background: #ececec7a;
     padding: 33px;
     margin-top: -40px;
-    margin-left: -40px;
-    width: 100%;
-    padding-left: 43px;
+    margin-left: -20px;
+    width: calc(100% - 11px);
+    padding-left: 20px;
     border-bottom: 1px solid #ecececc9;
 }
 .ultraaddons .no-border-bottom, .ultraaddons-panel .no-border-bottom {
@@ -74,14 +77,14 @@
 
 {
 	width: 100%;
-        max-width: 400px;
+	max-width: 400px;
 	border: 1px solid #d8d8d8;
 	border-radius: 8px;
 	padding: 4px 10px;
 	height: 38px;
 	min-width: 90px;
 	box-shadow: none;
-	color: #716269;
+	color: #000000;
 }
 
 .ultraaddons .ua_input:focus,
@@ -108,7 +111,6 @@
     position: relative;
     margin-bottom: 38px;
     padding:40px 20px;
-    overflow: hidden;
 }
 
 .ultraaddons-panel.no-background{
@@ -118,7 +120,7 @@
 }
 
 /********Panel Table Default*******/
-.ultraaddons-panel table {
+.ultraaddons-panel table, .ultraaddons-table, .ultraaddons table {
     width: 100%;
 }
 .ultraaddons-panel table tr th{
@@ -131,7 +133,7 @@
     font-weight: 500;
     color: #004354;
     }
-.ultraaddons-panel table tr th label{font-weight: 500;}
+.ultraaddons-panel table tr th label{font-weight: 400;text-shadow: -1px 0 0px #0572a982;}
 .ultraaddons-panel table tr th,
 .ultraaddons-panel table tr td{
     padding: 16px 0 28px 0;
@@ -311,4 +313,107 @@
 
 .ultraaddons .slider.round:before {
   border-radius: 50%;
+}
+
+
+
+
+/* Features Design */
+.ultraaddons .ultraaddons-feature-panel {
+    background: #fff;
+    border: 1px solid #ddd;
+    padding: 50px 20px;
+    margin-bottom: 20px;
+}
+.ultraaddons-feature-panel .col{
+    float: left;
+    width: 50%;
+}
+.ultraaddons-feature-panel .col.has-img {
+    text-align: center;
+}
+.ultraaddons-feature-panel .col-left.has-text {
+    text-align: right;
+}
+.ultraaddons-feature-panel .col-right.has-text {
+    text-align: left;
+}
+.ultraaddons-feature-panel img {
+    border-radius: 50%;
+    max-width: 350px;
+    border: 6px solid #ffffff;
+    box-shadow: 4px 4px 14px 9px #00000014;
+    width: 100%;
+}
+.ultraaddons-feature-panel:after{
+    content: "";
+    display: block;
+    clear: both;
+}
+.ultraaddons-feature-panel .col-left{
+
+}
+.ultraaddons-feature-panel .col-right{
+    
+}
+.ultraaddons .ultraaddons-feature-panel h2 {
+    text-transform: inherit;
+    margin: 20px 0;
+}
+.ultraaddons-feature-panel .col h2 {
+    font-size: 2.5em;
+    font-family: sans-serif;
+    line-height: initial;
+    border-bottom: 1px solid #aaaaaa42;
+    padding-bottom: 15px;
+}
+.ultraaddons-feature-panel.feature-head h1 {
+    font-size: 3.8em;
+    color: #32373c;
+    font-weight: 600;
+}
+
+.ultraaddons-feature-panel.feature-head h1 {
+    font-size: 3.8em;
+    color: #32373c;
+    font-weight: 600;
+}
+
+.ultraaddons-feature-panel .col li {
+    line-height: 1.5;
+    margin: 0;
+}
+.ultraaddons-feature-panel .col p,
+.ultraaddons-feature-panel .col li,
+.ultraaddons-feature-panel .col code {
+    font-size: 120%;
+}
+
+/* Responsive Design Starts */
+@media screen and (max-width: 782px){
+    .ultraaddons .fieldwrap,
+    #wpt_configuration_form .ultraaddons-panel table tr th {
+        width: 100%;
+    }
+    .ultraaddons-panel table tr th, .ultraaddons-panel table tr td {
+        display: block;
+    }
+    .ultraaddons-panel table tr th label {
+        font-size: 2em;
+    }
+}
+
+@media screen and (max-width: 992px){
+    .ultraaddons-feature-panel .col {
+        float: none;
+        width: 100%;
+    }
+    .ultraaddons-feature-panel .col-left.has-text {
+        text-align: left;
+    }
+}
+@media screen and (min-width: 992px){
+    .ultraaddons-feature-panel.even .col-right {
+        float: right;
+    }
 }
