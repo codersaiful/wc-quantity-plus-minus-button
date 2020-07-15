@@ -9,7 +9,7 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.0.1
+ * Version: 1.0.2
  * Requires at least:    4.0.0
  * Tested up to:         5.4.2
  * WC requires at least: 3.7
