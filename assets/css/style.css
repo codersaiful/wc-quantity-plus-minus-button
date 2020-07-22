@@ -8,7 +8,7 @@
     line-height: 20px;
     width: 41px;
     color: black;
-    height: 41px;
+    min-height: 41px;
 }
 .qib-button-wrapper .quantity {
     display: inline;
@@ -21,6 +21,7 @@
 .qib-button-wrapper button.qib-button, .qib-button-wrapper div.quantity.wqpmb_quantity {
     float: none !important;
     height: 41px;
+    margin: 0;
 }
 
 .qib-button-wrapper .quantity input.input-text.qty.text {
