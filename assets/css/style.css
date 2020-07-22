@@ -1,0 +1,63 @@
+.qib-button-wrapper button.qib-button{
+    padding: 6px 12px 8px;
+    height: 41px;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    cursor: pointer;
+    font-size: 20px;
+    line-height: 20px;
+    width: 41px;
+    color: black;
+    height: 41px;
+}
+.qib-button-wrapper .quantity {
+    display: inline;
+}
+.qib-button-wrapper{
+    margin: 3px auto;
+    white-space: nowrap;
+}
+
+.qib-button-wrapper button.qib-button, .qib-button-wrapper div.quantity.wqpmb_quantity {
+    float: none !important;
+    height: 41px;
+}
+
+.qib-button-wrapper .quantity input.input-text.qty.text {
+    height: 41px;
+    padding: 6px 12px 8px;
+    text-align: center;
+    background: #ffffff;
+    border: 1px solid #efefef;
+    font-size: 20px;
+    line-height: 20px;
+    box-shadow: none;
+}
+
+span.wqpmb_plain_input.hidden{display: none;}
+
+body.cart tr.woocommerce-cart-form__cart-item.cart_item .quantity.wqpmb_quantity,.quantity.wqpmb_quantity {
+    display: inline-flex;
+}
+body.single-product .qib-button.qib-button-wrapper {
+    display: inline-block;
+    float: left;
+    margin-right: 5px;
+}
+body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
+    margin: inherit;
+}
+.woocommerce div.product form.cart .qib-button-wrapper div.quantity{
+    margin-right: 0;margin: 0;
+}
+
+.qib-button-wrapper input::-webkit-outer-spin-button,
+.qib-button-wrapper input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    margin: 0; 
+}
+.qib-button-wrapper input[type=number]
+{
+  -moz-appearance: textfield;
+}
