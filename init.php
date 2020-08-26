@@ -9,11 +9,11 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.0.2
+ * Version: 1.0.3
  * Requires at least:    4.0.0
- * Tested up to:         5.4.2
+ * Tested up to:         5.5
  * WC requires at least: 3.7
- * WC tested up to:      4.2.2
+ * WC tested up to:      4.4.3
  */
 if ( !defined( 'ABSPATH' ) ) {
     die();
