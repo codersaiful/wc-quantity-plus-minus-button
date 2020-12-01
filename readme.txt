@@ -1,4 +1,4 @@
-=== Quantity Plus/Minus Button for WooCommerce ===
+=== Quantity Plus Minus Button for WooCommerce ===
 
 Contributors: codersaiful, codeastrology
 Tags: woocommerce quantity, plus minus button, quantity, qty button
