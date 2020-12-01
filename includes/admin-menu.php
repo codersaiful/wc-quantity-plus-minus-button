@@ -8,7 +8,7 @@ if( !function_exists( 'wqpmb_plugin_actions' ) ){
      * @return type
      */
     function wqpmb_plugin_actions( $actions ) {
-        $links[] = '<a href="' . admin_url( 'admin.php?page=wqpmb-settings' ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
+        $links[] = '<a href="' . admin_url( 'admin.php?page=ua-quanity-plus-minus-button' ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
         $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '" target="_blank">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
         $links[] = '<a href="https://wcquantity.com/product/head-phone/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
         $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
