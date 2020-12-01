@@ -131,6 +131,12 @@ do_action( 'wqpmb_form_row' );
 
 == Change log ==
 
+= 1.0.5 =
+
+* Setting link fixed
+* name fixed
+* Bug fixed
+
 = 1.0 =
 
 * Initial release
