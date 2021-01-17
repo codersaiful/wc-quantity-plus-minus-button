@@ -16,6 +16,24 @@
  * @version     3.3.0
  */
 
+/**
+ * This issue will be activated
+ * Basically for Oceanwp theme
+ * Actually in oCeanwp theme, for our product table, there are showing
+ * lots of qty button.
+ * 
+ * Because they has generate qty button by JavaScript based on .qty of input tag of quantity.
+ * In this situation, we have to remove .qty class.
+ * we also can use a filter of woocommerce: woocommerce_quantity_input_classes
+ * 'classes'      => apply_filters( 'woocommerce_quantity_input_classes', array( 'input-text', 'qty', 'text' ), $product ),
+ * file: woocommerce/includes/wc-template-function.php
+ */
+//if( isset( $classes ) && is_array( $classes ) ){
+//    $qty_index = array_search( 'qty', $classes );
+//    unset( $classes[$qty_index] );
+//}
+//
+
 if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
