@@ -2,12 +2,12 @@
 
 Contributors: codersaiful, codeastrology
 Tags: woocommerce quantity, plus minus button, quantity, qty button
-Version: 1.0.5
+Version: 1.0.6
 Requires at least: 4.0.0
-Tested up to: 5.4.2
+Tested up to: 5.7.2
 Requires PHP: 5.6
 WC requires at least: 3.7
-WC tested up to: 4.2.2
+WC tested up to: 5.4.1
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -76,14 +76,19 @@ Use default WooCommerce template
 add_filter('wqpmb_show_validation', '__return_true');
 `
 
-Show on product page
+Hide on product page
 `
-add_filter('wqpmb_on_product_page', '__return_true');
+add_filter('wqpmb_on_product_page', '__return_false');
 `
 
-Show on cart page
+Hide on cart page
 `
-add_filter('wqpmb_on_cart_page', '__return_true');
+add_filter('wqpmb_on_cart_page', '__return_false');
+`
+
+Hide on Mini Cart page
+`
+add_filter('wqpmb_on_mini_cart_page', '__return_false');
 `
 
 To Change Templae Base Directory, Use following Hook
@@ -130,6 +135,11 @@ do_action( 'wqpmb_form_row' );
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.0.6 =
+
+* Hide on Mini Cart page
+* Bug fixed
 
 = 1.0.5 =
 
