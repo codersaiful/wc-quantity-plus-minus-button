@@ -25,14 +25,19 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
                 return $template;
         }
         
-        $show_on_product_page = apply_filters( 'wqpmb_on_product_page', true );
-        $show_on_cart_page    = apply_filters( 'wqpmb_on_cart_page', true );
+        $show_on_product_page       = apply_filters( 'wqpmb_on_product_page', true );
+        $show_on_cart_page          = apply_filters( 'wqpmb_on_cart_page', true );
+        $show_on_mini_cart_page     = apply_filters( 'wqpmb_on_mini_cart_page', true );
 
         if ( false === $show_on_product_page && is_product() ) {
                 return $template;
         }
 
         if ( false === $show_on_cart_page && is_cart() ) {
+                return $template;
+        }
+        
+        if ( false === $show_on_mini_cart_page && 'cart/mini-cart.php' == $template_name ) {
                 return $template;
         }
 
