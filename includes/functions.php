@@ -10,6 +10,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
     function wqpmb_locate_template( $template, $template_name, $template_path ){
         $option_key = WQPMB_Button::$option['option'];
         $datas = get_option( $option_key, false );
+		
         
         $validation = isset( $datas['on_off'] ) && $datas['on_off'] == 'on' ? true : false;
         
@@ -28,6 +29,15 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         $show_on_product_page       = apply_filters( 'wqpmb_on_product_page', true );
         $show_on_cart_page          = apply_filters( 'wqpmb_on_cart_page', true );
         $show_on_mini_cart_page     = apply_filters( 'wqpmb_on_mini_cart_page', true );
+        $emplate_on_off             = apply_filters( 'wqpmb_template_on_off', true, $template, $template_name, $template_path );
+
+        //Assaign Template or changing template based on $template, $template_name, $template_path, If needed
+        $template                   = apply_filters( 'wqpmb_template', $template, $template_name, $template_path );
+
+        //To set condition based on current template name, temp path etc,
+        if ( false === $emplate_on_off ) {
+        return $template;
+        }
 
         if ( false === $show_on_product_page && is_product() ) {
                 return $template;
@@ -74,7 +84,7 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
         if ( ! $template ) {
                 $template = $_template;
         }
-        
+		
         return $template;
     }
     add_filter( 'woocommerce_locate_template', 'wqpmb_locate_template',1,3 );
