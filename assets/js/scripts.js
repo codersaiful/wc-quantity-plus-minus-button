@@ -19,11 +19,13 @@ jQuery(function ($) {
             var max = parseFloat(qty.attr("max"));
             var min = parseFloat(qty.attr("min"));
             var step = parseFloat(qty.attr("step"));
-            var static = 8;
+            // var static = 8;
             
             var qtyObj = $(this).siblings(".quantity");
             var last_step = qtyObj.attr('data-last_step');
-
+            last_step = parseFloat( last_step );
+            var prev_step = qtyObj.attr('data-prev_step');
+            prev_step = parseFloat( prev_step );
             // Change input field value if result is in min and max range.
             // If the result is above max then change to max and alert user about exceeding max stock.
             // If the field is empty, fill with min for "-" (0 possible) and step for "+".
@@ -40,6 +42,8 @@ jQuery(function ($) {
                 }
                 if (val + step > max) {
                     qtyObj.attr('data-last_step', ( max-val ) );
+                    qtyObj.attr('data-prev_step', ( step ) );
+                    qtyObj.find(".input-text").attr('step', 1 );
                     qty.val(max);
                 } else {
                     console.log(888);
@@ -49,8 +53,10 @@ jQuery(function ($) {
 
                 if (last_step) {
                     
-                    qty.val(max - static);
+                    qty.val(max - last_step);
                     qtyObj.removeAttr('data-last_step');
+                    qtyObj.find(".input-text").attr('step', prev_step );
+                    qtyObj.removeAttr('data-prev_step');
                     return false;
                 }
                 if (val === min){
