@@ -43,7 +43,7 @@ jQuery(function ($) {
                 if (val + step > max) {
                     qtyObj.attr('data-last_step', ( max-val ) );
                     qtyObj.attr('data-prev_step', ( step ) );
-                    qtyObj.find(".input-text").attr('step', 1 );
+                    qtyObj.find(".input-text").removeAttr('step' );
                     qty.val(max);
                 } else {
                     console.log(888);
