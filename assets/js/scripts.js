@@ -31,22 +31,19 @@ jQuery(function ($) {
             // If the field is empty, fill with min for "-" (0 possible) and step for "+".
             if ($(this).is(".plus")) {
                 if (val === max){
-                    console.log(555);
                     return false;
                 }
                     
                 if (isNaN(val)) {
-                    console.log(666);
                     qty.val(step);
                     return false;
                 }
                 if (val + step > max) {
-                    qtyObj.attr('data-last_step', ( max-val ) );
+                    qtyObj.attr('data-last_step', ( max-val < 0 ? 1 : max-val ) );
                     qtyObj.attr('data-prev_step', ( step ) );
                     qtyObj.find(".input-text").removeAttr('step' );
                     qty.val(max);
                 } else {
-                    console.log(888);
                     qty.val(val + step);
                 }
             } else {
@@ -60,20 +57,16 @@ jQuery(function ($) {
                     return false;
                 }
                 if (val === min){
-                    console.log(1111);
                     return false;
                 }
                     
                 if (isNaN(val)) {
-                    console.log(2222);
                     qty.val(min);
                     return false;
                 }
                 if (val - step < min) {
-                    console.log(3333);
                     qty.val(min);
                 } else {
-                    console.log(4444);
                     qty.val(val - step);
                 }
             }
