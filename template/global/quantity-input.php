@@ -38,6 +38,18 @@ if ( ! defined( 'ABSPATH' ) ) {
 	exit;
 }
 
+global $product;
+/**
+ * Checking if is_sold_individually
+ * then wc will not show qty box
+ * that's why, I return default template
+ * 
+ * rest will handle from WooCommerce
+ * 
+ * @since 1.0.8
+ */
+if( $product->is_sold_individually() ) return false;
+
 if ( $max_value && $min_value === $max_value ) {
 	?>
 	<div class="quantity hidden">

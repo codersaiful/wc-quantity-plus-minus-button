@@ -8,6 +8,12 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
      * @return type Template
      */
     function wqpmb_locate_template( $template, $template_name, $template_path ){
+
+        if( $template_name !== 'global/quantity-input.php' ){
+            return $template;
+        }
+        
+       
         $option_key = WQPMB_Button::$option['option'];
         $datas = get_option( $option_key, false );
 		
