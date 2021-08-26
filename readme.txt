@@ -136,6 +136,9 @@ do_action( 'wqpmb_form_row' );
 
 == Change log ==
 
+= 1.0.8 =
+* Integrate with sold indivisual 
+
 = 1.0.6 =
 
 * Hide on Mini Cart page
