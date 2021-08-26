@@ -48,7 +48,9 @@ global $product;
  * 
  * @since 1.0.8
  */
-if( $product->is_sold_individually() ) return false;
+if( $product->is_sold_individually() ){
+    $max_value = 1;
+}
 
 if ( $max_value && $min_value === $max_value ) {
 	?>
