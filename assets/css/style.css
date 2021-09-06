@@ -40,9 +40,10 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .quantity.wqpmb_quantity
     display: inline-flex;
 }
 body.single-product .qib-button.qib-button-wrapper {
-    display: inline-block;
+    display: flex;
     float: left;
-    margin-right: 5px;
+    column-gap: 5px;
+    margin: 0;
 }
 body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
     margin: inherit;
