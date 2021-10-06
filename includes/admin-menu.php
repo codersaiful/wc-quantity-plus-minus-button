@@ -130,10 +130,10 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-enable-quantity-button-shop">Enable on shop</label></th>
                         <td>
                             <?php
-                            $checkbox = isset( $our_data['on_off'] ) ? 'checked' : '';
+                            $checkbox = isset( $our_data['shop_on_off'] ) ? 'checked' : '';
                             ?>
                             <label class="switch">
-                                <input  name="on_off" type="checkbox" id="wqpmb-enable-quantity-button-shop" <?php echo esc_attr( $checkbox ); ?>>
+                                <input  name="shop_on_off" type="checkbox" id="wqpmb-enable-quantity-button-shop" <?php echo esc_attr( $checkbox ); ?>>
                                 <div class="slider round"><!--ADDED HTML -->
                                     <span class="on">ON</span><span class="off">OFF</span><!--END-->
                                 </div>

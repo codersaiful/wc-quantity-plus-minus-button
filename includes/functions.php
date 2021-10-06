@@ -186,10 +186,13 @@ if( !function_exists( 'wqpmb_header_css' ) ){
     }
     add_filter( 'wp_head', 'wqpmb_header_css' );
 }
-
-
+$key = WQPMB_Button::$option['option'];
+$data = get_option($key);
+// var_dump($data);
 // Add quantity box on shop page
-add_filter( 'woocommerce_loop_add_to_cart_link', 'quantity_inputs_for_woocommerce_loop_add_to_cart_link', 1000, 2 );
+if( isset($data['shop_on_off']) && $data['shop_on_off'] == 'on' ){
+    add_filter( 'woocommerce_loop_add_to_cart_link', 'quantity_inputs_for_woocommerce_loop_add_to_cart_link', 1000, 2 );
+}
 /**
  * Override loop template and show quantities next to add to cart buttons
  * @link https://gist.github.com/mikejolley/2793710
