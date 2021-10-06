@@ -186,3 +186,20 @@ if( !function_exists( 'wqpmb_header_css' ) ){
     }
     add_filter( 'wp_head', 'wqpmb_header_css' );
 }
+
+
+// Add quantity box on shop page
+add_filter( 'woocommerce_loop_add_to_cart_link', 'quantity_inputs_for_woocommerce_loop_add_to_cart_link', 1000, 2 );
+/**
+ * Override loop template and show quantities next to add to cart buttons
+ * @link https://gist.github.com/mikejolley/2793710
+ */
+function quantity_inputs_for_woocommerce_loop_add_to_cart_link( $html, $product ) {
+	if ( is_user_logged_in() && is_shop() && $product && $product->is_type( 'simple' ) && $product->is_purchasable() && $product->is_in_stock() && ! $product->is_sold_individually() ) {
+		$html = '<form action="' . esc_url( $product->add_to_cart_url() ) . '" class="cart" method="post" enctype="multipart/form-data">';
+		$html .= woocommerce_quantity_input( array(), $product, false );
+		$html .= '<button type="submit" class="button alt">' . esc_html( $product->add_to_cart_text() ) . '</button>';
+		$html .= '</form>';
+	}
+	return $html;
+}
