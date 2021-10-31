@@ -108,7 +108,7 @@ if( !function_exists( 'wqpmb_admin_body_class' ) ){
         if( isset( $current_screen->id ) && $current_screen->id == 'ultraaddons_page_' . WQPMB_MENU_SLUG ){
             return ' ultraaddons ' . WQPMB_MENU_SLUG . ' ';
         }
-        return;
+        return '';
     }
     add_filter( 'admin_body_class', 'wqpmb_admin_body_class' );
 }
