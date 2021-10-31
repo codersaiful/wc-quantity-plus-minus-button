@@ -136,6 +136,9 @@ do_action( 'wqpmb_form_row' );
 
 == Change log ==
 
+= 1.0.9 =
+* Fixed: body-class issue on WooCommerce My Subscriptions menu
+
 = 1.0.8 =
 * Integrate with sold indivisual 
 
