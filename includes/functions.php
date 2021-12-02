@@ -159,6 +159,22 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
     add_filter( 'wqpmb_save_data', 'wqpmb_form_submit' );
 }
 
+if( !function_exists( 'wqpmb_button_off_in_minicart' ) ){
+    
+    /**
+     * Disable our qty button from other place where global $product is not available
+     *
+     * @param bool $bool
+     * @return bool
+     */
+    function wqpmb_button_off_in_minicart( $bool ){
+        global $product;
+        if(is_null($product)) return false;
+        return $bool;
+    }
+    //add_filter( 'wqpmb_template_on_off', 'wqpmb_button_off_in_minicart' ); //currently disable
+}
+
 if( !function_exists( 'wqpmb_header_css' ) ){
     /**
      * set class for Admin Body tag
