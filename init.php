@@ -15,11 +15,11 @@
  * WC requires at least: 3.7
  * WC tested up to:      5.9.1
  */
-if ( !defined( 'ABSPATH' ) ) {
+if ( ! defined( 'ABSPATH' ) ) {
     die();
 }
 
-if ( !defined( 'UltraAddons' ) ) {
+if ( ! defined( 'UltraAddons' ) ) {
     define( 'UltraAddons', __( 'UltraAddons', 'wqpmb' ));
 }
 
