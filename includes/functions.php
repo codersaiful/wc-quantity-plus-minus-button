@@ -91,18 +91,28 @@ if( !function_exists( 'wqpmb_locate_template' ) ){
 }
 
 if( !function_exists( 'wqpmb_admin_body_class' ) ){
+    
     /**
      * set class for Admin Body tag
      * 
      * @param type $classes
      * @return String
+     * 
+     * Fully fixed
+     * @author Saiful Islam <codersaiful@gmail.com>
+     * Fixed by Saiful at V1.1.0.0
      */
-    function wqpmb_admin_body_class(){
+    function wqpmb_admin_body_class( $class ){
         global $current_screen;
         if( isset( $current_screen->id ) && $current_screen->id == 'ultraaddons_page_' . WQPMB_MENU_SLUG ){
-            return ' ultraaddons ' . WQPMB_MENU_SLUG . ' ';
+            if( is_array( $class ) ){
+                $class[] = 'ultraaddons';
+                $class[] = WQPMB_MENU_SLUG;
+                return $class;
+            }
+            return  ' ultraaddons ' . WQPMB_MENU_SLUG . ' ';
         }
-        return;
+        return $class;
     }
     add_filter( 'admin_body_class', 'wqpmb_admin_body_class' );
 }
