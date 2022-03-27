@@ -103,3 +103,4 @@ if ( $max_value && $min_value === $max_value ) {
 	</div>
 	<?php
 }
+
