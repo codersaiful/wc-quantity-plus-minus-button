@@ -35,8 +35,7 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 * Compatible with the latest version of WordPress
 * Compatible with the latest version of WooCommerce
 
-**[Plugin's Home Page](https://wcquantity.com/wc-quantity-plus-minus-button/)**
-**[Demo Link](https://wcquantity.com/product/head-phone/)**
+**[Demo Link](https://demo.wooproducttable.com/product/couple-jewelry/)**
 
 == Frequently Asked Questions ==
 
