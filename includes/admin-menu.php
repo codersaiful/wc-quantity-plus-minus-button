@@ -126,9 +126,26 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                             
                         </td>
                     </tr>
+                    <tr>
+                        <th><label for="wqpmb-enable-quantity-button-archive">Enable On Archive</label></th>
+                        <td>
+                            <?php
+                            $checkbox = isset( $our_data['archive_on_off'] ) ? 'checked' : '';
+                            ?>
+                            <label class="switch">
+                                <input  name="archive_on_off" type="checkbox" id="wqpmb-enable-quantity-button-archive" <?php echo esc_attr( $checkbox ); ?>>
+                                <div class="slider round"><!--ADDED HTML -->
+                                    <span class="on">ON</span><span class="off">OFF</span><!--END-->
+                                </div>
+                            </label>
+                            
+                        </td>
+                    </tr>
                     
                     <?php
-                    } //End of Checkbox Row Validation
+                    } 
+
+                    //End of Checkbox Row Validation
                     do_action( 'wqpmb_checkbox_row', $our_data, $datas );
                     
                     
