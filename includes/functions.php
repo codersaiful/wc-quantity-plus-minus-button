@@ -208,3 +208,14 @@ if( !function_exists( 'wqpmb_header_css' ) ){
 }
 
 // will code here later
+
+function custom_quantity_field_archive() {
+
+	$product = wc_get_product( get_the_ID() );
+
+	if ( ! $product->is_sold_individually() && 'variable' != $product->get_type() && $product->is_purchasable() ) {
+		woocommerce_quantity_input( array( 'min_value' => 1, 'max_value' => $product->backorders_allowed() ? '' : $product->get_stock_quantity() ) );
+	}
+
+}
+add_action( 'woocommerce_after_shop_loop_item', 'custom_quantity_field_archive', 0, 9 );
