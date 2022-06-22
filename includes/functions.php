@@ -215,7 +215,7 @@ $datas = get_option( $option_key, false );
 $validation = isset( $datas['on_off'] ) && $datas['on_off'] == 'on' ? true : false;
 $Archive_validation = isset( $datas['archive_on_off'] ) && $datas['archive_on_off'] == 'on' ? true : false;
 
-function custom_quantity_field_archive() {
+function wqpmb_quantity_field_archive() {
 
 	$product = wc_get_product( get_the_ID() );
 
@@ -225,5 +225,5 @@ function custom_quantity_field_archive() {
 
 }
 if( $Archive_validation && $validation ){
-    add_action( 'woocommerce_after_shop_loop_item', 'custom_quantity_field_archive', 0, 9 );
+    add_action( 'woocommerce_after_shop_loop_item', 'wqpmb_quantity_field_archive' );
 }

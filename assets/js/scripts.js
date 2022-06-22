@@ -2,7 +2,22 @@ jQuery(function ($) {
 
     // Make the code work after page load.
     $(document).ready(function () {
+        
         QuantityChange();
+
+        // quantity for archive page
+        jQuery( ".post-type-archive-product , .tax-product_cat" ).on( "click", ".quantity.wqpmb_quantity input", function() {
+            return false;
+        });
+
+    $( ".post-type-archive-product, .tax-product_cat" ).on( "change input", ".quantity.wqpmb_quantity .qty", function() {
+            var add_to_cart_button = $(this).parents( '.products' ).find( ".add_to_cart_button" );
+            // For AJAX add-to-cart actions
+            add_to_cart_button.attr( "data-quantity", jQuery( this ).val() );
+        
+            // For non-AJAX add-to-cart actions
+            add_to_cart_button.attr( "href", "?add-to-cart=" + add_to_cart_button.attr( "data-product_id" ) + "&quantity=" + jQuery( this ).val() );
+        });
     });
 
     // Make the code work after executing AJAX.
@@ -76,18 +91,5 @@ jQuery(function ($) {
             $("body").removeClass("sf-input-focused");
         });
     }
-
-    // quantity for archive page
-    jQuery( ".post-type-archive-product" ).on( "click", ".quantity input", function() {
-        return false;
-    });
-
-   jQuery( ".post-type-archive-product, .tax-product_cat" ).on( "change input", ".quantity .qty", function() {
-        var add_to_cart_button = jQuery( this ).parents( ".product" ).find( ".add_to_cart_button" );
-        // For AJAX add-to-cart actions
-        add_to_cart_button.attr( "data-quantity", jQuery( this ).val() );
-        // For non-AJAX add-to-cart actions
-        add_to_cart_button.attr( "href", "?add-to-cart=" + add_to_cart_button.attr( "data-product_id" ) + "&quantity=" + jQuery( this ).val() );
-    });
 
 });
