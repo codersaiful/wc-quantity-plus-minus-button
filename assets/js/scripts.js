@@ -3,7 +3,7 @@ jQuery(function ($) {
     // Make the code work after page load.
     $(document).ready(function () {
         QuantityChange();
-        changePriceByQuantity();
+        changePriceByQty();
     });
 
     // Make the code work after executing AJAX.
@@ -13,7 +13,6 @@ jQuery(function ($) {
 
     function QuantityChange() {
         $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
-            //alert(4444444);
             // Find quantity input field corresponding to increment button clicked.
             var qty = $(this).siblings(".quantity").find(".input-text");
             // Read value and attributes min, max, step.
@@ -79,16 +78,14 @@ jQuery(function ($) {
         });
     }
 
-    /// code by bari
-    function changePriceByQuantity(){
-        $(document).on("click", ".qib-button", function () {
+    function changePriceByQty(){
+        $(document).off("click", ".plus .qib-button").on("click", ".plus .qib-button", function () {
+            //Find quantity input field corresponding to increment button clicked.
             var qty = $(this).siblings(".quantity").find(".input-text");
+            // Read value and attributes min, max, step.
             var val = parseFloat(qty.val());
-
-            var price = val * 8;
-            console.log(price);
-            //$('.woocommerce-Price-amount').html = 'pppp';
-            $(".woocommerce-Price-amount").text("price");
+            
+            console.log(val);
         });
     }
 
