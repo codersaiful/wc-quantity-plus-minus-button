@@ -6,7 +6,7 @@ Requires at least: 4.0.0
 Tested up to: 5.9
 Requires PHP: 5.6
 WC requires at least: 3.7
-WC tested up to: 6.1.1
+WC tested up to: 6.0.2
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -133,6 +133,11 @@ do_action( 'wqpmb_form_row' );
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.0.6 =
+
+* Change demo link
+* Bug fixed
 
 = 1.0.6 =
 
