@@ -24,7 +24,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.1.0');
+    define( 'WQPMB_VERSION', '1.1.1.1');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
