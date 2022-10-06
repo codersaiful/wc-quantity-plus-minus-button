@@ -1,6 +1,6 @@
 === Quantity Plus Minus Button for WooCommerce by CodeAstrology ===
 
-Contributors: codersaiful, codeastrology
+Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.0.2
@@ -115,7 +115,10 @@ do_action( 'wqpmb_form_row' );
 
 **👷 HONORABLE CONTRIBUTOR - [GitHub](https://github.com/codersaiful/wc-quantity-plus-minus-button/graphs/contributors) 👷**<br>
 
-* [codersaiful](https://github.com/codersaiful) (2 commits 1,531 ++ )
+* [codersaiful](https://github.com/codersaiful) (53 commits 1,965 ++ )
+* [unikforceit](https://github.com/unikforceit) (1 commit 5 ++  )
+* [fazlebarisn](https://github.com/fazlebarisn) (1 commit 11 ++ )
+* [autocircled](https://github.com/autocircled) (1 commit 110 ++ )
 * 👉 [You can join here](https://github.com/codersaiful/wc-quantity-plus-minus-button/fork)
 
 **🥇 CONTRIBUTE 🥇**<br>
