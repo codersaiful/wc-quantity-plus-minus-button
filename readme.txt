@@ -113,6 +113,14 @@ do_action( 'wqpmb_form_row' );
 `
 
 
+**👷 HONORABLE CONTRIBUTOR - [GitHub](https://github.com/codersaiful/wc-quantity-plus-minus-button/graphs/contributors) 👷**<br>
+
+* [codersaiful](https://github.com/codersaiful) (1,000+ commits And Pro: 1000+ commits )
+* 👉 [You can join here](https://github.com/codersaiful/wc-quantity-plus-minus-button/fork)
+
+**🥇 CONTRIBUTE 🥇**<br>
+You are welcome to contribute  to this project. Join with us [Fork Github repository](https://github.com/codersaiful/wc-quantity-plus-minus-button/fork). If you contribute 1 commit, We will add your name to our plugin's Contributor table/list of WordPress Plugin too.
+
 
 == Installation ==
 

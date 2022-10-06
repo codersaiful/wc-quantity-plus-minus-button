@@ -4,8 +4,8 @@
  * Plugin Name: Quantity Plus Minus Button for WooCommerce
  * Plugin URI: https://wcquantity.com/wc-quantity-plus-minus-button/
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
- * Author: CodeAstrology
- * Author URI: https://profiles.wordpress.org/codersaiful/#content-plugins
+ * Author: CodeAstrology Team
+ * Author URI: https://codeastrology.com/
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
