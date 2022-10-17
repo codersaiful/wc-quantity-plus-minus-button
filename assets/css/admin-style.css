@@ -21,6 +21,7 @@
     background: white;
     padding: 19px;
 }
+.wqpmb-wubmit-button{padding-bottom: 10px !important;margin-bottom: 10px !important;}
 
 @media only screen and (max-width: 900px) {
     .wqpmb-after-form {

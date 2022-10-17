@@ -19,7 +19,7 @@ class Recommeded
         $req_mmp = new Require_Control($mmp_req_slug,$mmp_tar_slug);
         $req_mmp->set_args( ['Name' => 'Product Table for WooCoomerce by CodeAstrology'] )
         ->set_download_link('https://wordpress.org/plugins/woo-product-table/')
-        ->set_this_download_link('https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/');
+        ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
         $mmp_message = __('%s Product Table plugin helps you to display your WooCommerce products in a searchable table layout with filters. Add a table on any page or post via a shortcode. You can create tables as many as you want.','wcmmq');
         $wpt_link = "<a href='https://wooproducttable.com/' target='_blank'>(Woo Product Table)</a>";
         $mmp_message = sprintf($mmp_message, $wpt_link);
@@ -38,7 +38,7 @@ class Recommeded
         $req_mmp = new Require_Control($mmp_req_slug,$mmp_tar_slug);
         $req_mmp->set_args( ['Name' => 'Min Max Quantity & Step Control for WooCommerce'] )
         ->set_download_link('https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/')
-        ->set_this_download_link('https://wordpress.org/plugins/woo-product-table/');
+        ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
         $mmp_message = __('If you want to set CONDITION for minimum and maximum limit and want to control step, then you can install it. Otherwise ignore it.','wqpmb');
         $req_mmp->set_message($mmp_message);
         $req_mmp->get_full_this_plugin_name($this_plugin);
@@ -55,7 +55,7 @@ class Recommeded
         $req_qv = new Require_Control($qv_req_slug,$qv_tar_slug);
         $req_qv->set_args( ['Name' => 'Quick View vy CodeAstrology'] )
         ->set_download_link('https://wordpress.org/plugins/ca-quick-view/')
-        ->set_this_download_link('https://wordpress.org/plugins/woo-product-table/');
+        ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
 
         $req_qv->get_full_this_plugin_name($this_plugin);
         if( method_exists($req_qv, 'set_location') ){
