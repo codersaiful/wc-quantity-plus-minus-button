@@ -236,7 +236,7 @@ function wqpmb_social_links(){
         'youtube'   => ['url' => 'https://www.youtube.com/c/codeastrology'],
         'facebook'   => ['url' => 'https://www.facebook.com/codeAstrology'],
         'twitter'   => ['url' => 'https://www.twitter.com/codeAstrology'],
-        'skype'   => ['url' => 'https://www.twitter.com/codeAstrology', 'title' => 'codersaiful'],
+        'skype'   => ['url' => '#codersaiful', 'title' => 'codersaiful'],
     ];
     foreach($codeastrology as $key=>$cLogy){
         $image_name = $key . '.png';
