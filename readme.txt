@@ -37,21 +37,6 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 
 **[Demo Link](https://demo.wooproducttable.com/product/couple-jewelry/)**
 
-== Frequently Asked Questions ==
-
-= Does this plugin support StoreFront theme? =
-
-Yes this plugin is supports all themes.
-
-= Where is the settings page? =
-
-You can find it under UltraAddons -> Plus Minus Button
-
-= Does this plugin supports decimal value as quantity? =
-
-Yes, this plugin supports decimal value as product quantity.
-
-
 == Filter ==
 
 You can validate form data using this filter
@@ -130,16 +115,23 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 1. Upload 'wc-quantity-plus-minus-button' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
-
 == Frequently Asked Questions ==
 
 = Menu Location? =
 
-🔅 Dashboard -> WooCommerce -> (+-) Plus Minus Button
+Dashboard -> WooCommerce -> (+-) Plus Minus Button
 
 = Already my theme provide Plus Minus botton, Do I need it? =
 
-🔅 No
+🔅 No Need, As it's already provided by your theme.
+
+= Does this plugin support StoreFront theme? =
+
+🔅 Yes this plugin is supports all themes.
+
+= Does this plugin supports decimal value as quantity? =
+
+🔅 Yes, this plugin supports decimal value as product quantity.
 
 = What is default Shortcode? =
 
@@ -151,20 +143,20 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 
 = Can I set product limitation to show in one table? =
 
-🔅Yes. You can set the product limit to show in you able. Eg. You have 100 products in your site then you can easily show 50 of them.
+🔅 Yes. You can set the product limit to show in you able. Eg. You have 100 products in your site then you can easily show 50 of them.
 
 = How to use? =
 
-🔅Install and activate. Then go to ( Dashboard->WooCommerce->Plus Minus Button -> [And change/update your setting] ).  And enjoy it.
+🔅 Install and activate. Then go to ( Dashboard->WooCommerce->Plus Minus Button -> [And change/update your setting] ).  And enjoy it.
 That's it. So easy, Right !!!
 
 = Is it suitable for any theme ? =
 
-🔅Yes, But if already available plus minus button on your theme, you should not use any plus minus button plugin.
+🔅 Yes, But if already available plus minus button on your theme, you should not use any plus minus button plugin.
 
 = Is it suitable with (Woo Product Table) Plugin ? =
 
-🔅Yes. *Product Table for WooCommerce by CodeAstrology* will adapt with your design.
+🔅 Yes. *Product Table for WooCommerce by CodeAstrology* will adapt with your design.
 
 == Screenshots ==
 
