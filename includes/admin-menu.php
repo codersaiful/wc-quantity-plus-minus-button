@@ -54,7 +54,11 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
             add_menu_page( UltraAddons, UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
         }
         
+        /**
+         * @todo Submenu under ultraaddons will be removed
+         */
         add_submenu_page('ultraaddons', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
+        add_submenu_page('woocommerce', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
         remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
     add_action( 'admin_menu', 'wqpmb_admin_menu' );
@@ -196,6 +200,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     do_action( 'wqpmb_form_row' );
                     ?>
                 </table>
+                
             </div>
             <?php
             } //End of Default Form Validation
@@ -212,8 +217,74 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         <div class="wqpmb-after-form">
             <?php do_action( 'wqpmb_after_form' ); ?>
         </div>
+        <?php wqpmb_social_links(); ?>
     </div>
 </div>
 <?php
     }
+}
+
+
+function wqpmb_social_links(){
+?>
+<div class="codeastrogy-social-area-wrapper">
+    <?php
+    $img_folder = WQPMB_BASE_URL . 'assets/images/social/';
+    $codeastrology = [
+        'web'   => ['url' => 'https://codeastrology.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
+        'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
+        'youtube'   => ['url' => 'https://www.youtube.com/c/codeastrology'],
+        'facebook'   => ['url' => 'https://www.facebook.com/codeAstrology'],
+        'twitter'   => ['url' => 'https://www.twitter.com/codeAstrology'],
+        'skype'   => ['url' => 'https://www.twitter.com/codeAstrology', 'title' => 'codersaiful'],
+    ];
+    foreach($codeastrology as $key=>$cLogy){
+        $image_name = $key . '.png';
+        $image_file = $img_folder . $image_name;
+        $url = $cLogy['url'] ?? '#';
+        $title = $cLogy['title'] ?? false;
+        $alt = ! empty( $title ) ? $title : $key;
+        $title_available = ! empty( $title ) ? 'title-available' : '';
+        
+    ?>
+    <a class="ca-social-link ca-social-<?php echo esc_attr( $key ); ?> ca-<?php echo esc_attr( $title_available ); ?>" href="<?php echo esc_url( $url ); ?>" target="_blank">
+        <img src="<?php echo esc_url( $image_file ); ?>" alt="<?php echo esc_attr( $alt ); ?>"> 
+        <span><?php echo esc_html( $title ); ?></span>
+    </a>
+    <?php 
+        
+
+    }
+    ?>
+    <style>
+        .codeastrogy-social-area-wrapper {
+            display: flex;
+            gap: 5px;
+            align-items: center;
+            justify-content: flex-start;
+            flex-direction: row;
+        }
+
+        .codeastrogy-social-area-wrapper a.ca-social-link {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            padding: 0;
+        }
+        .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
+            background: #cddc3900;
+            border: 1px solid #00000030;
+        }
+
+        .codeastrogy-social-area-wrapper a.ca-social-link img {
+            height: 30px;
+            width: auto;
+        }
+        .codeastrogy-social-area-wrapper a.ca-title-available span{padding-right: 10px;}
+    </style>
+</div>
+
+<?php
 }

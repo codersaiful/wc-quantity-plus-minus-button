@@ -133,6 +133,10 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 
 == Frequently Asked Questions ==
 
+= Menu Location? =
+
+🔅 Dashboard -> WooCommerce -> (+-) Plus Minus Button
+
 = Already my theme provide Plus Minus botton, Do I need it? =
 
 🔅 No
@@ -143,7 +147,7 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 
 = What is setting page? or Where I can change button color =
 
-🔅Go to `Dashboard->WooCommerce->Plus Minus Button -> [And change/update your setting]`
+🔅Go to `Dashboard -> WooCommerce-> (+-) Plus Minus Button -> [And change/update your setting]`
 
 = Can I set product limitation to show in one table? =
 

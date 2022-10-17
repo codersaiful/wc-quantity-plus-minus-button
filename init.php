@@ -28,7 +28,7 @@ if ( !defined( 'WQPMB_VERSION' ) ) {
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
-    define( 'WQPMB_NAME', 'Quantity Plus/Minus Button');
+    define( 'WQPMB_NAME', 'Quantity Plus Minus Button for WooCommerce by CodeAstrology');
 }
 
 if ( !defined( 'WQPMB_BASE_NAME' ) ) {
