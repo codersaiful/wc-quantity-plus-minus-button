@@ -232,7 +232,7 @@ function wqpmb_social_links(){
     $img_folder = WQPMB_BASE_URL . 'assets/images/social/';
     $codeastrology = [
         'web'   => ['url' => 'https://codeastrology.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
-        'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
+        'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
         'youtube'   => ['url' => 'https://www.youtube.com/c/codeastrology'],
         'facebook'   => ['url' => 'https://www.facebook.com/codeAstrology'],
         'twitter'   => ['url' => 'https://www.twitter.com/codeAstrology'],
@@ -270,12 +270,12 @@ function wqpmb_social_links(){
             align-items: center;
             gap: 5px;
             text-decoration: none;
-            border-radius: 5px;
+            border-radius: 7px;
             padding: 0;
         }
         .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
-            background: #cddc3900;
-            border: 1px solid #00000030;
+            background: #fff;
+            border: 1px solid #3fd3dd;
         }
 
         .codeastrogy-social-area-wrapper a.ca-social-link img {
