@@ -166,6 +166,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <td>
                             <input type="text" id="" name="css[border-width]" 
                                    value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
+                                   placeholder="eg: 4px"
                                    class="ua_input" />
                         </td>
                     </tr>
@@ -174,6 +175,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <td>
                             <input type="text" id="" name="css[border-radius]" 
                                    value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
+                                   placeholder="eg: 4px"
                                    class="ua_input" />
                         </td>
                     </tr>
@@ -207,6 +209,9 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                 <button name="reset_button" class="button button-default" onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">Reset Default</button>
             </div>
         </form>
+        <div class="wqpmb-after-form">
+            <?php do_action( 'wqpmb_after_form' ); ?>
+        </div>
     </div>
 </div>
 <?php

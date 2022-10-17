@@ -1,19 +1,19 @@
 <?php
 
 /**
- * Plugin Name: Quantity Plus Minus Button for WooCommerce
- * Plugin URI: https://wcquantity.com/wc-quantity-plus-minus-button/
+ * Plugin Name: Quantity Plus Minus Button for WooCommerce by CodeAstrology
+ * Plugin URI: https://demo.wooproducttable.com/product/beanie/
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology Team
  * Author URI: https://codeastrology.com/
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.1.1
+ * Version: 1.1.2
  * Requires at least:    4.0.0
  * Tested up to:         6.0.2
  * WC requires at least: 3.7
- * WC tested up to: 	 6.9.4
+ * WC tested up to: 	 7.0.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
@@ -24,7 +24,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.1.1');
+    define( 'WQPMB_VERSION', '1.1.2.0');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
@@ -193,7 +193,9 @@ class WQPMB_Button {
 
     public function __construct() {
         
-        if (!is_plugin_active('woocommerce/woocommerce.php')) {
+        $is_woocommerce = is_plugin_active( 'woocommerce/woocommerce.php' );
+
+        if ( ! $is_woocommerce ) {
             add_action('admin_notices', [$this, 'admin_notice_missing_main_plugin']);
             return;
         }
@@ -212,7 +214,7 @@ class WQPMB_Button {
         
         
         $dir = dirname( __FILE__ ); 
-       
+        include_once $dir . '/autoloader.php';
        /**
         * See $path_args for Set Path and set Constant
         * 
@@ -240,10 +242,14 @@ class WQPMB_Button {
        $this->setConstant($path_args);
        
        
-       if ( is_plugin_active( 'woocommerce/woocommerce.php' ) ) {
+       if ( $is_woocommerce ) {
             include_once $this->path('BASE_DIR', 'includes/functions.php');
             include_once $this->path('BASE_DIR', 'includes/admin-menu.php');
             include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
+       }
+
+       if( is_admin() && $is_woocommerce ){
+        WQPMB\Framework\Recommeded::check();
        }
     }
 

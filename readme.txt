@@ -6,7 +6,7 @@ Requires at least: 4.0.0
 Tested up to: 6.0.2
 Requires PHP: 5.6
 WC requires at least: 3.7
-WC tested up to: 6.9.4
+WC tested up to: 7.0.0
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -18,22 +18,22 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 
 **Features**
 
-* Quantity step supported
-* Decimal quantity supported
-* Customizable button design
-* You can customize button background color
-* You can customize button text color
-* You can customize border color
-* You can customize border width
-* You can set custom border radius
-* Well documented
-* Well commented
-* Clean code
-* Compatible with all themes
-* Compatible with all plugins
-* Compatible with Woo Product Table
-* Compatible with the latest version of WordPress
-* Compatible with the latest version of WooCommerce
+👉 Quantity step supported
+👉 Decimal quantity supported
+👉 Customizable button design
+👉 You can customize button background color
+👉 You can customize button text color
+👉 You can customize border color
+👉 You can customize border width
+👉 You can set custom border radius
+👉 Well documented
+👉 Well commented
+👉 Clean code
+👉 Compatible with all themes
+👉 Compatible with all plugins
+👉 Compatible with Woo Product Table
+👉 Compatible with the latest version of WordPress
+👉 Compatible with the latest version of WooCommerce
 
 **[Demo Link](https://demo.wooproducttable.com/product/couple-jewelry/)**
 
@@ -130,6 +130,38 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 1. Upload 'wc-quantity-plus-minus-button' to the '/wp-content/plugins/' directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
 
+
+== Frequently Asked Questions ==
+
+= Already my theme provide Plus Minus botton, Do I need it? =
+
+🔅 No
+
+= What is default Shortcode? =
+
+🔅 There is no shortcode for this plugin.
+
+= What is setting page? or Where I can change button color =
+
+🔅Go to `Dashboard->WooCommerce->Plus Minus Button -> [And change/update your setting]`
+
+= Can I set product limitation to show in one table? =
+
+🔅Yes. You can set the product limit to show in you able. Eg. You have 100 products in your site then you can easily show 50 of them.
+
+= How to use? =
+
+🔅Install and activate. Then go to ( Dashboard->WooCommerce->Plus Minus Button -> [And change/update your setting] ).  And enjoy it.
+That's it. So easy, Right !!!
+
+= Is it suitable for any theme ? =
+
+🔅Yes, But if already available plus minus button on your theme, you should not use any plus minus button plugin.
+
+= Is it suitable with (Woo Product Table) Plugin ? =
+
+🔅Yes. *Product Table for WooCommerce by CodeAstrology* will adapt with your design.
+
 == Screenshots ==
 
 1. Quantity button in WooCommerce cart page
@@ -144,6 +176,14 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.1.2 =
+* Minor Error fixed 
+* Tested with Latest WordPress and Updated
+* Tested with Latest WooCommerce and Updated
+* Compatibility Check with More Theme And Plugin 
+* Compatible with [Woo Product Table (Poduct Table Plugin for WooCommerce by CodeAstrology)](https://github.com/autocircled)
+* Bug Fixed
 
 = 1.0.6 =
 
