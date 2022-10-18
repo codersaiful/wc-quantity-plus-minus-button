@@ -66,10 +66,10 @@
 .codeastrogy-social-area-wrapper a.ca-title-available span{padding-right: 10px;}
 /**Social AREA **/
 
-.ultraaddons .with-background, .ultraaddons-panel .with-background {
+.wqpmb.wqpmb-wrapper .ultraaddons .with-background, .wqpmb.wqpmb-wrapper .ultraaddons-panel .with-background.ca-branding-header {
     width: unset;
 }
-.ca-branding-header{
+.wqpmb.wqpmb-wrapper .ultraaddons .with-background.ca-branding-header, .wqpmb.wqpmb-wrapper .ultraaddons-panel .with-background.ca-branding-header{
     background-image: url('../images/header-logo.png') !important;
     background-repeat: no-repeat !important;
     background-position: center right !important;
