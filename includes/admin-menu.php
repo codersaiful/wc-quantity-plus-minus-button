@@ -286,34 +286,7 @@ function wqpmb_social_links(){
 
     }
     ?>
-    <style>
-        .codeastrogy-social-area-wrapper {
-            display: flex;
-            gap: 5px;
-            align-items: center;
-            justify-content: flex-start;
-            flex-direction: row;
-        }
-
-        .codeastrogy-social-area-wrapper a.ca-social-link {
-            display: flex;
-            align-items: center;
-            gap: 5px;
-            text-decoration: none;
-            border-radius: 7px;
-            padding: 0;
-        }
-        .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
-            background: #fff;
-            border: 1px solid #3fd3dd;
-        }
-
-        .codeastrogy-social-area-wrapper a.ca-social-link img {
-            height: 30px;
-            width: auto;
-        }
-        .codeastrogy-social-area-wrapper a.ca-title-available span{padding-right: 10px;}
-    </style>
+    <!-- css code at assets/css/admin-style.css file -->
 </div>
 
 <?php

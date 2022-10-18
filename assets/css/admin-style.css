@@ -29,6 +29,43 @@
     }
 }
 
+/**Social AREA **/
+.codeastrogy-social-area-wrapper {
+    display: flex;
+    gap: 5px;
+    align-items: center;
+    justify-content: flex-start;
+    flex-direction: row;
+    margin-top: 5px;
+    margin-bottom: 10px;
+}
+
+.codeastrogy-social-area-wrapper a.ca-social-link {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    text-decoration: none;
+    border-radius: 7px;
+    padding: 0;
+}
+.codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
+    background: #fff;
+    border: 1px solid #e2e2e3;
+    transition: .2s all;
+}
+.codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available:hover {
+    background: #02142a;
+    border: 1px solid transparent;
+    color: white;
+}
+
+.codeastrogy-social-area-wrapper a.ca-social-link img {
+    height: 30px;
+    width: auto;
+}
+.codeastrogy-social-area-wrapper a.ca-title-available span{padding-right: 10px;}
+/**Social AREA **/
+
 .ultraaddons .with-background, .ultraaddons-panel .with-background {
     width: unset;
 }
