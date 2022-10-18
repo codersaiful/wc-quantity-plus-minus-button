@@ -56,10 +56,11 @@ class Recommeded
         $req_qv->set_args( ['Name' => 'Quick View vy CodeAstrology'] )
         ->set_download_link('https://wordpress.org/plugins/ca-quick-view/')
         ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
-
+        $qv_message = __("Quick View by Code Astrology is a lightweight WooCommerce based plugin. A user can easily view a product without redirection.",'wqpmb');
+        $req_qv->set_message($qv_message);
         $req_qv->get_full_this_plugin_name($this_plugin);
         if( method_exists($req_qv, 'set_location') ){
-            $req_qv->set_location('wqpmb_after_form'); //wpt_premium_image_bottom
+            $req_qv->set_location('wqpmb_after_form'); 
             $req_qv->run();
         }
         
