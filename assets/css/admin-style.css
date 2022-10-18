@@ -38,6 +38,7 @@
     flex-direction: row;
     margin-top: 5px;
     margin-bottom: 10px;
+    flex-wrap: wrap;
 }
 
 .codeastrogy-social-area-wrapper a.ca-social-link {
@@ -47,10 +48,11 @@
     text-decoration: none;
     border-radius: 7px;
     padding: 0;
+    box-shadow: -3px 2px 3px #00000006;
 }
 .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
     background: #fff;
-    border: 1px solid #e2e2e3;
+    border: 1px solid transparent;
     transition: .2s all;
 }
 .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available:hover {
