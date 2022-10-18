@@ -94,17 +94,15 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         ?>
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 
-    <h1 class="wp-heading-inline"><?php echo esc_html( WQPMB_NAME ); ?></h1>
+    <h1 class="wp-heading-inline ca-main-header-title"><?php echo esc_html( WQPMB_NAME ); ?></h1>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
             <?php
             $wqpmb_forms_validation = apply_filters( 'wqpmb_default_form_panel_validation', true, $our_data, $datas );
             if( $wqpmb_forms_validation ){
-                
-            
             ?>
             <div class="section ultraaddons-panel">
-                <h2 class="with-background light-background">Quantity Button Settings</h2>
+                <h2 class="with-background light-background ca-branding-header">Quantity Button Settings</h2>
                 <table class="ultraaddons-table">
                     <?php
                     /**

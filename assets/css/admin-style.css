@@ -28,3 +28,25 @@
         flex-wrap: wrap;
     }
 }
+
+.ultraaddons .with-background, .ultraaddons-panel .with-background {
+    width: unset;
+}
+.ca-branding-header{
+    background-image: url('../images/header-logo.png') !important;
+    background-repeat: no-repeat !important;
+    background-position: center right !important;
+}
+h1.ca-main-header-title {
+    color: #39c2cb;
+    background: #02142a url('../images/animated-logo.gif') no-repeat center right;
+    width: calc(100% - 50px);
+    display: flex;
+    padding: 15px;
+    /* margin: 0; */
+    line-height: 25px;
+    font-size: 24px;
+    font-weight: 400;
+    margin-top: 20px;
+    background-size: auto 40px;
+}
