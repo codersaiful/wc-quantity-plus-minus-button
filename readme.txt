@@ -5,7 +5,7 @@ Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.0.2
 Requires PHP: 5.6
-WC requires at least: 3.7
+WC requires at least: 4.0
 WC tested up to: 7.0.0
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -117,9 +117,9 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 
 == Frequently Asked Questions ==
 
-= Menu Location? =
+= Menu Location after Install: =
 
-Dashboard -> WooCommerce -> (+-) Plus Minus Button
+🔅 Dashboard -> WooCommerce -> (+-) Plus Minus Button
 
 = Already my theme provide Plus Minus botton, Do I need it? =
 
@@ -173,7 +173,14 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
+= 1.1.3 =
+
+* Live support from CodeAstrology button Added
+* Spelling fix on html markup
+* Bug Fix 
+
 = 1.1.2 =
+
 * Minor Error fixed 
 * Tested with Latest WordPress and Updated
 * Tested with Latest WooCommerce and Updated
