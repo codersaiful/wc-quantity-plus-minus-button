@@ -168,7 +168,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <td>
                             <input type="text" id="" name="css[border-width]" 
                                    value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
-                                   placeholder="eg: 4px"
+                                   placeholder="eg: 1px"
                                    class="ua_input" />
                         </td>
                     </tr>
