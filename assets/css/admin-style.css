@@ -50,6 +50,10 @@
     padding: 0;
     box-shadow: -3px 2px 3px #00000006;
 }
+.codeastrogy-social-area-wrapper a.ca-social-link>img {
+    background: white;
+    border-radius: 5px;
+}
 .codeastrogy-social-area-wrapper a.ca-social-link.ca-title-available {
     background: #fff;
     border: 1px solid #4a4a4a17;
