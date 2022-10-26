@@ -3,8 +3,8 @@
 Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
-Tested up to: 6.0.3
-Requires PHP: 5.6
+Tested up to: 6.1
+Requires PHP: 7.4
 WC requires at least: 4.0
 WC tested up to: 7.0.0
 License: GPL3+

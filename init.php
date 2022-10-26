@@ -11,7 +11,7 @@
  * 
  * Version: 1.1.3
  * Requires at least:    4.0.0
- * Tested up to:         6.0.3
+ * Tested up to:         6.1
  * WC requires at least: 3.7
  * WC tested up to: 	 7.0.0
  */
