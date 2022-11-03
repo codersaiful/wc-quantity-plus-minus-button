@@ -10,6 +10,13 @@ jQuery(function ($) {
         QuantityChange();
     });
 
+    $(document.body).on('change','ul.products input.input-text.qty.text',function(){
+        var qty_val = $(this).val();
+        if(typeof qty_val !== 'undefined' ){
+            $(this).closest('li.product').find('a.button').attr('data-quantity', qty_val);
+        }
+        
+    });
     function QuantityChange() {
         $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
             // Find quantity input field corresponding to increment button clicked.
