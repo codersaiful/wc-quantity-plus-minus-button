@@ -139,6 +139,7 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             update_option( $option_key, $datas );
             
             $selector = WQPMB_Button::$css_selector;
+            $input_css_selector = WQPMB_Button::$input_css_selector;
             /**
              * @Hook Filter: wqpmb_default_css_selector
              * to change selector of css selector, Currently set for qty button and input box
@@ -157,9 +158,17 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
                     
                     $style_hover .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
                 }
+                $style_input = "\n";
+                $css_input = ! empty( $datas['css_input'] ) && is_array( $datas['css_input'] ) ? $datas['css_input'] : [];
+
+                foreach( $css_input as $property => $value ){
+                    
+                    $style_input .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
+                }
                 $css_base = $selector . "{" . $style . "}\n";
                 $css_hover = $selector . ":hover{" . $style_hover . "}\n";
-                $css = $css_base . $css_hover;
+                $css_input = $input_css_selector . "{" . $style_input . "}\n";
+                $css = $css_base . $css_hover . $css_input;
 
                 $css = apply_filters( 'wqpmb_css_on_save', $css, $datas );
                 update_option( $css_key, $css);

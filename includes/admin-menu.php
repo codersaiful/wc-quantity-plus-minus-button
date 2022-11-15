@@ -139,6 +139,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
 
                     $css = isset( $our_data['css'] ) && is_array( $our_data['css'] ) ? $our_data['css'] : array();
                     $css_hover = isset( $our_data['css_hover'] ) && is_array( $our_data['css_hover'] ) ? $our_data['css_hover'] : array();
+                    $css_input = isset( $our_data['css_input'] ) && is_array( $our_data['css_input'] ) ? $our_data['css_input'] : array();
                     ?>
                     <tr>
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
@@ -148,19 +149,33 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                                    class="ua_color_picker" />
                         </td>
                     </tr>
-                    <tr>
-                        <th><label for="wqpmb-btn-bg-color-hover">Button Background Color Hover</label></th>
-                        <td>
-                            <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
-                                   value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
-                                   class="ua_color_picker" />
-                        </td>
-                    </tr>
+                    
                     <tr>
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
                                    value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
+                                   class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    
+                    <tr>
+                        <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
+                                   value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
+                                   class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    
+                    <tr class="wqpmb-title-row">
+                        <th colspan="2"><h3>Button Hover Color</h3></th>
+                    </tr>
+                    <tr>
+                        <th><label for="wqpmb-btn-bg-color-hover">Button Background Color Hover</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
+                                   value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -173,20 +188,15 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         </td>
                     </tr>
                     <tr>
-                        <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
-                        <td>
-                            <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
-                                   value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
-                                   class="ua_color_picker" />
-                        </td>
-                    </tr>
-                    <tr>
                         <th><label for="wqpmb-btn-font-colorcss_hover">Button Font Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-colorcss_hover" name="css_hover[color]" 
                                    value="<?php echo isset( $css_hover['color'] ) ? $css_hover['color'] : '' ?>" 
                                    class="ua_color_picker" />
                         </td>
+                    </tr>
+                    <tr class="wqpmb-title-row">
+                        <th colspan="2"><h3>Button Border Style</h3></th>
                     </tr>
                     <tr>
                         <th><label for="">Border Width</label></th>
@@ -206,7 +216,35 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                                    class="ua_input" />
                         </td>
                     </tr>
+
                     
+                    <tr class="wqpmb-title-row">
+                        <th colspan="2"><h3>Input Box Style</h3></th>
+                    </tr>
+                    <tr>
+                        <th><label for="wqpmb-btn-bg-color-input">Input Box Background Color</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-bg-color-input" name="css_input[background-color]" 
+                                   value="<?php echo isset( $css_input['background-color'] ) ? $css_input['background-color'] : '' ?>" 
+                                   class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="wqpmb-btn-border-color-input">Input Box Border Color</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-border-color-input" name="css_input[border-color]" 
+                                   value="<?php echo isset( $css_input['border-color'] ) ? $css_input['border-color'] : '' ?>" 
+                                   class="ua_color_picker" />
+                        </td>
+                    </tr>
+                    <tr>
+                        <th><label for="wqpmb-btn-font-color-input">Input Box Font Color</label></th>
+                        <td>
+                            <input type="text" id="wqpmb-btn-font-color-input" name="css_input[color]" 
+                                   value="<?php echo isset( $css_input['color'] ) ? $css_input['color'] : '' ?>" 
+                                   class="ua_color_picker" />
+                        </td>
+                    </tr>
                     <?php                     
                     } //End of CSS Row Validation
                     

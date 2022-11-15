@@ -80,6 +80,7 @@ class WQPMB_Button {
      */
     public static $css_selector = '.qib-button-wrapper button.qib-button';//,.qib-button-wrapper .quantity input.input-text.qty.text
 
+    public static $input_css_selector = '.qib-button-wrapper .quantity input.input-text.qty.text';
     /**
      * Trying to commit and push something
      * Minimum PHP Version
