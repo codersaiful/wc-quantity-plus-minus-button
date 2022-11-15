@@ -147,11 +147,20 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             $selector = apply_filters( 'wqpmb_default_css_selector', $selector, $datas  );
             if( isset( $datas['css'] ) && is_array( $datas['css'] ) ){
                 $style = "\n";
+                $style_hover = "\n";
                 foreach( $datas['css'] as $property => $value ){
                     
-                    $style .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . ";\n" : '';
+                    $style .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
                 }
-                $css = $selector . "{" . $style . "}";
+                $css_hover = ! empty( $datas['css_hover'] ) && is_array( $datas['css_hover'] ) ? $datas['css_hover'] : [];
+                foreach( $css_hover as $property => $value ){
+                    
+                    $style_hover .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
+                }
+                $css_base = $selector . "{" . $style . "}\n";
+                $css_hover = $selector . ":hover{" . $style_hover . "}\n";
+                $css = $css_base . $css_hover;
+
                 $css = apply_filters( 'wqpmb_css_on_save', $css, $datas );
                 update_option( $css_key, $css);
             }

@@ -78,7 +78,7 @@ class WQPMB_Button {
      *
      * @var type String
      */
-    public static $css_selector = '.qib-button-wrapper button.qib-button,.qib-button-wrapper .quantity input.input-text.qty.text';
+    public static $css_selector = '.qib-button-wrapper button.qib-button';//,.qib-button-wrapper .quantity input.input-text.qty.text
 
     /**
      * Trying to commit and push something

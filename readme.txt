@@ -10,7 +10,7 @@ WC tested up to: 7.0.0
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Quantity button design features available. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
+Easily add plus, minus button for WooCommerce Quantity Input box in everywhere with custom Design functionality. Quantity button design features available. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
 
 == Description ==
 
@@ -21,11 +21,12 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 👉 Quantity step supported
 👉 Decimal quantity supported
 👉 Customizable button design
-👉 You can customize button background color
-👉 You can customize button text color
-👉 You can customize border color
+👉 You can customize button background color and hover
+👉 You can customize button text color and hover
+👉 You can customize border color and hover
 👉 You can customize border width
 👉 You can set custom border radius
+👉 Live customer support for any Issue.
 👉 Well documented
 👉 Well commented
 👉 Clean code
@@ -156,7 +157,7 @@ That's it. So easy, Right !!!
 
 = Is it suitable with (Woo Product Table) Plugin ? =
 
-🔅 Yes. *Product Table for WooCommerce by CodeAstrology* will adapt with your design.
+🔅 Yes. *Product Table for WooCommerce by CodeAstrology* or *Woo Product Table* will adapt with your design.
 
 == Screenshots ==
 
@@ -172,6 +173,13 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.1.4 =
+ 
+* Added Hover background color.
+* Added Hover border color.
+* Added Hover font color.
+* Bug Fix 
 
 = 1.1.3 =
 
