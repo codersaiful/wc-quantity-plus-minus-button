@@ -4,6 +4,7 @@ Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.1
+Stable tag: 1.1.4
 Requires PHP: 7.0
 WC requires at least: 4.0
 WC tested up to: 7.0.0
@@ -175,7 +176,9 @@ That's it. So easy, Right !!!
 == Change log ==
 
 = 1.1.4 =
- 
+
+* More Setting added.
+* Input box style added.
 * Added Hover background color.
 * Added Hover border color.
 * Added Hover font color.
