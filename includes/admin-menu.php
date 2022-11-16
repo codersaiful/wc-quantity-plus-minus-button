@@ -274,6 +274,22 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                 <button name="configure_submit" class="button-primary button-primary primary button">Save Change</button>
                 <button name="reset_button" class="button button-default" onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">Reset Default</button>
             </div>
+
+            
+            <a class="sort-time-offer-wqpmb" href="https://codeastrology.com/coupons/" target="_blank">
+                    
+            <?php
+            $time = time();
+            $tar_time = strtotime('1/25/2022');
+            if($time < $tar_time){
+            $img = WQPMB_BASE_URL . 'assets/images/offer/black-friday-notice.png';
+            ?>
+                <img src="<?php echo esc_attr( $img ); ?>" style="max-width: 100%;height:auto;width:auto;">
+            <?php }{ ?>
+                <span>CodeAstrology All Products OFFER</span>click Here
+            <?php } ?>
+            </a>
+                
         </form>
         <div class="wqpmb-after-form">
             <?php do_action( 'wqpmb_after_form' ); ?>

@@ -93,3 +93,24 @@ h1.ca-main-header-title {
     margin-top: 20px;
     background-size: auto 40px;
 }
+.sort-time-offer-wqpmb {
+    background: #202020 url('../images/animated-logo.gif') no-repeat center right;
+    width: 100%;
+    display: block;
+    margin-top: 10px;
+    background-size: auto 40px;
+    color: white;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+.sort-time-offer-wqpmb:hover{
+    color:aquamarine;
+}
+a.sort-time-offer-wqpmb span {
+    color: #ff5722;
+    padding: 15px;
+    display: inline-block;
+    font-size: 22px;
+}
