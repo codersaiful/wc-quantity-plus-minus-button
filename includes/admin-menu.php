@@ -280,14 +280,13 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                     
             <?php
             $time = time();
-            $tar_time = strtotime('1/25/2022');
+            $tar_time = strtotime('11/25/2022');
             if($time < $tar_time){
             $img = WQPMB_BASE_URL . 'assets/images/offer/black-friday-notice.png';
             ?>
                 <img src="<?php echo esc_attr( $img ); ?>" style="max-width: 100%;height:auto;width:auto;">
-            <?php }{ ?>
-                <span>CodeAstrology All Products OFFER</span>click Here
             <?php } ?>
+                <span>CodeAstrology All Products OFFER</span>click Here
             </a>
                 
         </form>
