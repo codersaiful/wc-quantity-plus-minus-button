@@ -18,7 +18,7 @@ jQuery(function ($) {
         
     });
     function QuantityChange() {
-        $(document).off("click", ".button.qib-button").on("click", ".button.qib-button", function () {
+        $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
             // Find quantity input field corresponding to increment button clicked.
             var qty = $(this).siblings(".quantity").find(".input-text");
             // Read value and attributes min, max, step.
