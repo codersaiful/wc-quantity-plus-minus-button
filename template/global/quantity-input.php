@@ -63,7 +63,7 @@ if ( $max_value && $min_value === $max_value ) {
 		global $product;
 		$product_id =  $product->get_id()
 	?>
-	<div class="qib-button qib-button-wrapper qib-button-wrapper-<?=$product_id?>">
+	<div class="qib-button qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
 	
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
 		
@@ -74,7 +74,7 @@ if ( $max_value && $min_value === $max_value ) {
 			id="<?php echo esc_attr( $input_id ); ?>"
 			class="wqpmb_input_text <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
 			step="<?php echo esc_attr( $step ); ?>"
-			product_id="<?php echo esc_attr( $product_id ); ?>"
+			data-product_id="<?php echo esc_attr( $product_id ); ?>"
 			min="<?php echo esc_attr( $min_value ); ?>"
 			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 			name="<?php echo esc_attr( $input_name ); ?>"
