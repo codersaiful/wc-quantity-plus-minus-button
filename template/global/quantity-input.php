@@ -61,7 +61,10 @@ if ( $max_value && $min_value === $max_value ) {
 	?>
 	<?php 
 		global $product;
-		$product_id =  $product->get_id()
+		$product_id =  0;
+		if( is_object( $product ) && method_exists( $product,'get_id' ) ){
+			$product_id =  $product->get_id();
+		}
 	?>
 	<div class="qib-button qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
 	
