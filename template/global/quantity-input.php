@@ -78,6 +78,7 @@ if ( $max_value && $min_value === $max_value ) {
 			class="wqpmb_input_text <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
 			step="<?php echo esc_attr( $step ); ?>"
 			data-product_id="<?php echo esc_attr( $product_id ); ?>"
+			data-variation_id=""
 			min="<?php echo esc_attr( $min_value ); ?>"
 			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 			name="<?php echo esc_attr( $input_name ); ?>"
