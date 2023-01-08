@@ -77,8 +77,7 @@ jQuery(function ($) {
                     qty.val(val - step);
                 }
             }
-
-            qty.val(Math.round(qty.val() * 100) / 100);
+            qty.val(Math.round(qty.val() * 100000) / 100000);
             qty.trigger("change");
             $("body").removeClass("sf-input-focused");
         });
