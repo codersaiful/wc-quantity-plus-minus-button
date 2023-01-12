@@ -224,3 +224,45 @@ if( !function_exists( 'wqpmb_header_css' ) ){
     }
     add_filter( 'wp_head', 'wqpmb_header_css' );
 }
+
+
+/**
+* start the customisation
+*/
+// add_action('woocommerce_before_shop_loop', function() {
+//     add_filter('woocommerce_loop_add_to_cart_link', 'wpse_125946_add_to_cart', 10, 3);
+// });
+
+/**
+* customise Add to Cart link/button for product loop
+* @param string $button
+* @param object $product
+* @param array $link
+* @return string
+*/
+function wpse_125946_add_to_cart($button, $product, $link) {
+    $product_type = $product->get_type();
+    var_dump(get_option('woocommerce_enable_ajax_add_to_cart'));
+    // return $button;
+    // not for variable, grouped or external products
+    if (!in_array($product_type, array('variable', 'grouped', 'external'))) {
+        // only if can be purchased
+        if ($product->is_purchasable()) {
+            // show qty +/- with button
+            ob_start();
+            woocommerce_simple_add_to_cart();
+            $button = ob_get_clean();
+        }
+    }elseif( $product_type == 'variable' ){
+        if ($product->is_purchasable()) {
+            //woocommerce_template_single_add_to_cart
+            //woocommerce_template_loop_add_to_cart
+            // show qty +/- with button
+            ob_start();
+            woocommerce_template_single_add_to_cart();
+            $button = ob_get_clean();
+        }
+    }
+
+    return $button;
+}
