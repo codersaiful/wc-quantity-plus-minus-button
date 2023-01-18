@@ -70,29 +70,29 @@ if ( $max_value && $min_value === $max_value ) {
 	
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
 		
-                <button type="button" class="minus qib-button">-</button>
-                <div class="quantity wqpmb_quantity">
-                    <input
-			type="number"
-			id="<?php echo esc_attr( $input_id ); ?>"
-			class="wqpmb_input_text <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
-			step="<?php echo esc_attr( $step ); ?>"
-			data-product_id="<?php echo esc_attr( $product_id ); ?>"
-			data-variation_id=""
-			min="<?php echo esc_attr( $min_value ); ?>"
-			max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
-			name="<?php echo esc_attr( $input_name ); ?>"
-			value="<?php echo esc_attr( $input_value ); ?>"
-			title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'wqpmb' ); ?>"
-			size="4"
-			placeholder="<?php echo esc_attr( $placeholder ); ?>"
-			inputmode="<?php echo esc_attr( $inputmode ); ?>" />
-		<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
-                    
-                </div>
-                <span class="wqpmb_plain_input hidden"><?php echo esc_html( $input_value ); ?></span>
+            <button type="button" class="minus qib-button">-</button>
+			<div class="quantity wqpmb_quantity">
+				<input
+					type="number"
+					id="<?php echo esc_attr( $input_id ); ?>"
+					class="wqpmb_input_text <?php echo esc_attr( join( ' ', (array) $classes ) ); ?>"
+					step="<?php echo esc_attr( $step ); ?>"
+					data-product_id="<?php echo esc_attr( $product_id ); ?>"
+					data-variation_id=""
+					min="<?php echo esc_attr( $min_value ); ?>"
+					max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
+					name="<?php echo esc_attr( $input_name ); ?>"
+					value="<?php echo esc_attr( $input_value ); ?>"
+					title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'wqpmb' ); ?>"
+					size="4"
+					placeholder="<?php echo esc_attr( $placeholder ); ?>"
+					inputmode="<?php echo esc_attr( $inputmode ); ?>" />
+				<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
+				
+			</div>
+            <span class="wqpmb_plain_input hidden"><?php echo esc_html( $input_value ); ?></span>
 		
-                <button type="button" class="plus qib-button">+</button>
+            <button type="button" class="plus qib-button">+</button>
 	
 	</div>
 	<?php
