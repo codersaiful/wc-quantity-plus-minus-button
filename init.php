@@ -9,11 +9,11 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.1.4
+ * Version: 1.1.5
  * Requires at least:    4.0.0
  * Tested up to:         6.1.1
  * WC requires at least: 3.7
- * WC tested up to: 	 7.2.0
+ * WC tested up to: 	 7.3
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
@@ -24,7 +24,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.4.0');
+    define( 'WQPMB_VERSION', '1.1.5.0');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
