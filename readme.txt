@@ -175,6 +175,11 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
+= 1.1.5 =
+
+* Little CSS issue fixed for Cart page.
+* Bug Fix 
+
 = 1.1.4 =
 
 * More Setting added.
