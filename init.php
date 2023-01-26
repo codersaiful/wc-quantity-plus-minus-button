@@ -243,15 +243,16 @@ class WQPMB_Button {
        $this->setConstant($path_args);
        
        
-       if ( $is_woocommerce ) {
-            include_once $this->path('BASE_DIR', 'includes/functions.php');
-            include_once $this->path('BASE_DIR', 'includes/admin-menu.php');
-            include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
-       }
+       
+        include_once $this->path('BASE_DIR', 'includes/functions.php');
+        include_once $this->path('BASE_DIR', 'includes/admin-menu.php');
+        include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
 
        if( is_admin() && $is_woocommerce ){
         WQPMB\Framework\Recommeded::check();
        }
+
+       WQPMB\Includes\Feature_Loader::run();
     }
 
     public function admin_notice_missing_main_plugin() {
