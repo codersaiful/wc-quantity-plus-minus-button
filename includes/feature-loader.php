@@ -15,7 +15,7 @@ class Feature_Loader
         
         self::$options = get_option( self::$option_key );// WC_MMQ::getOptions();
         
-        self::$options['quantiy_box_archive'] = 1;
+        // self::$options['quantiy_box_archive'] = 1;
         $quantiy_archive = self::$options['quantiy_box_archive'] ?? false;
         if( ! empty( $quantiy_archive ) && $quantiy_archive == 1 ){
             $quantiy_archive_obj = new Quantiy_Archive();

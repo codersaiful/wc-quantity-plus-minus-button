@@ -261,13 +261,13 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                 <h2 class="with-background light-background ca-branding-header">Configuration and Other Setting</h2>
                 <table class="ultraaddons-table">
                     <tr>
-                        <th><label for="wqpmb-enable-quantity-button">Quantiy box in Archive</label></th>
+                        <th><label for="wqpmb-enable-quantity-archive">Quantiy box in Archive</label></th>
                         <td>
                             <?php
                             $checkbox = isset( $our_data['quantiy_box_archive'] ) ? 'checked' : '';
                             ?>
-                            <label class="switch switch-reverse">
-                                <input  name="on_off" type="checkbox" id="wqpmb-enable-quantity-button" <?php echo esc_attr( $checkbox ); ?>>
+                            <label class="switch">
+                                <input  name="quantiy_box_archive" type="checkbox" id="wqpmb-enable-quantity-archive" <?php echo esc_attr( $checkbox ); ?>>
                                 <div class="slider round"><!--ADDED HTML -->
                                     <span class="on">ON</span><span class="off">OFF</span><!--END-->
                                 </div>

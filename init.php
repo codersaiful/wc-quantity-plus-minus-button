@@ -289,6 +289,7 @@ class WQPMB_Button {
         $default_data = array(
                 'on_off'    => 'on',
                 'css'       => false,
+                'quantiy_box_archive' => 1,
                 /*
                  'css'   =>  array(
                 'background-color' => '#bada55',
