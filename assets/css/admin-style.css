@@ -114,3 +114,30 @@ a.sort-time-offer-wqpmb span {
     display: inline-block;
     font-size: 22px;
 }
+
+tr.wqpmb_offer_row_pro {
+    font-size: 22px;
+}
+
+.wqpmb_offer_area_for_pro {
+    font-size: 22px;
+    background: #ffeb3b2e;
+    padding: 15px;
+    border: 3px solid #ffc107;
+}
+.wqpmb_offer_area_for_pro p {
+    padding: 0;
+    margin: 0;
+    /* color: black !important; */
+    font-style: normal !important;
+    font-size: 22px;
+}
+
+.wqpmb_offer_area_for_pro p>b {
+    color: black !important;
+    background: #8080802e;
+    padding: 1px 5px;
+}
+.wqpmb_offer_area_for_pro p>a {
+    color: #06b0bb;
+}

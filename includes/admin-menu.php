@@ -275,7 +275,20 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                             
                         </td>
                     </tr>
-                    
+                    <?php 
+                    $available_pro = apply_filters( 'wqpmb_available_pro', false );
+                    if( ! $available_pro ){ ?>
+                    <tr class="wqpmb_offer_row_pro">
+                        <th>Offer</th>
+                        <td>
+                            <div class="wqpmb_offer_area_for_pro">
+                            <p>If you want <b>Quick Cart</b> Feature and <b>Quantity box in Archive for Variable</b> product.</p>
+                            <p>NEED PREMIUM VERSION</p>
+                            <p>Purchase <a href="https://codeastrology.com/downloads/quick-cart-and-plus-minus/?campain=PlusMinuPlugin">Quick Cart and Plus Minus Button Everywhere</a> Plugin in low Price.</p>
+                            </div>
+                        </td>
+                    </tr>
+                    <?php } ?>
                     <?php 
                     /**
                      * @Hook Action: wqpmb_form_row
