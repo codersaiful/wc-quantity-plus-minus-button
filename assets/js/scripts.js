@@ -17,6 +17,11 @@ jQuery(function ($) {
         }
         
     });
+    alert(444444);
+    $(document.body).on('click', '.qib-button',function(){
+        alert(2323);
+        QuantityChange();
+    });
     function QuantityChange() {
         $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
             // Find quantity input field corresponding to increment button clicked.
