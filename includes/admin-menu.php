@@ -95,6 +95,10 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 
     <h1 class="wp-heading-inline ca-main-header-title"><?php echo esc_html( WQPMB_NAME ); ?></h1>
+    <?php
+        wqpmb_social_links(); 
+        wqpmb_submit_issue_link();
+    ?>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
             <?php
@@ -329,7 +333,10 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
         <div class="wqpmb-after-form">
             <?php do_action( 'wqpmb_after_form' ); ?>
         </div>
-        <?php wqpmb_social_links(); ?>
+        <?php 
+            wqpmb_social_links();
+            wqpmb_submit_issue_link();
+        ?>
     </div>
 </div>
 <?php
@@ -375,6 +382,7 @@ function wqpmb_social_links(){
     <?php
     $img_folder = WQPMB_BASE_URL . 'assets/images/social/';
     $codeastrology = [
+        'ticket'   => ['url' => 'https://codeastrology.com/my-support/?utm=Plugin_Social', 'title' => 'Create Ticket'],
         'web'   => ['url' => 'https://codeastrology.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
         'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
         'min-max'   => ['url' => 'https://codeastrology.com/min-max-quantity/?utm=Plugin_Social', 'title' => 'CodeAstrology Min Max Step'],
@@ -406,4 +414,24 @@ function wqpmb_social_links(){
 </div>
 
 <?php
+}
+
+/**
+ * For submiting issue
+ * @author Fazle Bari 
+ */
+function wqpmb_submit_issue_link(){
+    ?>
+    <p class="wpt-issue-submit">
+<?php
+$content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:', 'wcmmq' );
+?>
+        <b>ISSUE SUBMIT:</b> If you founded any issue, Please inform us. That will be very helpful for us to Fix.
+        <a href="https://github.com/codersaiful/woo-min-max-quantity-step-control-single/issues/new" target="_blank">SUBMIT ISSUE</a> or 
+        <a href="mailto:contact@codeastrology.com">contact@codeastrology.com</a> or 
+        <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&su=<?php echo urlencode("Found issue on your Min Max and Step Control Plugin, see screenshot of issue"); ?>&body=<?php echo esc_attr( $content_of_mail ); ?>&ui=2&tf=1&to=codersaiful@gmail.com,contact@codeastrology.com" target="_blank">Gmail Me</a> or
+        <a href="https://www.facebook.com/groups/wphelps" target="_blank">Facebook Group</a>
+        <a href="https://codeastrology.com/my-support/?utm_source=plugin-backend&&utm_medium=Free+Version" target="_blank" class="wpt-create-ticket">Create Ticket</a>
+    </p>
+    <?php
 }
