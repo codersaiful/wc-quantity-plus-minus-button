@@ -141,3 +141,8 @@ tr.wqpmb_offer_row_pro {
 .wqpmb_offer_area_for_pro p>a {
     color: #06b0bb;
 }
+
+a.ca-social-link.ca-social-ticket.ca-title-available {
+    background: #42b9cc;
+    color: white;
+}

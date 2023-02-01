@@ -97,7 +97,6 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     <h1 class="wp-heading-inline ca-main-header-title"><?php echo esc_html( WQPMB_NAME ); ?></h1>
     <?php
         wqpmb_social_links(); 
-        wqpmb_submit_issue_link();
     ?>
     <div class="wqpmb-fields-wrapper">
         <form action="" method="POST">
