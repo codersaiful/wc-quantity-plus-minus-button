@@ -49,17 +49,18 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
         global $admin_page_hooks;
         $capability = apply_filters( 'wqpmb_menu_capability', 'manage_woocommerce' );
         
-        if( !isset( $admin_page_hooks['ultraaddons'] ) ){
-            $icon_url = WQPMB_BASE_URL . 'assets/images/icon.png';//Our Custom Icon will be add
-            add_menu_page( UltraAddons, UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
-        }
+        // if( !isset( $admin_page_hooks['ultraaddons'] ) ){
+        //     $icon_url = WQPMB_BASE_URL . 'assets/images/icon.png';//Our Custom Icon will be add
+        //     add_menu_page( UltraAddons, UltraAddons, 'manage_woocommerce', 'ultraaddons', '__return_true', $icon_url, 35);
+        // }
         
-        /**
-         * @todo Submenu under ultraaddons will be removed
-         */
-        add_submenu_page('ultraaddons', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
+        // /**
+        //  * @todo Submenu under ultraaddons will be removed
+        //  */
+        // add_submenu_page('ultraaddons', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
+        
         add_submenu_page('woocommerce', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
-        remove_submenu_page( 'ultraaddons', 'ultraaddons' );
+        // remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
     add_action( 'admin_menu', 'wqpmb_admin_menu' );
 }
