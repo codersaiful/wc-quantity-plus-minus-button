@@ -13,7 +13,7 @@
  * Requires at least:    4.0.0
  * Tested up to:         6.1.1
  * WC requires at least: 3.7
- * WC tested up to: 	 7.3
+ * WC tested up to: 	 7.4.0
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
