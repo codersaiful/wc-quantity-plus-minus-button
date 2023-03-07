@@ -74,12 +74,12 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
     -moz-appearance: none;
     margin: 0; 
 }
-.qib-button-wrapper input[type=number]
-{
-  -moz-appearance: textfield;
+
+.qib-button-wrapper input[type=number],
+.qib-button .quantity input[type=number], 
+.qib-button .quantity input[type=number]{ 
+-moz-appearance:textfield; /* Firefox */
 }
-
-
 
 @media only screen and (max-width: 600px) {
     table.cart .product-quantity .plus, table.cart .product-quantity .minus {
