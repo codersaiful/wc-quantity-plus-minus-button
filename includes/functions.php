@@ -139,6 +139,7 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             update_option( $option_key, $datas );
             
             $selector = WQPMB_Button::$css_selector;
+            $input_css_selector = WQPMB_Button::$input_css_selector;
             /**
              * @Hook Filter: wqpmb_default_css_selector
              * to change selector of css selector, Currently set for qty button and input box
@@ -147,11 +148,28 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
             $selector = apply_filters( 'wqpmb_default_css_selector', $selector, $datas  );
             if( isset( $datas['css'] ) && is_array( $datas['css'] ) ){
                 $style = "\n";
+                $style_hover = "\n";
                 foreach( $datas['css'] as $property => $value ){
                     
-                    $style .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . ";\n" : '';
+                    $style .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
                 }
-                $css = $selector . "{" . $style . "}";
+                $css_hover = ! empty( $datas['css_hover'] ) && is_array( $datas['css_hover'] ) ? $datas['css_hover'] : [];
+                foreach( $css_hover as $property => $value ){
+                    
+                    $style_hover .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
+                }
+                $style_input = "\n";
+                $css_input = ! empty( $datas['css_input'] ) && is_array( $datas['css_input'] ) ? $datas['css_input'] : [];
+
+                foreach( $css_input as $property => $value ){
+                    
+                    $style_input .= !empty( $value ) && !is_array( $value ) ? $property . ': ' . $value . " !important;\n" : '';
+                }
+                $css_base = $selector . "{" . $style . "}\n";
+                $css_hover = $selector . ":hover{" . $style_hover . "}\n";
+                $css_input = $input_css_selector . "{" . $style_input . "}\n";
+                $css = $css_base . $css_hover . $css_input;
+
                 $css = apply_filters( 'wqpmb_css_on_save', $css, $datas );
                 update_option( $css_key, $css);
             }
@@ -205,4 +223,46 @@ if( !function_exists( 'wqpmb_header_css' ) ){
         echo $style;
     }
     add_filter( 'wp_head', 'wqpmb_header_css' );
+}
+
+
+/**
+* start the customisation
+*/
+// add_action('woocommerce_before_shop_loop', function() {
+//     add_filter('woocommerce_loop_add_to_cart_link', 'wpse_125946_add_to_cart', 10, 3);
+// });
+
+/**
+* customise Add to Cart link/button for product loop
+* @param string $button
+* @param object $product
+* @param array $link
+* @return string
+*/
+function wpse_125946_add_to_cart($button, $product, $link) {
+    $product_type = $product->get_type();
+    var_dump(get_option('woocommerce_enable_ajax_add_to_cart'));
+    // return $button;
+    // not for variable, grouped or external products
+    if (!in_array($product_type, array('variable', 'grouped', 'external'))) {
+        // only if can be purchased
+        if ($product->is_purchasable()) {
+            // show qty +/- with button
+            ob_start();
+            woocommerce_simple_add_to_cart();
+            $button = ob_get_clean();
+        }
+    }elseif( $product_type == 'variable' ){
+        if ($product->is_purchasable()) {
+            //woocommerce_template_single_add_to_cart
+            //woocommerce_template_loop_add_to_cart
+            // show qty +/- with button
+            ob_start();
+            woocommerce_template_single_add_to_cart();
+            $button = ob_get_clean();
+        }
+    }
+
+    return $button;
 }

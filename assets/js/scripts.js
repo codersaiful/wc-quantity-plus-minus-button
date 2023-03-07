@@ -10,6 +10,18 @@ jQuery(function ($) {
         QuantityChange();
     });
 
+    $(document.body).on('change','ul.products input.input-text.qty.text',function(){
+        var qty_val = $(this).val();
+        if(typeof qty_val !== 'undefined' ){
+            $(this).closest('li.product').find('a.button').attr('data-quantity', qty_val);
+        }
+        
+    });
+    // alert(444444);
+    // $(document.body).on('click', '.qib-button',function(){
+    //     alert(2323);
+    //     QuantityChange();
+    // });
     function QuantityChange() {
         $(document).off("click", ".qib-button").on("click", ".qib-button", function () {
             // Find quantity input field corresponding to increment button clicked.
@@ -70,8 +82,7 @@ jQuery(function ($) {
                     qty.val(val - step);
                 }
             }
-
-            qty.val(Math.round(qty.val() * 100) / 100);
+            qty.val(Math.round(qty.val() * 100000) / 100000);
             qty.trigger("change");
             $("body").removeClass("sf-input-focused");
         });
