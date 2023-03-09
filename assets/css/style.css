@@ -14,7 +14,7 @@
     display: inline;
 }
 .qib-button-wrapper{
-    margin: 3px auto;
+    margin: 3px 0;
     white-space: nowrap;
 }
 
@@ -80,6 +80,8 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
 .qib-button .quantity input[type=number]{ 
 -moz-appearance:textfield; /* Firefox */
 }
+
+
 .woocommerce-page div.product form.cart div.quantity.wqpmb_quantity, .woocommerce div.product form.cart .quantity.wqpmb_quantity, .woocommerce div.product .quantity.wqpmb_quantity{
     margin: 0 !important;
 }
