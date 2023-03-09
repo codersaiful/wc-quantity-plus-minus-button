@@ -175,6 +175,9 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
+= 1.1.7 =
+* input box right margin issue has been solved.
+
 = 1.1.6 =
 * Added: Quantity box for Shop Page
 * Added: Quantity box for All Archive/Tag/Category/Taxonomy Page
