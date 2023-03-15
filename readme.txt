@@ -131,6 +131,11 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 
 🔅 Yes this plugin is supports all themes.
 
+= Can I hide plus minus button from cart page? =
+
+🔅 Yes, you can hide it by using our filter (`wqpmb_on_cart_page`). see following code:
+`add_filter('wqpmb_on_cart_page','__return_false');`
+
 = Does this plugin supports decimal value as quantity? =
 
 🔅 Yes, this plugin supports decimal value as product quantity.
