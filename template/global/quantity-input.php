@@ -66,7 +66,7 @@ if ( $max_value && $min_value === $max_value ) {
 			$product_id =  $product->get_id();
 		}
 	?>
-	<div class="qib-button qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
+	<div class="qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
 	
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
 		
