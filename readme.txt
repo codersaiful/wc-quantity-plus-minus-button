@@ -4,7 +4,7 @@ Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.2
-Stable tag: 1.1.7
+Stable tag: 1.1.8
 Requires PHP: 7.0
 WC requires at least: 4.0
 WC tested up to: 7.4.0
@@ -179,6 +179,9 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.1.8 =
+* Divi theme's quantity box issue has been solved
 
 = 1.1.7 =
 * input box right margin issue has been solved.
