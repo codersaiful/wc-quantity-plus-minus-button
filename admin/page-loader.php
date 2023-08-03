@@ -122,8 +122,9 @@ class Page_Loader extends Base
 
         if( strpos( $s_id, $this->plugin_prefix) == false ) return;
 
-        $livesupport = $this->data['data']
-
+        //If disbale option found, we will remove live support
+        $off = $this->data['extra']['disable_live_support'] ?? 'no_disable';
+        if($off == '1') return;
         ?>
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">

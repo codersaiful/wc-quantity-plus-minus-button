@@ -1,5 +1,5 @@
 <?php
-$extra_info = $our_data['data'] ?? [];
+$extra_info = $our_data['extra'] ?? [];
 ?>
 <table class="wqpmb-table universal-setting">
     <thead>
@@ -35,7 +35,7 @@ $extra_info = $our_data['data'] ?? [];
                     </div>
                     <div class="form-field col-lg-6">
                         <label class="switch reverse">
-                            <input value="1" name="data[disable_live_support]"
+                            <input value="1" name="extra[disable_live_support]"
                                 <?php echo $live_support; /* finding checked or null */ ?> type="checkbox" id="_disable_live_support">
                             <div class="slider round"><!--ADDED HTML -->
                                 <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
@@ -46,6 +46,7 @@ $extra_info = $our_data['data'] ?? [];
             </td>
             <td>
                 <div class="wqpmb-form-info">
+                    <p>Here can need Reload,after change.</p>
                     <?php wqpmb_doc_link('https://codeastrology.com/my-support', 'Customer Support'); ?>
                     
                 </div> 
@@ -96,9 +97,9 @@ $extra_info = $our_data['data'] ?? [];
                 </div> 
             </td>
         </tr>
-
+        
         <?php $tracker = isset( $extra_info['tracker' ] ) && $extra_info['tracker' ] == '1' ? 'checked' : false; ?>
-        <tr>
+        <tr style="display: none !important;">
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
@@ -107,7 +108,7 @@ $extra_info = $our_data['data'] ?? [];
                     <div class="form-field col-lg-6">
                         
                         <label class="switch">
-                            <input value="1" name="data[tracker]"
+                            <input value="1" name="extra[tracker]"
                                 <?php echo $tracker; /* finding checked or null */ ?> type="checkbox" id="_tracker">
                             <div class="slider round"><!--ADDED HTML -->
                                 <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
