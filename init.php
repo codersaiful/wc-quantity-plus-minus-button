@@ -36,7 +36,8 @@ if ( !defined( 'WQPMB_BASE_NAME' ) ) {
 }
 
 if ( !defined( 'WQPMB_MENU_SLUG' ) ) {
-    define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+    // define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+    define( 'WQPMB_MENU_SLUG', 'wqpmb-settings' );
 }
 
 if ( !defined( 'WQPMB_MENU_NAME' ) ) {

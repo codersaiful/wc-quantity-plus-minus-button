@@ -9,6 +9,7 @@ class Page_Loader extends Base
     protected $parent_slug = 'woocommerce';
     public $option_key;
     public $data;
+    public $is_pro = true;
 
     /**
      * Right slash already set
@@ -16,6 +17,8 @@ class Page_Loader extends Base
      * @var [type]
      */
     public $html_folder_dir;
+    public $topbar_file_dir;
+
 
     public function __construct()
     {
@@ -30,13 +33,15 @@ class Page_Loader extends Base
         $this->data = get_option( $this->option_key);
 
         $this->html_folder_dir = $this->base_dir . '/admin/html/';
+        $this->topbar_file_dir = $this->base_dir . '/admin/html/topbar.php';
 
     }
 
     public function run()
     {
-        var_dump($this);
+        // var_dump($this);
         add_action( 'admin_menu', [$this, 'admin_menu'] );
+        add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
     }
     public function admin_menu()
     {
@@ -45,9 +50,59 @@ class Page_Loader extends Base
     }
     public function page_html()
     {
-        $page_file = $this->html_folder_dir . 'menu-page.php';
+        $page_file = $this->html_folder_dir . 'main-page.php';
         if(is_file($page_file)){
+            include $this->topbar_file_dir;
             include $page_file;
         }
+    }
+    public function admin_enqueue_scripts( $hook_suffix )
+    {
+        global $current_screen;
+
+        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
+        if( strpos( $s_id, $this->plugin_prefix ) !== false ){
+
+            wp_enqueue_style( 'wp-color-picker' );
+            wp_register_script( $this->plugin_prefix . '-admin-script', $this->base_url .'assets/js/admin-script.js', array( 'wp-color-picker' ), false, true );
+            wp_enqueue_script( $this->plugin_prefix . '-admin-script' );
+
+            $ajax_url = admin_url( 'admin-ajax.php' );
+            $WQPMB_ADMIN_DATA = array( 
+                'ajax_url'       => $ajax_url,
+                'site_url'       => site_url(),
+                'cart_url'       => wc_get_cart_url(),
+                );
+            wp_localize_script( $this->plugin_prefix . '-admin-script', 'WQPMB_ADMIN_DATA', $WQPMB_ADMIN_DATA );
+            
+
+            add_filter('admin_footer_text',[$this, 'admin_footer_text']);
+            
+            wp_register_style( $this->plugin_prefix . '-icon-font', $this->base_url . 'assets/fontello/css/wqpmb-icon.css', false, $this->dev_version );
+            wp_enqueue_style( $this->plugin_prefix . '-icon-font' );
+
+            
+            wp_register_style( $this->plugin_prefix . '-icon-animation', $this->base_url . 'assets/fontello/css/animation.css', false, $this->dev_version );
+            wp_enqueue_style( $this->plugin_prefix . '-icon-animation' );
+
+
+
+
+            wp_register_style( $this->plugin_prefix . '-new-admin', $this->base_url . 'assets/css/new-admin.css', false, $this->dev_version );
+            wp_enqueue_style( $this->plugin_prefix . '-new-admin' );
+
+        }
+
+    }
+
+    public function admin_footer_text($text)
+    {
+        $rev_link = 'https://wordpress.org/support/plugin/wc-quantity-plus-minus-button/reviews/#new-post';
+        $text = sprintf(
+			__( 'Thank you for using Plus Minus Button. <a href="%s" target="_blank">%sPlease review us</a>.' ),
+			$rev_link,
+            '<i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i>'
+		);
+        return '<span id="footer-thankyou" class="wqpmb-footer-thankyou">' . $text . '</span>';
     }
 }
