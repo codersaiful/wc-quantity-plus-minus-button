@@ -62,7 +62,7 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
         add_submenu_page('woocommerce', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
         // remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
-    add_action( 'admin_menu', 'wqpmb_admin_menu' );
+    // add_action( 'admin_menu', 'wqpmb_admin_menu' );
 }
 
 

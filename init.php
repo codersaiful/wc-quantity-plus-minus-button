@@ -248,8 +248,14 @@ class WQPMB_Button {
         include_once $this->path('BASE_DIR', 'includes/admin-menu.php');
         include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
 
+       if(is_admin()){
+        $admin_page = new \WQPMB\Includes\Admin_Page_Loader();
+        $admin_page->run();
+       }
+
        if( is_admin() && $is_woocommerce ){
-        WQPMB\Framework\Recommeded::check();
+        //Recommedation is currently Off
+        // WQPMB\Framework\Recommeded::check();
        }
 
        WQPMB\Includes\Feature_Loader::run();
