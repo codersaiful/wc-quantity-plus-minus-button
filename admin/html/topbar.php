@@ -1,5 +1,5 @@
 <?php
-$min_max_img = $this->base_url . 'assets/images/social/min-max.png';
+$min_max_img = $this->base_url . 'assets/images/plus-minus-small.png';
 
 /**
  * This following part actually
