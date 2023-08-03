@@ -249,7 +249,7 @@ class WQPMB_Button {
         include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
 
        if(is_admin()){
-        $admin_page = new \WQPMB\Includes\Admin_Page_Loader();
+        $admin_page = new \WQPMB\Admin\Page_Loader();
         $admin_page->run();
        }
 
