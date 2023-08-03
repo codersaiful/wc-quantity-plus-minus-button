@@ -3,16 +3,32 @@ namespace WQPMB\Core;
 
 defined('ABSPATH') || exit;
 
-class Base
+abstract class Base
 {
     public $_root = __CLASS__;
     public $plugin_prefix = 'wqpmb';
     public $dev_version = WQPMB_VERSION;
     public $base_url = WQPMB_BASE_URL;
+
+    /**
+     * No right slash at the end 
+     * So if want to use any where, add right slash at the end
+     *
+     * @var string
+     */
     public $base_dir = WQPMB_BASE_DIR;
     public $assets_url = WQPMB_BASE_URL . 'assets/';
 
+    public $option_key;
+    public $data;
+
     public $data_packed;
+
+    public function __construct()
+    {
+        $this->option_key = \WQPMB_Button::$option['option'];
+        $this->data = get_option( $this->option_key);
+    }
 
     /**
      * For non-exist property
