@@ -33,7 +33,7 @@ if( isset( $this->topbar_sub_title ) && ! empty( $this->topbar_sub_title ) ){
             <div class="header-button-wrapper">
                 <?php if( ! $this->is_pro){ ?>
                     <a class="wqpmb-button reverse" 
-                        href="https://codeastrology.com/min-max-quantity/pricing/" 
+                        href="https://codeastrology.com/" 
                         target="_blank">
                         <i class="wqpmb_icon-heart-filled"></i>
                         Get Premium Offer
@@ -41,16 +41,16 @@ if( isset( $this->topbar_sub_title ) && ! empty( $this->topbar_sub_title ) ){
                 <?php }else{ ?>
                     <a class="wqpmb-btn wqpmb-has-icon" 
 
-                        href="#">
+                        href="https://codeastrology.com/downloads/">
                         <span><i class=" wqpmb_icon-heart-1"></i></span>
                         Browse Plugin
                     </a>
                 <?php } ?>
                 
                 <a class="wqpmb-button reset" 
-                    href="https://codeastrology.com/min-max-quantity/documentation/" 
+                    href="https://demo.wooproducttable.com/product/couple-jewelry/" 
                     target="_blank">
-                    <i class="wqpmb_icon-note"></i>Documentation
+                    <i class="wqpmb_icon-note"></i>Demo
                 </a>
             </div>
         </div>
