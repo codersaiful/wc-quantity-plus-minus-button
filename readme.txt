@@ -41,10 +41,6 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere w
 
 == Filter ==
 
-You can validate form data using this filter
-`
-add_filter( 'wqpmb_default_form_panel_validation', '__return_true' );
-`
 
 On off checkbox in admin page using filter
 `
@@ -84,20 +80,6 @@ add_filter('wqpmb_template_base_dir', $template_base_dir);
 
 == Action ==
 
-You can use this action for append something new after the checkbox
-`
-do_action( 'wqpmb_checkbox_row', $our_data, $datas );
-`
-
-To add New CSS row, use following action hook
-`
-do_action( 'wqpmb_css_row' );
-`
-
-To add any new row, use the following action hook
-`
-do_action( 'wqpmb_form_row' );
-`
 
 
 **👷 HONORABLE CONTRIBUTOR - [GitHub](https://github.com/codersaiful/wc-quantity-plus-minus-button/graphs/contributors) 👷**<br>

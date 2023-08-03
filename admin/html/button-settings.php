@@ -15,15 +15,7 @@
 
     <tbody>
 
-        <?php
-        /**
-         * @Hook Filter: wqpmb_checkbox_row_validation
-         * To set validation for Quantity Button On/Off Checkbox
-         * @return bool Need true for enable/ otherwise false to disable
-         */
-        $checkbox_for_row = apply_filters( 'wqpmb_checkbox_row_validation', true, $our_data, $datas );
-        if( $checkbox_for_row ){
-        ?>
+        
         <tr>
             <td>
                 <div class="wqpmb-form-control">
@@ -49,8 +41,35 @@
                 </div> 
             </td>
         </tr>
+
+
+        <tr>
+            <td>
+                <div class="wqpmb-form-control">
+                    <div class="form-label col-lg-6">
+                        <label for="wqpmb-enable-quantity-archive">Quantiy box in Archive</label>
+                    </div>
+                    <div class="form-field col-lg-6">
+                    <?php
+                    $checkbox = isset( $our_data['quantiy_box_archive'] ) ? 'checked' : '';
+                    ?>
+                    <label class="switch">
+                        <input  name="quantiy_box_archive" type="checkbox" id="wqpmb-enable-quantity-archive" <?php echo esc_attr( $checkbox ); ?>>
+                        <div class="slider round"><!--ADDED HTML -->
+                            <span class="on">ON</span><span class="off">OFF</span><!--END-->
+                        </div>
+                    </label>
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="wqpmb-form-info">
+                    <p>It's main setting. If set off, Our plus minus button will disable from Everywhere.</p>
+                </div> 
+            </td>
+        </tr>
         <?php 
-        }
+
         do_action( 'wqpmb_checkbox_row', $our_data, $datas );
 
         $css_for_row = apply_filters( 'wqpmb_css_row_validation', true, $our_data, $datas );
@@ -62,7 +81,7 @@
         ?>
 
 
-        <tr>
+        <tr class="divider-row">
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
@@ -142,7 +161,7 @@
 
         <!-- ----------------------- --> 
 
-        <tr>
+        <tr class="divider-row">
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
@@ -221,7 +240,7 @@
 
         <!-- ----------------------- --> 
 
-        <tr>
+        <tr class="divider-row">
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
