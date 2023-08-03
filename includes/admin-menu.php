@@ -374,7 +374,7 @@ s0.parentNode.insertBefore(s1,s0);
         
     }
 }
-add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
+// add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
 
 function wqpmb_social_links(){
 ?>

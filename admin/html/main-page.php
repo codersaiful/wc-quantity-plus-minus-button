@@ -49,6 +49,9 @@ $our_data = $this->data;
             do_action( 'wqpmb_form_bottom', $our_data, $datas );
             ?>
 
+            <div class="wqpmb-section-panel live-support" id="wqpmb-live-support-area">
+                <?php include 'live-support.php'; ?>
+            </div>
             <div class="wqpmb-section-panel no-background wqpmb-full-form-submit-wrapper">
                 
                 <button name="configure_submit" type="submit"

@@ -42,6 +42,9 @@ class Page_Loader extends Base
         // var_dump($this);
         add_action( 'admin_menu', [$this, 'admin_menu'] );
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
+
+        //Live Support tawkto.code
+        add_action( 'admin_head', [$this,'tawkto_code'], 999 );
     }
     public function admin_menu()
     {
@@ -104,5 +107,35 @@ class Page_Loader extends Base
             '<i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i>'
 		);
         return '<span id="footer-thankyou" class="wqpmb-footer-thankyou">' . $text . '</span>';
+    }
+
+    /**
+     * Adding tawk.to Live Chat support rendering
+     * here
+     *
+     * @return void
+     */
+    public function tawkto_code()
+    {
+        global $current_screen;
+        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
+
+        if( strpos( $s_id, $this->plugin_prefix) == false ) return;
+        ?>
+        <!--Start of Tawk.to Script-->
+        <script type="text/javascript">
+        var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
+        (function(){
+        var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+        s1.async=true;
+        s1.src='https://embed.tawk.to/628f5d4f7b967b1179915ad7/1g4009033';
+        s1.charset='UTF-8';
+        s1.setAttribute('crossorigin','*');
+        s0.parentNode.insertBefore(s1,s0);
+        })();
+        </script>
+        <!--End of Tawk.to Script-->      
+        <?php
+       
     }
 }
