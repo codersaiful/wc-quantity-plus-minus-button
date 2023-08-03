@@ -8,6 +8,36 @@ do_action( 'wqpmb_save_data', $datas );
 
 $our_data = $this->data;
 ?>
+<div class="wrap wqpmb_wrap wqpmb-content">
+    <h1 class="wp-heading "></h1>
+    <div class="fieldwrap">
+        <form action="" method="POST">
+            <div class="wqpmb-section-panel no-background wqpmb-full-form-submit-wrapper">
+                
+                <button name="configure_submit" type="submit"
+                    class="wqpmb-btn wqpmb-has-icon configure_submit">
+                    <span><i class="wqpmb_icon-floppy"></i></span>
+                    <strong class="form-submit-text">
+                    <?php echo esc_html__('Save Change','wqpmb');?>
+                    </strong>
+                </button>
+            </div>
+
+            <div class="wqpmb-section-panel button-settings" id="wqpmb-button-settings">
+                <?php include 'button-settings.php'; ?>
+            </div><!-- /#wqpmb-button-settings -->
+
+            
+            <div class="wqpmb-section-panel inputbox-settings" id="wqpmb-inputbox-settings">
+                <?php include 'inputbox-settings.php'; ?>
+            </div><!-- /#wqpmb-button-settings -->
+
+
+
+        </form>
+    </div><!-- ./fieldwrap -->
+</div> <!-- ./wrap wqpmb_wrap wqpmb-content -->
+
 <div class="wqpmb wqpmb-wrapper ultraaddons ultraaddons-wrapper">
 
 <h1 class="wp-heading-inline ca-main-header-title"><?php echo esc_html( WQPMB_NAME ); ?></h1>
@@ -32,21 +62,6 @@ wqpmb_social_links();
             $checkbox_for_row = apply_filters( 'wqpmb_checkbox_row_validation', true, $our_data, $datas );
             if( $checkbox_for_row ){
             ?>
-            <tr>
-                <th><label for="wqpmb-enable-quantity-button">Enable Quantity Button</label></th>
-                <td>
-                    <?php
-                    $checkbox = isset( $our_data['on_off'] ) ? 'checked' : '';
-                    ?>
-                    <label class="switch">
-                        <input  name="on_off" type="checkbox" id="wqpmb-enable-quantity-button" <?php echo esc_attr( $checkbox ); ?>>
-                        <div class="slider round"><!--ADDED HTML -->
-                            <span class="on">ON</span><span class="off">OFF</span><!--END-->
-                        </div>
-                    </label>
-                    
-                </td>
-            </tr>
             
             <?php
             } //End of Checkbox Row Validation
@@ -60,110 +75,8 @@ wqpmb_social_links();
             $css_hover = isset( $our_data['css_hover'] ) && is_array( $our_data['css_hover'] ) ? $our_data['css_hover'] : array();
             $css_input = isset( $our_data['css_input'] ) && is_array( $our_data['css_input'] ) ? $our_data['css_input'] : array();
             ?>
-            <tr>
-                <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-bg-color" name="css[background-color]" 
-                           value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
             
-            <tr>
-                <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
-                           value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            
-            <tr>
-                <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
-                           value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            
-            <tr class="wqpmb-title-row">
-                <th colspan="2"><h3>Button Hover Color</h3></th>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-bg-color-hover">Button Background Color Hover</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
-                           value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-border-colorcss_hover">Button Border Color Hover</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-border-colorcss_hover" name="css_hover[border-color]" 
-                           value="<?php echo isset( $css_hover['border-color'] ) ? $css_hover['border-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-font-colorcss_hover">Button Font Color Hover</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-font-colorcss_hover" name="css_hover[color]" 
-                           value="<?php echo isset( $css_hover['color'] ) ? $css_hover['color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            <tr class="wqpmb-title-row">
-                <th colspan="2"><h3>Button Border Style</h3></th>
-            </tr>
-            <tr>
-                <th><label for="">Border Width</label></th>
-                <td>
-                    <input type="text" id="" name="css[border-width]" 
-                           value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
-                           placeholder="eg: 1px"
-                           class="ua_input" />
-                </td>
-            </tr>
-            <tr>
-                <th><label for="">Border Radius</label></th>
-                <td>
-                    <input type="text" id="" name="css[border-radius]" 
-                           value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
-                           placeholder="eg: 4px"
-                           class="ua_input" />
-                </td>
-            </tr>
-
-            
-            <tr class="wqpmb-title-row">
-                <th colspan="2"><h3>Input Box Style</h3></th>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-bg-color-input">Input Box Background Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-bg-color-input" name="css_input[background-color]" 
-                           value="<?php echo isset( $css_input['background-color'] ) ? $css_input['background-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-border-color-input">Input Box Border Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-border-color-input" name="css_input[border-color]" 
-                           value="<?php echo isset( $css_input['border-color'] ) ? $css_input['border-color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
-            <tr>
-                <th><label for="wqpmb-btn-font-color-input">Input Box Font Color</label></th>
-                <td>
-                    <input type="text" id="wqpmb-btn-font-color-input" name="css_input[color]" 
-                           value="<?php echo isset( $css_input['color'] ) ? $css_input['color'] : '' ?>" 
-                           class="ua_color_picker" />
-                </td>
-            </tr>
+        
             <?php                     
             } //End of CSS Row Validation
             
