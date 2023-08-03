@@ -121,6 +121,9 @@ class Page_Loader extends Base
         $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
 
         if( strpos( $s_id, $this->plugin_prefix) == false ) return;
+
+        $livesupport = $this->data['data']
+
         ?>
         <!--Start of Tawk.to Script-->
         <script type="text/javascript">

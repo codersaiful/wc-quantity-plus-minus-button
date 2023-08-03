@@ -7,9 +7,6 @@ $datas = filter_input_array(INPUT_POST);
 do_action( 'wqpmb_save_data', $datas );
 $this->data = get_option( $this->option_key);
 $our_data = $this->data;
-// if($datas){
-//     $our_data = $datas;
-// }
 
 ?>
 <div class="wrap wqpmb_wrap wqpmb-content">

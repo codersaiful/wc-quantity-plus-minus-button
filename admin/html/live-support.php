@@ -1,5 +1,5 @@
 <?php
-$saved_data = [];
+$extra_info = $our_data['data'] ?? [];
 ?>
 <table class="wqpmb-table universal-setting">
     <thead>
@@ -26,7 +26,7 @@ $saved_data = [];
         * @ since 3.6.0
         * @ Author Fazle Bari 
         -->
-        <?php $live_support = isset( $saved_data['disable_live_support' ] ) && $saved_data['disable_live_support' ] == '1' ? 'checked' : false; ?>
+        <?php $live_support = isset( $extra_info['disable_live_support' ] ) && $extra_info['disable_live_support' ] == '1' ? 'checked' : false; ?>
         <tr>
             <td>
                 <div class="wqpmb-form-control">
@@ -67,14 +67,14 @@ $saved_data = [];
                                 Web                       
                             </a>
                             <a class="wqpmb-btn wqpmb-has-icon wqpmb-btn-tiny" 
-                              href="https://github.com/codersaiful/woo-min-max-quantity-step-control-single"
+                              href="https://github.com/codersaiful/wc-quantity-plus-minus-button"
                               title="Github Repository of Min Man Control Free version"
                               target="_blank">
                                 <span><i class="wqpmb_icon-github-circled"></i></span>    
                                 Github Repo                       
                             </a>
                             <a class="wqpmb-btn wqpmb-has-icon wqpmb-btn-tiny"
-                              href="https://github.com/codersaiful/woo-min-max-quantity-step-control-single/issues/new"
+                              href="https://github.com/codersaiful/wc-quantity-plus-minus-button/issues/new"
                               title="Submit your issue and you can request for a feature"
                               target="_blank">
                                 <span><i class="wqpmb_icon-github"></i></span>    
@@ -97,7 +97,7 @@ $saved_data = [];
             </td>
         </tr>
 
-        <?php $tracker = isset( $saved_data['tracker' ] ) && $saved_data['tracker' ] == '1' ? 'checked' : false; ?>
+        <?php $tracker = isset( $extra_info['tracker' ] ) && $extra_info['tracker' ] == '1' ? 'checked' : false; ?>
         <tr>
             <td>
                 <div class="wqpmb-form-control">
