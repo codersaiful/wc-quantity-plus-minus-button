@@ -42,6 +42,10 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere w
 == Filter ==
 
 
+Enable Ajax add to cart for Single Product Page.
+`
+add_filter('wqpmn_ajax_cart_single_page', '__return_true' );
+
 On off checkbox in admin page using filter
 `
 add_filter('wqpmb_checkbox_row_validation', '__return_true' );
