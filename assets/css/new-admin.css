@@ -355,7 +355,12 @@ a.wqpmb-button.reset:hover {
 .wrap.wqpmb_wrap.wqpmb-content {
     margin: 0 10px;
 }
-.wqpmb-form-control .form-field>* {
+.wqpmb-important-link-area {
+    display: flex;
+    gap: 5px;
+    flex-wrap: wrap;
+    align-items: flex-start;
+    justify-content: flex-start;
     margin-bottom: 10px;
 }
 .wqpmb-form-control select {
