@@ -167,26 +167,34 @@ class Tracker extends Base
         $datas = filter_input_array(INPUT_POST);
         ?>
         <div class="tracker-wrapper">
-            <div class="tracker-content-allow-wrapper">
-                <div class="track-content">
-                    <?php
-                    // var_dump($this,$datas);
-                    ?>
-                    <div class="track-section header-section">
-                        <h3 class="track-title">Never miss an important update</h3>
+            <div class="tracker-insider">
+                <div class="tracker-content-allow-wrapper">
+                    <div class="track-content">
+                        <?php
+                        // var_dump($this,$datas);
+                        ?>
+                        <div class="track-section header-section">
+                            <h3 class="track-title" style="color: black;font-weight: bold;">Never miss an important update</h3>
+                        </div>
+                        <div class="track-section description-aread">
+                            <p>Opt in to get email notifications for security & feature updates, educational content, and occasional offers, and to share some basic WordPress environment info. This will help us make the plugin more compatible with your site and better at doing what you need it to.</p>
+                        </div>
+                        <div class="track-section allow-submission-wrapper">
+                            <form action="" class="ca-track-submission-form" method="POST">
+                                <button type="submit" name="allow_and_submit" class="button button-primary">Allow & Continue</button> 
+                                <button type="submit" name="skip" class="button button-default">Skip</button> 
+                            </form>
+                        </div>
+                        
                     </div>
-                    <div class="track-section description-aread">
-                        <p>Opt in to get email notifications for security & feature updates, educational content, and occasional offers, and to share some basic WordPress environment info. This will help us make the plugin more compatible with your site and better at doing what you need it to.</p>
-                    </div>
-                    <div class="track-section allow-submission-wrapper">
-                        <form action="" class="ca-track-submission-form" method="POST">
-                            <button type="submit" name="allow_and_submit" class="button button-primary">Allow & Continue</button> 
-                            <button type="submit" name="skip" class="button button-default">Skip</button> 
-                        </form>
-                    </div>
-                    
                 </div>
+                <ul class="important-link-tracker">
+                    <li class="link"><a href="#" target="_blank">Terms and Conditions</a></li>
+                    <li class="link"><a href="#" target="_blank">Contact Us</a></li>
+                    <li class="link"><a href="#" target="_blank">Live Support</a></li>
+                </ul>
             </div>
+            
         </div>
         <?php
     }
@@ -219,8 +227,8 @@ class Tracker extends Base
         left: 0;
         height: 100%;
         width: 100%;
-        /* background: #ffffffe6; */
-        background: #f0f0f1;
+        background: #ffffffe6;
+        /* background: #f0f0f1; */
         z-index: 1;
         overflow: hidden;
         display: flex;
@@ -228,12 +236,15 @@ class Tracker extends Base
         justify-content: center;
         cursor: help;
     }
+    .tracker-insider{
+        position: fixed;
+        margin-top: 80px;
+    }
     .tracker-content-allow-wrapper {
         display: block;
         background: white;
         padding: 0;
-        position: fixed;
-        margin-top: 80px;
+        
         border: 1px solid white;
         box-shadow: 0 10px 30px #96939359;
         cursor: default;
@@ -245,17 +256,41 @@ class Tracker extends Base
         display: flex;
         flex-direction: column;
         gap: 15px;
-        padding-top: 15px;
-        padding-bottom: 15px;
+        padding-top: 20px;
+        padding-bottom: 20px;
+        background: white;
+    }
+    .track-content p, .track-content h3{margin: 0;}
+    .track-content .track-section {
+        padding-left: 20px;
+        padding-right: 20px;
+    }
+    .track-section.allow-submission-wrapper form {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
     }
 
-    .track-content .track-section {
-        padding-left: 15px;
-        padding-right: 15px;
+    .track-section.allow-submission-wrapper form .button {
+        font-size: 120%;
     }
-    .track-content {
-        background: white;
-        padding: 20px;
+    ul.important-link-tracker {
+        display: flex;
+        width: 100%;
+        background: transparent;
+        gap: 15px;
+        align-items: center;
+        justify-content: center;
+        margin-top: 16px;
+    }
+
+    ul.important-link-tracker a {
+        text-decoration: none;
+        color: #969696;
+    }
+    ul.important-link-tracker a:hover {
+        text-decoration: underline;
+        color: #1e1d1d;
     }
 </style>
         <?php
