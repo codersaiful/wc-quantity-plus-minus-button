@@ -189,9 +189,9 @@ class Tracker extends Base
                     </div>
                 </div>
                 <ul class="important-link-tracker">
+                    <li class="link"><a href="#" target="_blank">Powerby <?php echo esc_html( $this->plugin_name ); ?></a></li>
+                    <li class="link"><a href="#" target="_blank">Privacey Policy</a></li>
                     <li class="link"><a href="#" target="_blank">Terms and Conditions</a></li>
-                    <li class="link"><a href="#" target="_blank">Contact Us</a></li>
-                    <li class="link"><a href="#" target="_blank">Live Support</a></li>
                 </ul>
             </div>
             
