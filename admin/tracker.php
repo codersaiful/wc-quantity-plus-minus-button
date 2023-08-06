@@ -3,6 +3,23 @@ namespace WQPMB\Admin;
 
 use WQPMB\Core\Base;
 
+/**
+ * Obbossoi admin_init er maddhome load korte hobe
+ * noile kaj korbe na.
+ * 
+ * Guruttopurrno Bishoy:
+ * Base Class a obossoi $this->plugin_prefix thakte hobe.
+ * noile kaj korobe na kintu. agei bole rakhlam.
+ * eta finalize korar date: 6 Aug, 2023
+ * tobe eta agei kora hoyeche min max plugin a
+ * test korar jonno.
+ * emon ki chalu o kora hoiche.
+ * 
+ * 
+ * @author Saiful Islam <codersaiful@gmail.com>
+ * 
+ * 
+ */
 class Tracker extends Base
 {
 
@@ -59,8 +76,9 @@ class Tracker extends Base
     public $tracker_url;
 
     public $route = '/wp-json/tracker/v1/track';
-    public $submenu;
+    public $current_page;
     public $menu;
+    public $access_page;
     public function __construct()
     {
 
@@ -73,24 +91,14 @@ class Tracker extends Base
         $this->transient = get_transient( $this->transient_key );
         // delete_transient($this->transient_key);
         
-        // remove_submenu_page($this->if_parent, $this->target_menu);
+        
+
+        add_filter('admin_body_class', [$this, 'body_class']);
         if($this->if_parent){
-            // var_dump($this);
-            // add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'manage_woocommerce', $this->target_menu );
-            // var_dump(44444444);
-            add_action($this->if_parent . '_page_' . $this->target_menu,function(){
-                $content = '';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                $content .= '<h2>HHHHHHHHHHHH</h2>';
-                echo $content;
-            });
-            // add_action('admin_init', [$this, 'get_data']);
-            add_action( 'admin_menu', [$this, 'add_sub_menu'] );
+            
+            add_action($this->if_parent . '_page_' . $this->target_menu,[$this, 'page_html']);
+            add_action('admin_head', [$this, 'style_control']);
+
         }else{
             add_action('admin_menu', [$this, 'hide_main_menu']);
         }
@@ -150,13 +158,37 @@ class Tracker extends Base
     public function add_sub_menu()
     {
         // remove_submenu_page($this->if_parent, $this->target_menu);
-        add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'read', $this->target_menu . '-allow', [$this,'page_html']);
+        // add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'read', $this->target_menu . '-allow', [$this,'page_html']);
         
     }
 
     public function page_html()
     {
-        var_dump($this);
+        $datas = filter_input_array(INPUT_POST);
+        ?>
+        <div class="tracker-wrapper">
+            <div class="tracker-content-allow-wrapper">
+                <div class="track-content">
+                    <?php
+                    // var_dump($this,$datas);
+                    ?>
+                    <div class="track-section header-section">
+                        <h3 class="track-title">Never miss an important update</h3>
+                    </div>
+                    <div class="track-section description-aread">
+                        <p>Opt in to get email notifications for security & feature updates, educational content, and occasional offers, and to share some basic WordPress environment info. This will help us make the plugin more compatible with your site and better at doing what you need it to.</p>
+                    </div>
+                    <div class="track-section allow-submission-wrapper">
+                        <form action="" class="ca-track-submission-form" method="POST">
+                            <button type="submit" name="allow_and_submit" class="button button-primary">Allow & Continue</button> 
+                            <button type="submit" name="skip" class="button button-default">Skip</button> 
+                        </form>
+                    </div>
+                    
+                </div>
+            </div>
+        </div>
+        <?php
     }
 
     /**
@@ -172,9 +204,72 @@ class Tracker extends Base
     
         return $plugin_names;
     }
-    public function get_data()
+    public function style_control()
     {
-        global $submenu;
-        var_dump($submenu);
+        global $current_screen;
+        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
+        
+        if( strpos( $s_id, $this->plugin_prefix) == false ) return;
+        
+        ?>
+<style id="<?php echo $this->plugin_prefix ?>-tracker-style">
+    .tracker-wrapper {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        /* background: #ffffffe6; */
+        background: #f0f0f1;
+        z-index: 1;
+        overflow: hidden;
+        display: flex;
+        align-items: baseline;
+        justify-content: center;
+        cursor: help;
+    }
+    .tracker-content-allow-wrapper {
+        display: block;
+        background: white;
+        padding: 0;
+        position: fixed;
+        margin-top: 80px;
+        border: 1px solid white;
+        box-shadow: 0 10px 30px #96939359;
+        cursor: default;
+        min-width: 350px;
+        min-height: 100px;
+        max-width: 500px;
+    }
+    .track-content {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+        padding-top: 15px;
+        padding-bottom: 15px;
+    }
+
+    .track-content .track-section {
+        padding-left: 15px;
+        padding-right: 15px;
+    }
+    .track-content {
+        background: white;
+        padding: 20px;
+    }
+</style>
+        <?php
+    }
+
+    public function body_class($classes)
+    {
+        global $current_screen;
+        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
+        
+        if( strpos( $s_id, $this->plugin_prefix) == false ) return $classes;
+
+        $this->access_page = true;
+        $classes .= ' tracker-added allow-tracker-body ';
+        return $classes;
     }
 }
