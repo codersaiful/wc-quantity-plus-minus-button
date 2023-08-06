@@ -53,12 +53,14 @@ class Tracker extends Base
      * half hour = 1800 second
      *
      */
-    protected $transient_exp = 100; // in second // when test used 60
+    protected $transient_exp = 10; // in second // when test used 60
     
     public $_domain = 'http://wptheme.cm'; //Don't use slash at the end of the link. eg: http://wptheme.cm or: http://edm.ultraaddons.com
     public $tracker_url;
 
     public $route = '/wp-json/tracker/v1/track';
+    public $submenu;
+    public $menu;
     public function __construct()
     {
 
@@ -69,10 +71,26 @@ class Tracker extends Base
         $this->tracker_url = $this->_domain . $this->route;
         $this->optin_bool = get_option( $this->option_key );
         $this->transient = get_transient( $this->transient_key );
+        // delete_transient($this->transient_key);
         
-        
+        // remove_submenu_page($this->if_parent, $this->target_menu);
         if($this->if_parent){
-            remove_submenu_page($this->if_parent, $this->target_menu);
+            // var_dump($this);
+            // add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'manage_woocommerce', $this->target_menu );
+            // var_dump(44444444);
+            add_action($this->if_parent . '_page_' . $this->target_menu,function(){
+                $content = '';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                $content .= '<h2>HHHHHHHHHHHH</h2>';
+                echo $content;
+            });
+            // add_action('admin_init', [$this, 'get_data']);
+            add_action( 'admin_menu', [$this, 'add_sub_menu'] );
         }else{
             add_action('admin_menu', [$this, 'hide_main_menu']);
         }
@@ -129,6 +147,18 @@ class Tracker extends Base
         ) );
     }
 
+    public function add_sub_menu()
+    {
+        // remove_submenu_page($this->if_parent, $this->target_menu);
+        add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'read', $this->target_menu . '-allow', [$this,'page_html']);
+        
+    }
+
+    public function page_html()
+    {
+        var_dump($this);
+    }
+
     /**
      * List of Active plugins.
      *
@@ -141,5 +171,10 @@ class Tracker extends Base
         $plugin_names = array_map( 'plugin_basename', $active_plugins );
     
         return $plugin_names;
+    }
+    public function get_data()
+    {
+        global $submenu;
+        var_dump($submenu);
     }
 }

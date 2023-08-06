@@ -41,6 +41,7 @@ class Page_Loader extends Base
 
     public function run()
     {
+        
         add_action( 'admin_init', [$this,'admin_init_tracker'], 999 );
         // var_dump($this);
         add_action( 'admin_menu', [$this, 'admin_menu'] );
@@ -63,7 +64,7 @@ class Page_Loader extends Base
         if( $tracker ){
             $tracker = new Tracker();
             // var_dump($tracker);
-            // $tracker->run();
+            $tracker->run();
         }
         
     }
