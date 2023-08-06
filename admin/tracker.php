@@ -227,8 +227,8 @@ class Tracker extends Base
         left: 0;
         height: 100%;
         width: 100%;
-        background: #ffffffe6;
-        /* background: #f0f0f1; */
+        /* background: #ffffffe6; */
+        background: #f0f0f1;
         z-index: 1;
         overflow: hidden;
         display: flex;
