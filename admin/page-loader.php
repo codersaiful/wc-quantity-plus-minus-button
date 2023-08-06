@@ -63,7 +63,7 @@ class Page_Loader extends Base
         if( $tracker ){
             $tracker = new Tracker();
             // var_dump($tracker);
-            $tracker->run();
+            // $tracker->run();
         }
         
     }

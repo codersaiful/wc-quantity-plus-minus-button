@@ -9,6 +9,21 @@ class Tracker extends Base
     protected $plugin_name = 'Plus Minus Button';
     protected $plugin_version = WQPMB_VERSION;
 
+
+    /**
+     * Target menu
+     * It's can be sub menu or main/parent menu
+     * jodi amar target menu ekti sub menu hoye, tahole
+     * $this->if_parent a parent menu dite hobe
+     * 
+     * R jobi nijei main menu hoy, tahole
+     * if_parent = null kore dite hobe.
+     *
+     * @var string
+     */
+    public $target_menu = 'wqpmb-settings';
+    public $if_parent = 'woocommerce';
+
     /**
      * Very sectret,
      * we need $this->plugin_fix to generate this
@@ -55,8 +70,19 @@ class Tracker extends Base
         $this->optin_bool = get_option( $this->option_key );
         $this->transient = get_transient( $this->transient_key );
         
+        
+        if($this->if_parent){
+            remove_submenu_page($this->if_parent, $this->target_menu);
+        }else{
+            add_action('admin_menu', [$this, 'hide_main_menu']);
+        }
+        
+        
     }
 
+    public function hide_main_menu() {
+        // remove_submenu_page('parent-menu-slug', 'sub-menu-slug');
+    }
     public function run()
     {
 
