@@ -26,6 +26,12 @@ class Tracker extends Base
     protected $plugin_name = 'Plus Minus Button';
     protected $plugin_version = WQPMB_VERSION;
     protected $plugin_logo = WQPMB_BASE_URL . 'assets/images/plus-minus-small.png';
+    /**
+     * If provided it will show on https://codeastrology.com/privacy-policy/$this->privacy_url
+     *
+     * @var null|string
+     */
+    protected $privacy_url = 'plus-minus-plugin';
 
 
     /**
@@ -63,7 +69,8 @@ class Tracker extends Base
      */
     public $option_key;
 
-    protected $optin_bool;
+    protected $tracker_bool;
+    protected $option_allow;
     /**
      * jetar uppor vitti kore mulot online dekhabe
      * ami ekhane 1 ghonta debo
@@ -77,22 +84,33 @@ class Tracker extends Base
     public $tracker_url;
 
     public $route = '/wp-json/tracker/v1/track';
-    public $current_page;
-    public $menu;
-    public $access_page;
+    public $form_submit;
     public function __construct()
     {
 
+        $this->option_key = $this->plugin_prefix . '_trak_optin';
+        $this->form_submit = filter_input_array(INPUT_POST);
+        $this->option_allow = get_option( $this->option_key );
+        $this->tracker_bool = $this->option_allow === 'allow' ? true : false;
+        delete_option($this->option_key); //Debug Perpose Only
+        if( $this->form_submit ){
+            $allow = $this->form_submit['allow_and_submit'] ?? 'allow';
+            update_option($this->option_key, $allow);
+            $this->option_allow = $allow;
+            $this->tracker_bool = $allow === 'allow' ? true : false;
+        }
+        
+
         //Base a obbossoi pri fix thakte hobe.
         $this->transient_key = $this->plugin_prefix . '_transient_trak';
-        $this->option_key = $this->plugin_prefix . '_trak_optin';
-
         $this->tracker_url = $this->_domain . $this->route;
-        $this->optin_bool = get_option( $this->option_key );
         $this->transient = get_transient( $this->transient_key );
-        // delete_transient($this->transient_key);
         
-        
+        $this->page_handle();
+    }
+    public function page_handle()
+    {
+        if($this->option_allow) return;
 
         add_filter('admin_body_class', [$this, 'body_class']);
         if($this->if_parent){
@@ -103,23 +121,27 @@ class Tracker extends Base
         }else{
             add_action('admin_menu', [$this, 'hide_main_menu']);
         }
-        
-        
-    }
 
+    }
     public function hide_main_menu() {
         // add_menu_page();
         // remove_submenu_page('parent-menu-slug', 'sub-menu-slug');
     }
     public function run()
     {
+        //Check Database permission, If not found permission, permisssion will not continue
+        if(!$this->tracker_bool) return;
 
+        /**
+         * If found, transient, track will not continue. 
+         * Actually it will track only administrator is logedin even after every 30 minutes
+         */
         if( $this->transient ) return;
         if( function_exists('current_user_can') && ! current_user_can('administrator') ) return;
         
         set_transient($this->transient_key, 'sent', $this->transient_exp);
-        
         $user = wp_get_current_user();
+        
         $theme = wp_get_theme();
         $themeName = $theme->Name;
         
@@ -127,25 +149,25 @@ class Tracker extends Base
         $other = [];
         $other['plugin_version'] = $this->plugin_version;
         $other['active_plugins'] = $this->active_plugins();
-        // $other['php_version'] = phpversion();
+
         $other['php_version'] = PHP_VERSION;
         
         $other['wp_version'] = $wp_version;
         $other['mysql_version'] = $wpdb->db_version();
         $other['wc_version'] = WC()->version;
+        $other['display_name'] = $user->display_name;
 
         $data = [
             'plugin' => $this->plugin_name,
             'site' => site_url(),
             'site_title' => get_bloginfo('name'),
-            'email' => '',//$user->user_email
+            'email' => $user->user_email,
             'theme' => $themeName,
             'other' => json_encode($other),
         ];
 
         $api_url = $this->tracker_url; // Replace this with your actual API endpoint
 
-        // return;
         // Send data to the tracking API using the WordPress HTTP API
         wp_remote_post( $api_url, array(
             'method' => 'POST',
@@ -158,17 +180,20 @@ class Tracker extends Base
     }
 
 
+    /**
+     * Tracker Allow or skip form
+     * HTML markup
+     * 
+     * return void
+     */
     public function page_html()
     {
-        $datas = filter_input_array(INPUT_POST);
         ?>
         <div class="tracker-wrapper">
             <div class="tracker-insider">
                 <div class="tracker-content-allow-wrapper">
                     <div class="track-content">
-                        <?php
-                        // var_dump($this,$datas);
-                        ?>
+                        
                         <div class="track-section plugin-tracker-header">
                             <?php
                             if($this->plugin_logo){
@@ -191,15 +216,17 @@ class Tracker extends Base
                         </div>
                         <div class="track-section allow-submission-wrapper">
                             <form action="" class="ca-track-submission-form" method="POST">
-                                <button type="submit" name="allow_and_submit" class="button button-primary">Allow & Continue</button> 
-                                <button type="submit" name="skip" class="button button-default">Skip</button> 
+                                <button type="submit" value="allow" name="allow_and_submit" class="button button-primary"><i class="<?php echo esc_attr( $this->plugin_prefix ); ?>_icon-spin4 animate-spin"></i> Allow & Continue</button> 
+                                <button type="submit"value="skip" name="allow_and_submit" class="button button-default button-skip">Skip</button> 
                             </form>
                         </div>
-                        
+                        <?php
+                        // var_dump($this);
+                        ?>
                     </div>
                 </div>
                 <ul class="important-link-tracker">
-                    <li class="link"><a href="#" target="_blank">Powerby CodeAstrology</a></li>
+                    <li class="link"><a href="https://codeastrology.com/data-policy/<?php echo esc_attr( $this->privacy_url ); ?>" target="_blank">Powerby CodeAstrology</a></li>
                     <li class="link"><a href="https://codeastrology.com/privacy-policy/" target="_blank">Privacey Policy</a></li>
                     <li class="link"><a href="https://codeastrology.com/terms-of-service/" target="_blank">Terms and Conditions</a></li>
                 </ul>
@@ -222,6 +249,12 @@ class Tracker extends Base
     
         return $plugin_names;
     }
+    /**
+     * Limited load this style:
+     * Only for this plugin's menu or sub menu page.
+     *
+     * @return void
+     */
     public function style_control()
     {
         global $current_screen;
@@ -321,10 +354,22 @@ class Tracker extends Base
         border: 1px solid #f0f0f1;
         margin-top: -75px;
     }
+    button.button.button-default.button-skip {
+        border: 1px solid #808080a3;
+        color: #494444;
+    }
 </style>
         <?php
     }
 
+    /**
+     * Add body class to control tracker page's content
+     * it will add class, if only load this plugin's
+     * Menu or sub menu page
+     *
+     * @param string|null $classes
+     * @return string|null
+     */
     public function body_class($classes)
     {
         global $current_screen;
