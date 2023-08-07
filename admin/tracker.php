@@ -25,6 +25,7 @@ class Tracker extends Base
 
     protected $plugin_name = 'Plus Minus Button';
     protected $plugin_version = WQPMB_VERSION;
+    protected $plugin_logo = WQPMB_BASE_URL . 'assets/images/plus-minus-small.png';
 
 
     /**
@@ -168,8 +169,22 @@ class Tracker extends Base
                         <?php
                         // var_dump($this,$datas);
                         ?>
+                        <div class="track-section plugin-tracker-header">
+                            <?php
+                            if($this->plugin_logo){
+                            ?>
+                            <img title="<?php echo esc_attr( $this->plugin_name ); ?>" src="<?php echo esc_url( $this->plugin_logo ); ?>" alt="Logo <?php echo esc_attr( $this->plugin_name ); ?>">
+                            <?php
+                            }else{
+                            ?>
+                            <h2 class="plugin-name"><?php echo esc_html( $this->plugin_name ); ?></h2>
+                            <?php
+                            }
+                            ?>
+                            
+                        </div>
                         <div class="track-section header-section">
-                            <h3 class="track-title" style="color: black;font-weight: bold;">Never miss an important update</h3>
+                            <h3 class="track-title" style="color: black;font-weight: bold;text-align:center;">Never miss an important update</h3>
                         </div>
                         <div class="track-section description-aread">
                             <p>Opt in to get email notifications for security & feature updates, educational content, and occasional offers, and to share some basic WordPress environment info. This will help us make the plugin more compatible with your site and better at doing what you need it to.</p>
@@ -292,6 +307,19 @@ class Tracker extends Base
     ul.important-link-tracker a:hover {
         text-decoration: underline;
         color: #1e1d1d;
+    }
+    .track-section.plugin-tracker-header {
+        display: block;
+        text-align: center;
+        background: transparent;
+    }
+
+    .track-section.plugin-tracker-header>img {
+        background: white;
+        padding: 6px;
+        border-radius: 8px;
+        border: 1px solid #f0f0f1;
+        margin-top: -75px;
     }
 </style>
         <?php
