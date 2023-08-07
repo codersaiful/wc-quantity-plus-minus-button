@@ -107,6 +107,7 @@ class Tracker extends Base
     }
 
     public function hide_main_menu() {
+        // add_menu_page();
         // remove_submenu_page('parent-menu-slug', 'sub-menu-slug');
     }
     public function run()
@@ -155,12 +156,6 @@ class Tracker extends Base
         ) );
     }
 
-    public function add_sub_menu()
-    {
-        // remove_submenu_page($this->if_parent, $this->target_menu);
-        // add_submenu_page($this->if_parent, $this->plugin_name, $this->plugin_name, 'read', $this->target_menu . '-allow', [$this,'page_html']);
-        
-    }
 
     public function page_html()
     {
@@ -189,9 +184,9 @@ class Tracker extends Base
                     </div>
                 </div>
                 <ul class="important-link-tracker">
-                    <li class="link"><a href="#" target="_blank">Powerby <?php echo esc_html( $this->plugin_name ); ?></a></li>
-                    <li class="link"><a href="#" target="_blank">Privacey Policy</a></li>
-                    <li class="link"><a href="#" target="_blank">Terms and Conditions</a></li>
+                    <li class="link"><a href="#" target="_blank">Powerby CodeAstrology</a></li>
+                    <li class="link"><a href="https://codeastrology.com/privacy-policy/" target="_blank">Privacey Policy</a></li>
+                    <li class="link"><a href="https://codeastrology.com/terms-of-service/" target="_blank">Terms and Conditions</a></li>
                 </ul>
             </div>
             
@@ -227,7 +222,7 @@ class Tracker extends Base
         left: 0;
         height: 100%;
         width: 100%;
-        /* background: #ffffffe6; */
+        background: #ffffffe6;
         background: #f0f0f1;
         z-index: 1;
         overflow: hidden;
@@ -235,6 +230,12 @@ class Tracker extends Base
         align-items: baseline;
         justify-content: center;
         cursor: help;
+    }
+    body.tracker-added.allow-tracker-body .wqpmb-header,
+    body.tracker-added.allow-tracker-body .wrap.wqpmb_wrap.wqpmb-content,
+    body.tracker-added.allow-tracker-body .wrap,
+    body.tracker-added.allow-tracker-body .fieldwrap{
+        display: none !important;
     }
     .tracker-insider{
         position: fixed;
@@ -302,8 +303,6 @@ class Tracker extends Base
         $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
         
         if( strpos( $s_id, $this->plugin_prefix) == false ) return $classes;
-
-        $this->access_page = true;
         $classes .= ' tracker-added allow-tracker-body ';
         return $classes;
     }
