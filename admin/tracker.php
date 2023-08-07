@@ -46,7 +46,7 @@ class Tracker extends Base
      * @var string
      */
     public $target_menu = 'wqpmb-settings';
-    public $if_parent = 'woocommerce';
+    public $if_parent;// = 'woocommerce';
 
     /**
      * Very sectret,
@@ -114,13 +114,11 @@ class Tracker extends Base
         if($this->option_allow) return;
         add_action('admin_notices', [$this, 'allow_notice']);
         add_filter('admin_body_class', [$this, 'body_class']);
-        if($this->if_parent){
-            $this->menu_url = admin_url( 'admin.php?page=' . $this->target_menu );
-            add_action($this->if_parent . '_page_' . $this->target_menu,[$this, 'page_html']);
-            add_action('admin_head', [$this, 'style_control']);
 
-        }else{
-            add_action('admin_menu', [$this, 'hide_main_menu']);
+        if($this->target_menu){
+            $this->menu_url = admin_url( 'admin.php?page=' . $this->target_menu );
+            add_action('admin_head', [$this, 'render_html_css_js']);
+
         }
 
     }
@@ -284,13 +282,13 @@ class Tracker extends Base
      *
      * @return void
      */
-    public function style_control()
+    public function render_html_css_js()
     {
         global $current_screen;
         $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
         
         if( strpos( $s_id, $this->plugin_prefix) == false ) return;
-        
+        $this->page_html();
         ?>
 
 <style id="<?php echo $this->plugin_prefix ?>-tracker-style">
