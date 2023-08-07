@@ -94,7 +94,7 @@ class Tracker extends Base
         $this->tracker_bool = $this->option_allow === 'allow' ? true : false;
         delete_option($this->option_key); //Debug Perpose Only
         if( $this->form_submit ){
-            $allow = $this->form_submit['allow_and_submit'] ?? 'allow';
+            $allow = $this->form_submit['allow_and_submit'] ?? false;
             update_option($this->option_key, $allow);
             $this->option_allow = $allow;
             $this->tracker_bool = $allow === 'allow' ? true : false;
@@ -130,8 +130,8 @@ class Tracker extends Base
     public function run()
     {
         //Check Database permission, If not found permission, permisssion will not continue
-        if(!$this->tracker_bool) return;
-
+        if( ! $this->tracker_bool) return;
+        
         /**
          * If found, transient, track will not continue. 
          * Actually it will track only administrator is logedin even after every 30 minutes
@@ -220,29 +220,29 @@ class Tracker extends Base
                                 <button type="submit"value="skip" name="allow_and_submit" class="button button-default button-skip">Skip</button> 
                             </form>
                         </div>
-                        <div class="track-section continue-option-button" style="text-align: center;margin-bottom: -10px;cursor: pointer;">
+                        <div class="track-section continue-option-button" style="text-align: center;cursor: pointer;margin-bottom: 5px;">
                         &#128512; This will allow <b><?php echo esc_html( $this->plugin_name ); ?></b> to &#8595;
                         </div>
-                        <div class="track-section continue-options">
+                        <div class="track-section continue-options" style="display: none;">
                             <div class="options-list">
                                 <div class="each-option">
                                     <h4>
-                                        View Basic Profile Info 
-                                        <i title="Never miss important updates, get security warnings before they become public knowledge, and receive notifications about special offers and awesome new features.">?</i>
+                                    &#9830; View Basic Profile Info 
+                                        <i class="option-info" title="Never miss important updates, get security warnings before they become public knowledge, and receive notifications about special offers and awesome new features.">info</i>
                                     </h4>
                                     <p>Your WordPress user's: display name, and email address</p>
                                 </div>
                                 
                                 <div class="each-option">
                                     <h4>
-                                        View Basic Website Info 
-                                        <i title="To provide additional functionality that's relevant to your website, avoid WordPress or PHP version incompatibilities that can break your website, and recognize which languages & regions the plugin should be translated and tailored to.">?</i>
+                                    &#9830; View Basic Website Info 
+                                        <i class="option-info" title="To provide additional functionality that's relevant to your website, avoid WordPress or PHP version incompatibilities that can break your website, and recognize which languages & regions the plugin should be translated and tailored to.">info</i>
                                     </h4>
                                     <p>Homepage URL & title, WP, WooCommerce & PHP versions</p>
                                 </div>
                                 <div class="each-option">
                                     <h4>
-                                        View Basic Info of our Plugin
+                                    &#9830; View Basic Info of our Plugin
                                     </h4>
                                     <p>Current plugin version of our plugin</p>
                                 </div>
@@ -289,6 +289,7 @@ class Tracker extends Base
         if( strpos( $s_id, $this->plugin_prefix) == false ) return;
         
         ?>
+
 <style id="<?php echo $this->plugin_prefix ?>-tracker-style">
     .tracker-wrapper {
         position: absolute;
@@ -299,7 +300,7 @@ class Tracker extends Base
         background: #ffffffe6;
         background: #f0f0f1;
         z-index: 1;
-        overflow: hidden;
+        /* overflow: hidden; */
         display: flex;
         align-items: baseline;
         justify-content: center;
@@ -312,7 +313,7 @@ class Tracker extends Base
         display: none !important;
     }
     .tracker-insider{
-        position: fixed;
+        position: absolute;
         margin-top: 80px;
     }
     .tracker-content-allow-wrapper {
@@ -332,7 +333,7 @@ class Tracker extends Base
         flex-direction: column;
         gap: 15px;
         padding-top: 20px;
-        /* padding-bottom: 20px; */
+        padding-bottom: 0;
         background: white;
     }
     .track-content p, .track-content h3{margin: 0;}
@@ -395,7 +396,50 @@ class Tracker extends Base
         padding-top: 15px;
         /* padding-bottom: 15px; */
     }
+    .continue-options {
+        padding-bottom: 20px;
+        padding-top: 20px;
+        background: #dddddd47;
+    }
+
+    .options-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .each-option h4 {
+        color: black;
+        font-weight: bold;
+    }
+
+    .each-option p {
+        padding: 1px 10px;
+        color: gray;
+    }
+    i.option-info {
+        background: #4CAF50;
+        color: white;
+        padding: 2px 5px;
+        border-radius: 8px;
+        font-size: 10px;
+        cursor: pointer;
+    }
 </style>
+<script>
+document.addEventListener("DOMContentLoaded", function() {
+  var button = document.querySelector("div.continue-option-button b");
+  var content = document.querySelector(".track-section.continue-options");
+
+  button.addEventListener("click", function() {
+    if (content.style.display === "none" || content.style.display === "") {
+      content.style.display = "block";
+    } else {
+      content.style.display = "none";
+    }
+  });
+});
+</script>
         <?php
     }
 
