@@ -220,9 +220,10 @@ class Tracker extends Base
                                 <button type="submit"value="skip" name="allow_and_submit" class="button button-default button-skip">Skip</button> 
                             </form>
                         </div>
-                        <?php
-                        // var_dump($this);
-                        ?>
+                        <div class="track-section continue-option-button" style="text-align: center;margin-bottom: -10px;cursor: pointer;">
+                        &#128512; This will allow <b><?php echo esc_html( $this->plugin_name ); ?></b> to &#8595;
+                        </div>
+                        <div class="track-section continue-options"></div>
                     </div>
                 </div>
                 <ul class="important-link-tracker">
@@ -306,7 +307,7 @@ class Tracker extends Base
         flex-direction: column;
         gap: 15px;
         padding-top: 20px;
-        padding-bottom: 20px;
+        /* padding-bottom: 20px; */
         background: white;
     }
     .track-content p, .track-content h3{margin: 0;}
@@ -341,6 +342,12 @@ class Tracker extends Base
         text-decoration: underline;
         color: #1e1d1d;
     }
+    .continue-option-button{font-size: 12px;}
+    .continue-option-button>b {
+        color: black;
+        font-style: italic;
+        text-decoration: underline;
+    }
     .track-section.plugin-tracker-header {
         display: block;
         text-align: center;
@@ -357,6 +364,11 @@ class Tracker extends Base
     button.button.button-default.button-skip {
         border: 1px solid #808080a3;
         color: #494444;
+    }
+    .track-section.allow-submission-wrapper {
+        border-top: 1px solid #dddddd80;
+        padding-top: 15px;
+        /* padding-bottom: 15px; */
     }
 </style>
         <?php
