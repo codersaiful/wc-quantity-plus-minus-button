@@ -223,7 +223,32 @@ class Tracker extends Base
                         <div class="track-section continue-option-button" style="text-align: center;margin-bottom: -10px;cursor: pointer;">
                         &#128512; This will allow <b><?php echo esc_html( $this->plugin_name ); ?></b> to &#8595;
                         </div>
-                        <div class="track-section continue-options"></div>
+                        <div class="track-section continue-options">
+                            <div class="options-list">
+                                <div class="each-option">
+                                    <h4>
+                                        View Basic Profile Info 
+                                        <i title="Never miss important updates, get security warnings before they become public knowledge, and receive notifications about special offers and awesome new features.">?</i>
+                                    </h4>
+                                    <p>Your WordPress user's: display name, and email address</p>
+                                </div>
+                                
+                                <div class="each-option">
+                                    <h4>
+                                        View Basic Website Info 
+                                        <i title="To provide additional functionality that's relevant to your website, avoid WordPress or PHP version incompatibilities that can break your website, and recognize which languages & regions the plugin should be translated and tailored to.">?</i>
+                                    </h4>
+                                    <p>Homepage URL & title, WP, WooCommerce & PHP versions</p>
+                                </div>
+                                <div class="each-option">
+                                    <h4>
+                                        View Basic Info of our Plugin
+                                    </h4>
+                                    <p>Current plugin version of our plugin</p>
+                                </div>
+
+                            </div>
+                        </div>
                     </div>
                 </div>
                 <ul class="important-link-tracker">
