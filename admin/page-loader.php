@@ -60,12 +60,8 @@ class Page_Loader extends Base
          * 
          * @since 4.5.8
          */
-        $tracker = 1;// WQPMB::getOption('tracker');
-        if( $tracker ){
-            $tracker = new Tracker();
-            // var_dump($tracker);
-            $tracker->run();
-        }
+        $tracker = new Tracker();
+        $tracker->run();
         
     }
 

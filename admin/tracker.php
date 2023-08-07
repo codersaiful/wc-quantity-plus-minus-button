@@ -31,7 +31,7 @@ class Tracker extends Base
      *
      * @var null|string
      */
-    protected $privacy_url = 'plus-minus-plugin';
+    protected $privacy_url;// = 'plus-minus-plugin';
 
 
     /**
@@ -78,7 +78,7 @@ class Tracker extends Base
      * half hour = 1800 second
      *
      */
-    protected $transient_exp = 10; // in second // when test used 60
+    protected $transient_exp = 1800; // in second // when test used 60
     
     public $_domain = 'http://edm.ultraaddons.com'; //Don't use slash at the end of the link. eg: http://wptheme.cm or: http://edm.ultraaddons.com
     public $tracker_url;
@@ -228,22 +228,24 @@ class Tracker extends Base
                             <div class="options-list">
                                 <div class="each-option">
                                     <h4>
-                                    &#9830; View Basic Profile Info 
+                                    👮 View Basic Profile Info 
                                         <i class="option-info" title="Never miss important updates, get security warnings before they become public knowledge, and receive notifications about special offers and awesome new features.">info</i>
                                     </h4>
                                     <p>Your WordPress user's: display name, and email address</p>
+                                    <p class="extra-ifno"></p>
                                 </div>
                                 
                                 <div class="each-option">
                                     <h4>
-                                    &#9830; View Basic Website Info 
+                                    🌍 View Basic Website Info 
                                         <i class="option-info" title="To provide additional functionality that's relevant to your website, avoid WordPress or PHP version incompatibilities that can break your website, and recognize which languages & regions the plugin should be translated and tailored to.">info</i>
                                     </h4>
                                     <p>Homepage URL & title, WP, WooCommerce & PHP versions</p>
+                                    <p class="extra-ifno"></p>
                                 </div>
                                 <div class="each-option">
                                     <h4>
-                                    &#9830; View Basic Info of our Plugin
+                                    ✍ View Basic Info of our Plugin
                                     </h4>
                                     <p>Current plugin version of our plugin</p>
                                 </div>
@@ -321,8 +323,7 @@ class Tracker extends Base
         display: block;
         background: white;
         padding: 0;
-        
-        border: 1px solid white;
+        border: 0 none;
         box-shadow: 0 10px 30px #96939359;
         cursor: default;
         min-width: 350px;
@@ -426,8 +427,18 @@ class Tracker extends Base
         font-size: 10px;
         cursor: pointer;
     }
+    .each-option p.extra-ifno.extra-ifno-added {
+        color: black;
+        font-style: italic;
+        padding: 10px;
+        background: #37323214;
+        margin-top: 10px;
+        border-radius: 8px;
+    }
 </style>
 <script>
+
+
 document.addEventListener("DOMContentLoaded", function() {
   var button = document.querySelector("div.continue-option-button b");
   var content = document.querySelector(".track-section.continue-options");
@@ -439,6 +450,20 @@ document.addEventListener("DOMContentLoaded", function() {
       content.style.display = "none";
     }
   });
+
+  var optionInfos = document.querySelectorAll(".option-info");
+  
+  optionInfos.forEach(function(optionInfo) {
+    console.log(optionInfo);
+    optionInfo.addEventListener("click", function() {
+      var paragraph = optionInfo.closest(".each-option").querySelector("p.extra-ifno");
+      paragraph.classList.add("extra-ifno-added");
+      var newContent = optionInfo.getAttribute("title");
+      paragraph.textContent = newContent;
+    });
+  });
+
+
 });
 </script>
         <?php
