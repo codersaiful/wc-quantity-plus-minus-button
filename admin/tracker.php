@@ -84,6 +84,7 @@ class Tracker extends Base
     public $tracker_url;
 
     public $route = '/wp-json/tracker/v1/track';
+    public $menu_url;
     public $form_submit;
     public function __construct()
     {
@@ -92,8 +93,8 @@ class Tracker extends Base
         $this->form_submit = filter_input_array(INPUT_POST);
         $this->option_allow = get_option( $this->option_key );
         $this->tracker_bool = $this->option_allow === 'allow' ? true : false;
-        delete_option($this->option_key); //Debug Perpose Only
-        if( $this->form_submit ){
+        // delete_option($this->option_key); //Debug Perpose Only
+        if( isset( $this->form_submit['allow_and_submit'] ) ){
             $allow = $this->form_submit['allow_and_submit'] ?? false;
             update_option($this->option_key, $allow);
             $this->option_allow = $allow;
@@ -111,10 +112,10 @@ class Tracker extends Base
     public function page_handle()
     {
         if($this->option_allow) return;
-
+        add_action('admin_notices', [$this, 'allow_notice']);
         add_filter('admin_body_class', [$this, 'body_class']);
         if($this->if_parent){
-            
+            $this->menu_url = admin_url( 'admin.php?page=' . $this->target_menu );
             add_action($this->if_parent . '_page_' . $this->target_menu,[$this, 'page_html']);
             add_action('admin_head', [$this, 'style_control']);
 
@@ -131,7 +132,7 @@ class Tracker extends Base
     {
         //Check Database permission, If not found permission, permisssion will not continue
         if( ! $this->tracker_bool) return;
-        
+
         /**
          * If found, transient, track will not continue. 
          * Actually it will track only administrator is logedin even after every 30 minutes
@@ -459,5 +460,15 @@ document.addEventListener("DOMContentLoaded", function() {
         if( strpos( $s_id, $this->plugin_prefix) == false ) return $classes;
         $classes .= ' tracker-added allow-tracker-body ';
         return $classes;
+    }
+
+    public function allow_notice()
+    {
+        $message = sprintf(
+                esc_html__( 'You are just one step away - %1$s', 'wcmmq' ),
+                '<b><a href="' . $this->menu_url . '">' . esc_html( $this->plugin_name ) . ' - Activate Now </a></b>'
+        );
+
+        printf( '<div class="updated success"><p>%1$s</p></div>', $message );
     }
 }
