@@ -80,7 +80,7 @@ class Tracker extends Base
      */
     protected $transient_exp = 10; // in second // when test used 60
     
-    public $_domain = 'http://wptheme.cm'; //Don't use slash at the end of the link. eg: http://wptheme.cm or: http://edm.ultraaddons.com
+    public $_domain = 'http://edm.ultraaddons.com'; //Don't use slash at the end of the link. eg: http://wptheme.cm or: http://edm.ultraaddons.com
     public $tracker_url;
 
     public $route = '/wp-json/tracker/v1/track';
@@ -217,7 +217,7 @@ class Tracker extends Base
                         </div>
                         <div class="track-section allow-submission-wrapper">
                             <form action="" class="ca-track-submission-form" method="POST">
-                                <button type="submit" value="allow" name="allow_and_submit" class="button button-primary"><i class="<?php echo esc_attr( $this->plugin_prefix ); ?>_icon-spin4 animate-spin"></i> Allow & Continue</button> 
+                                <button type="submit" value="allow" name="allow_and_submit" class="button button-primary"><i class="<?php echo esc_attr( $this->plugin_prefix ); ?>_icon-ok-circle"></i> Allow & Continue</button> 
                                 <button type="submit"value="skip" name="allow_and_submit" class="button button-default button-skip">Skip</button> 
                             </form>
                         </div>
