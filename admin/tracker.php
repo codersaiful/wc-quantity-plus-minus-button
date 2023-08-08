@@ -71,14 +71,23 @@ class Tracker extends Base
 
     protected $tracker_bool;
     protected $option_allow;
+
     /**
-     * jetar uppor vitti kore mulot online dekhabe
-     * ami ekhane 1 ghonta debo
+     * TRACK DELAY TIME: 3 HOURSE
+     * --------------------------
+     * Transient Expireation time,
+     * which is the delay time of re-track
+     * After this time(3 hours), your site will send your status
+     * 
      * 1 hour = 3600 second
      * half hour = 1800 second
+     * 3 hours = 10800 second
+     * 
+     * We have used 3 hours actually.
      *
+     * @author Saiful Islam <codersaiful@gmail.com>
      */
-    protected $transient_exp = 1800; // in second // when test used 60
+    protected $transient_exp = 10800; // in second // when test used 60
     
     public $_domain = 'http://edm.ultraaddons.com'; //Don't use slash at the end of the link. eg: http://wptheme.cm or: http://edm.ultraaddons.com
     public $tracker_url;
