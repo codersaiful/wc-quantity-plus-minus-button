@@ -84,7 +84,7 @@ class Tracker extends Base
      * 3 hours = 10800 second
      * 4 hours = 14400 second
      * 
-     * We have used 3 hours actually.
+     * We have used 4 hours actually.
      *
      * @author Saiful Islam <codersaiful@gmail.com>
      */
