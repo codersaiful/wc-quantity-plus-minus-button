@@ -13,7 +13,7 @@
  * Requires at least:    4.0.0
  * Tested up to:         6.3
  * WC requires at least: 3.7
- * WC tested up to: 	 7.9.0
+ * WC tested up to: 	 8.0.1
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
@@ -24,7 +24,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.8.4');
+    define( 'WQPMB_VERSION', '1.1.8.7');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
