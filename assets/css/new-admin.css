@@ -5,6 +5,9 @@
 body #wpcontent {
     padding-left: 0;
 }
+body.tracker-added.allow-tracker-body #wpbody-content {
+    display: none;
+}
 .wqpmb_wrap .fieldwrap,.wqpmb_wrap .fieldwrap form, #wqpmb-main-configuration-form{
     width: 100%;
     display: block;
