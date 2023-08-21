@@ -427,7 +427,7 @@ function wqpmb_submit_issue_link(){
 $content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:', 'wcmmq' );
 ?>
         <b>ISSUE SUBMIT:</b> If you founded any issue, Please inform us. That will be very helpful for us to Fix.
-        <a href="https://github.com/codersaiful/woo-min-max-quantity-step-control-single/issues/new" target="_blank">SUBMIT ISSUE</a> or 
+        <a href="https://github.com/codersaiful/wc-quantity-plus-minus-button/issues" target="_blank">SUBMIT ISSUE</a> or 
         <a href="mailto:contact@codeastrology.com">contact@codeastrology.com</a> or 
         <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&su=<?php echo urlencode("Found issue on your Min Max and Step Control Plugin, see screenshot of issue"); ?>&body=<?php echo esc_attr( $content_of_mail ); ?>&ui=2&tf=1&to=codersaiful@gmail.com,contact@codeastrology.com" target="_blank">Gmail Me</a> or
         <a href="https://www.facebook.com/groups/wphelps" target="_blank">Facebook Group</a>

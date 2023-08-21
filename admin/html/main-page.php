@@ -12,6 +12,22 @@ $our_data = $this->data;
 <div class="wrap wqpmb_wrap wqpmb-content">
     <h1 class="wp-heading "></h1>
     <div class="fieldwrap">
+
+    <?php
+        $randN = rand(1,2);
+        $recomm = get_option($this->plugin_prefix . '_recomm', 1);
+        $recomm++;
+        update_option($this->plugin_prefix . '_recomm', $recomm);
+        if($recomm <= 30 && $randN == 1){
+        ?>
+        <div id="wqpmb-recomendation-area" class="wqpmb-section-panel">
+            <?php 
+            //do_action( 'wqpmb_plugin_recommend_top' );
+            do_action( $this->plugin_prefix . '_plugin_recommend_top' ); 
+            ?>
+        </div>
+        <?php } ?>
+
         <form action="" method="POST">
             <div class="wqpmb-section-panel no-background wqpmb-full-form-submit-wrapper">
                 

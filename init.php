@@ -256,7 +256,7 @@ class WQPMB_Button {
 
        if( is_admin() && $is_woocommerce ){
         //Recommedation is currently Off
-        // WQPMB\Framework\Recommeded::check();
+        WQPMB\Framework\Recommeded::check();
        }
 
        WQPMB\Includes\Feature_Loader::run();

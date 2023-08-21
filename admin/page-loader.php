@@ -110,6 +110,10 @@ class Page_Loader extends Base
 
 
 
+            wp_register_style( $this->plugin_prefix . '-admin', $this->base_url . 'assets/css/admin-style.css', false, $this->dev_version );
+            wp_enqueue_style( $this->plugin_prefix . '-admin' );
+
+
             wp_register_style( $this->plugin_prefix . '-new-admin', $this->base_url . 'assets/css/new-admin.css', false, $this->dev_version );
             wp_enqueue_style( $this->plugin_prefix . '-new-admin' );
 

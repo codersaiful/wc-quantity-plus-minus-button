@@ -11,7 +11,7 @@ class Recommeded
     public static $base_file = 'wc-quantity-plus-minus-button/init.php';
     public static function check()
     {
-
+        $randN = rand(1,2);
         $this_plugin = __( 'Plus Minus Button', 'wqpmb' );
         
         $mmp_req_slug = 'woo-product-table/woo-product-table.php';
@@ -28,6 +28,12 @@ class Recommeded
         // var_dump(method_exists($req_mmp, 'set_location'),$req_mmp);
         // ->set_required();
         if( method_exists($req_mmp, 'set_location') ){
+            if($randN == 1){
+                $req_mmp->set_location('wqpmb_plugin_recommend_top');
+                $req_mmp->run();
+            }
+            
+
             $req_mmp->set_location('wqpmb_plugin_recommend_here'); //wpt_premium_image_bottom
             $req_mmp->run();
         }
@@ -45,6 +51,12 @@ class Recommeded
         // var_dump(method_exists($req_mmp, 'set_location'),$req_mmp);
         // ->set_required();
         if( method_exists($req_mmp, 'set_location') ){
+
+            if($randN == 2){
+                $req_mmp->set_location('wqpmb_plugin_recommend_top');
+                $req_mmp->run();
+            }
+
             $req_mmp->set_location('wqpmb_plugin_recommend_here');
             $req_mmp->run();
         }
