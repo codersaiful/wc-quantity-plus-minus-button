@@ -645,7 +645,7 @@ Device and Screen wise CSS end Here
 
 /* recommendation area  */
 #wqpmb-recomendation-area .ca-reuire-plugin-notice.anwwhere-notice {
-    border: 1px solid #ebebeb;
+    border: 1px solid white;
     margin: 10px 0;
     background: rgb(255 255 255 / 3%);
 }
@@ -696,9 +696,13 @@ small.wqpmb-small-title {
         padding-left: 108px;
     }
     div#wqpmb-recomendation-area.wqpmb-section-panel .ca-notice.ca-reuire-plugin-notice.anwwhere-notice {
-        background: transparent no-repeat 12px center;
+        background: #ffffff no-repeat 12px 15px;
         background-size: 55px auto;
         padding-left: 78px;
+        box-shadow: -4px 0px 15px #00000024;
+        margin-bottom: 20px;
+        padding-top: 12px;
+        padding-bottom: 18px;
     }
     div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='woo-product-table']{
         background-image: url('../images/products/woo-product-table.png');

@@ -146,3 +146,11 @@ a.ca-social-link.ca-social-ticket.ca-title-available {
     background: #42b9cc;
     color: white;
 }
+
+.wqpmb-content p.wpt-issue-submit {
+    border-top: 1px solid #dddddd4a;
+    opacity: 1;
+    padding-top: 15px;
+    margin-top: 10px;
+    line-height: 24px;
+}
