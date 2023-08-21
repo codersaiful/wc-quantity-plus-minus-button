@@ -649,7 +649,7 @@ Device and Screen wise CSS end Here
     margin: 10px 0;
     background: rgb(255 255 255 / 3%);
 }
-#wqpmb-recomendation-area .ca-reuire-plugin-notice.activate a.ca-button {
+#wqpmb-recomendation-area .ca-reuire-plugin-notice a.ca-button {
     background: #4caf50;
     border-color: #38823b;
     text-transform: uppercase !important;
@@ -657,7 +657,12 @@ Device and Screen wise CSS end Here
     border-left: 27px solid #38823b;
     position: relative;
 }
-#wqpmb-recomendation-area .ca-reuire-plugin-notice.activate a.ca-button:hover {
+#wqpmb-recomendation-area .install.ca-reuire-plugin-notice a.ca-button {
+    background: #ff4200;
+    border-color: #ff4200;
+    border-left-color:#ce3a07;
+}
+#wqpmb-recomendation-area .ca-reuire-plugin-notice a.ca-button:hover {
     background: #9C27B0;
     border-color: #7c1b8c;
     text-transform: uppercase !important;
@@ -665,7 +670,7 @@ Device and Screen wise CSS end Here
     border-left: 27px solid #7c1b8c;
     position: relative;
 }
-#wqpmb-recomendation-area .ca-reuire-plugin-notice.activate a.ca-button:before {
+#wqpmb-recomendation-area .ca-reuire-plugin-notice a.ca-button:before {
     content: "☀";
     position: absolute;
     top: 3px;
@@ -683,4 +688,31 @@ small.wqpmb-small-title {
     color: #9f9f9f;
     font-weight: normal;
     white-space: nowrap;
+}
+@media screen and (min-width: 680px) {
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice {
+        background: transparent no-repeat 10px center;
+        background-size: 85px auto;
+        padding-left: 108px;
+    }
+    div#wqpmb-recomendation-area.wqpmb-section-panel .ca-notice.ca-reuire-plugin-notice.anwwhere-notice {
+        background: transparent no-repeat 12px center;
+        background-size: 55px auto;
+        padding-left: 78px;
+    }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='woo-product-table']{
+        background-image: url('../images/products/woo-product-table.png');
+    }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='woo-min-max-quantity-step-control-single']{
+        background-image: url('../images/products/woo-min-max-quantity-step-control-single.png');
+    }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='wc-quantity-plus-minus-button']{
+        background-image: url('../images/products/wc-quantity-plus-minus-button.png');
+    }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='ca-quick-view']{
+        background-image: url('../images/products/ca-quick-view.png');
+    }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='ultraaddons-elementor-lite']{
+        background-image: url('../images/products/ultraaddons-elementor-lite.png');
+    }
 }
