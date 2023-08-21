@@ -167,7 +167,11 @@ That's it. So easy, Right !!!
 == Change log ==
 
 = 1.1.8 =
+* Live support Disable Option 
+* Backend Design update
 * Divi theme's quantity box issue has been solved
+* Bug Fix 
+* Code Optimized
 
 = 1.1.7 =
 * input box right margin issue has been solved.
