@@ -12,7 +12,7 @@ class Recommeded
     public static function check()
     {
 
-        $this_plugin = __( 'CodeAstrology Plus Minus Button', 'wqpmb' );
+        $this_plugin = __( 'Plus Minus Button', 'wqpmb' );
         
         $mmp_req_slug = 'woo-product-table/woo-product-table.php';
         $mmp_tar_slug = self::$base_file;
@@ -28,7 +28,7 @@ class Recommeded
         // var_dump(method_exists($req_mmp, 'set_location'),$req_mmp);
         // ->set_required();
         if( method_exists($req_mmp, 'set_location') ){
-            $req_mmp->set_location('wqpmb_after_form'); //wpt_premium_image_bottom
+            $req_mmp->set_location('wqpmb_plugin_recommend_here'); //wpt_premium_image_bottom
             $req_mmp->run();
         }
 
@@ -45,7 +45,7 @@ class Recommeded
         // var_dump(method_exists($req_mmp, 'set_location'),$req_mmp);
         // ->set_required();
         if( method_exists($req_mmp, 'set_location') ){
-            $req_mmp->set_location('wqpmb_after_form');
+            $req_mmp->set_location('wqpmb_plugin_recommend_here');
             $req_mmp->run();
         }
 
@@ -60,7 +60,7 @@ class Recommeded
         $req_qv->set_message($qv_message);
         $req_qv->get_full_this_plugin_name($this_plugin);
         if( method_exists($req_qv, 'set_location') ){
-            $req_qv->set_location('wqpmb_after_form'); 
+            $req_qv->set_location('wqpmb_plugin_recommend_here'); 
             $req_qv->run();
         }
         
@@ -77,7 +77,7 @@ class Recommeded
         // ->set_required();
         if( method_exists($req_pmb, 'set_location') && did_action( 'elementor/loaded' ) ){
 
-            $req_pmb->set_location('wqpmb_after_form'); //wpt_premium_image_bottom
+            $req_pmb->set_location('wqpmb_plugin_recommend_here'); //wpt_premium_image_bottom
             $req_pmb->run();
         }
 
