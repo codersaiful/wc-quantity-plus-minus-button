@@ -146,3 +146,31 @@ a.ca-social-link.ca-social-ticket.ca-title-available {
     background: #42b9cc;
     color: white;
 }
+
+@media screen and (min-width: 680px) {
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice {
+        background: transparent no-repeat 10px center;
+        background-size: 85px auto;
+        padding-left: 108px;
+    }
+    div#wqpmb-recomendation-area.wqpmb-section-panel .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice {
+        background: transparent no-repeat 12px center;
+        background-size: 55px auto;
+        padding-left: 78px;
+    }
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='woo-product-table']{
+        background-image: url('../images/products/woo-product-table.png');
+    }
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='woo-min-max-quantity-step-control-single']{
+        background-image: url('../images/products/woo-min-max-quantity-step-control-single.png');
+    }
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='wc-quantity-plus-minus-button']{
+        background-image: url('../images/products/wc-quantity-plus-minus-button.png');
+    }
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='ca-quick-view']{
+        background-image: url('../images/products/ca-quick-view.png');
+    }
+    div#wqpmb-recomendation-area .activate.ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='ultraaddons-elementor-lite']{
+        background-image: url('../images/products/ultraaddons-elementor-lite.png');
+    }
+}

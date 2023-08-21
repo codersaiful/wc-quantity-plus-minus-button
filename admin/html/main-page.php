@@ -84,7 +84,7 @@ $our_data = $this->data;
             </div>
 
         </form>
-        <div class="wqpmb-section-panel supported-terms wqpmb-recomendation-area" id="wqpmb-recomendation-area">
+        <div class="wqpmb-section-panel wqpmb-bottom-area wqpmb-recomendation-area" id="wqpmb-recomendation-area">
             <table class="wqpmb-table universal-setting">
                 <thead>
                     <tr>
