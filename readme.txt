@@ -167,6 +167,7 @@ That's it. So easy, Right !!!
 == Change log ==
 
 = 1.1.9 =
+* Added: new setting field added for input box height and width.
 * Add input box width change option
 * Add input box height change option
 * Bug Fix 
