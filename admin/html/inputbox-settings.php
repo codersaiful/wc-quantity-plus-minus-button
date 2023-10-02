@@ -23,7 +23,49 @@
         $css_hover = isset( $our_data['css_hover'] ) && is_array( $our_data['css_hover'] ) ? $our_data['css_hover'] : array();
         $css_input = isset( $our_data['css_input'] ) && is_array( $our_data['css_input'] ) ? $our_data['css_input'] : array();
         ?>
-
+         
+         <!-- Input box width. Added at version 1.1.9 -->
+        <tr>
+            <td>
+                <div class="wqpmb-form-control">
+                    <div class="form-label col-lg-6">
+                        <label for="wqpmn-inputbox-width">Width</label>
+                    </div>
+                    <div class="form-field col-lg-6">
+                        <input type="text" id="wqpmn-inputbox-width" name="css_input[width]" 
+                            value="<?php echo isset( $css_input['width'] ) ? $css_input['width'] : '' ?>" 
+                            placeholder="eg: 100px"
+                            class="ua_input" />
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="wqpmb-form-info">
+                    <p>Set the input box width.</p>
+                </div> 
+            </td>
+        </tr>
+        <!-- Input box height. Added at version 1.1.9 -->
+        <tr>
+            <td>
+                <div class="wqpmb-form-control">
+                    <div class="form-label col-lg-6">
+                        <label for="wqpmn-inputbox-height">Height</label>
+                    </div>
+                    <div class="form-field col-lg-6">
+                        <input type="text" id="wqpmn-inputbox-height" name="css_input[height]" 
+                            value="<?php echo isset( $css_input['height'] ) ? $css_input['height'] : '' ?>" 
+                            placeholder="eg: 50px"
+                            class="ua_input" />
+                    </div>
+                </div>
+            </td>
+            <td>
+                <div class="wqpmb-form-info">
+                    <p>Set the input box height.</p>
+                </div> 
+            </td>
+        </tr>
         <tr>
             <td>
                 <div class="wqpmb-form-control">

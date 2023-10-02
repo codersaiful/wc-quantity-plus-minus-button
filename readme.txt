@@ -166,6 +166,12 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
+= 1.1.9 =
+* Add input box width change option
+* Add input box height change option
+* Bug Fix 
+* Code Optimized
+
 = 1.1.8 =
 * Live support Disable Option 
 * Backend Design update
