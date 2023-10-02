@@ -194,7 +194,13 @@ class WQPMB_Button {
     }
 
     public function __construct() {
-        
+        // Declare compatibility with custom order tables for WooCommerce.
+        add_action( 'before_woocommerce_init', function(){
+                if (class_exists('\Automattic\WooCommerce\Utilities\FeaturesUtil')) {
+                    \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+                }
+            }
+        );
         $is_woocommerce = is_plugin_active( 'woocommerce/woocommerce.php' );
 
         if ( ! $is_woocommerce ) {

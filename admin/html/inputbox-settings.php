@@ -3,7 +3,7 @@
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Input Box Color', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Input Box Settings', 'wqpmb' ); ?></h3>
                 </div>
                 
             </th>
@@ -55,7 +55,7 @@
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmn-inputbox-height" name="css_input[height]" 
                             value="<?php echo isset( $css_input['height'] ) ? $css_input['height'] : '' ?>" 
-                            placeholder="eg: 50px"
+                            placeholder="eg: 41px"
                             class="ua_input" />
                     </div>
                 </div>
