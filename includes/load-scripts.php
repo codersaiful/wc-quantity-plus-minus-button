@@ -12,7 +12,7 @@ function wqpmb_style_js_adding(){
 }
 add_action( 'wp_enqueue_scripts', 'wqpmb_style_js_adding', 99 );
 
-add_action( 'admin_enqueue_scripts', 'wqpmb_admin_script_loader' );
+// add_action( 'admin_enqueue_scripts', 'wqpmb_admin_script_loader' );
 function wqpmb_admin_script_loader( $hook_suffix ) {
     /**
      * Including UltraAddons CSS form Style

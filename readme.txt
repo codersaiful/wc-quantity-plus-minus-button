@@ -3,8 +3,8 @@
 Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
-Tested up to: 6.2
-Stable tag: 1.1.6
+Tested up to: 6.3
+Stable tag: 1.1.8
 Requires PHP: 7.0
 WC requires at least: 4.0
 WC tested up to: 7.4.0
@@ -41,10 +41,10 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere w
 
 == Filter ==
 
-You can validate form data using this filter
+
+Enable Ajax add to cart for Single Product Page.
 `
-add_filter( 'wqpmb_default_form_panel_validation', '__return_true' );
-`
+add_filter('wqpmn_ajax_cart_single_page', '__return_true' );
 
 On off checkbox in admin page using filter
 `
@@ -84,20 +84,6 @@ add_filter('wqpmb_template_base_dir', $template_base_dir);
 
 == Action ==
 
-You can use this action for append something new after the checkbox
-`
-do_action( 'wqpmb_checkbox_row', $our_data, $datas );
-`
-
-To add New CSS row, use following action hook
-`
-do_action( 'wqpmb_css_row' );
-`
-
-To add any new row, use the following action hook
-`
-do_action( 'wqpmb_form_row' );
-`
 
 
 **👷 HONORABLE CONTRIBUTOR - [GitHub](https://github.com/codersaiful/wc-quantity-plus-minus-button/graphs/contributors) 👷**<br>
@@ -130,6 +116,11 @@ You are welcome to contribute  to this project. Join with us [Fork Github reposi
 = Does this plugin support StoreFront theme? =
 
 🔅 Yes this plugin is supports all themes.
+
+= Can I hide plus minus button from cart page? =
+
+🔅 Yes, you can hide it by using our filter (`wqpmb_on_cart_page`). see following code:
+`add_filter('wqpmb_on_cart_page','__return_false');`
 
 = Does this plugin supports decimal value as quantity? =
 
@@ -174,6 +165,23 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.1.9 =
+* Added: new setting field added for input box height and width.
+* Add input box width change option
+* Add input box height change option
+* Bug Fix 
+* Code Optimized
+
+= 1.1.8 =
+* Live support Disable Option 
+* Backend Design update
+* Divi theme's quantity box issue has been solved
+* Bug Fix 
+* Code Optimized
+
+= 1.1.7 =
+* input box right margin issue has been solved.
 
 = 1.1.6 =
 * Added: Quantity box for Shop Page

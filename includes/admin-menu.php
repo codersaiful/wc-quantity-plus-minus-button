@@ -8,7 +8,7 @@ if( !function_exists( 'wqpmb_plugin_actions' ) ){
      * @return type
      */
     function wqpmb_plugin_actions( $actions ) {
-        $links[] = '<a href="' . admin_url( 'admin.php?page=ua-quanity-plus-minus-button' ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
+        $links[] = '<a href="' . admin_url( 'admin.php?page=' . WQPMB_MENU_SLUG ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
         // $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '" target="_blank">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
         $links[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
         $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
@@ -62,7 +62,7 @@ if( !function_exists( 'wqpmb_admin_menu' ) ){
         add_submenu_page('woocommerce', WQPMB_NAME, WQPMB_MENU_NAME, $capability, WQPMB_MENU_SLUG, 'wqpmb_menupage_content');
         // remove_submenu_page( 'ultraaddons', 'ultraaddons' );
     }
-    add_action( 'admin_menu', 'wqpmb_admin_menu' );
+    // add_action( 'admin_menu', 'wqpmb_admin_menu' );
 }
 
 
@@ -374,7 +374,7 @@ s0.parentNode.insertBefore(s1,s0);
         
     }
 }
-add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
+// add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
 
 function wqpmb_social_links(){
 ?>
@@ -427,7 +427,7 @@ function wqpmb_submit_issue_link(){
 $content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:', 'wcmmq' );
 ?>
         <b>ISSUE SUBMIT:</b> If you founded any issue, Please inform us. That will be very helpful for us to Fix.
-        <a href="https://github.com/codersaiful/woo-min-max-quantity-step-control-single/issues/new" target="_blank">SUBMIT ISSUE</a> or 
+        <a href="https://github.com/codersaiful/wc-quantity-plus-minus-button/issues" target="_blank">SUBMIT ISSUE</a> or 
         <a href="mailto:contact@codeastrology.com">contact@codeastrology.com</a> or 
         <a href="https://mail.google.com/mail/u/0/?view=cm&fs=1&su=<?php echo urlencode("Found issue on your Min Max and Step Control Plugin, see screenshot of issue"); ?>&body=<?php echo esc_attr( $content_of_mail ); ?>&ui=2&tf=1&to=codersaiful@gmail.com,contact@codeastrology.com" target="_blank">Gmail Me</a> or
         <a href="https://www.facebook.com/groups/wphelps" target="_blank">Facebook Group</a>

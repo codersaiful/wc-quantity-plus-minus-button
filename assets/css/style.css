@@ -14,7 +14,7 @@
     display: inline;
 }
 .qib-button-wrapper{
-    margin: 3px auto;
+    margin: 3px 0;
     white-space: nowrap;
 }
 
@@ -39,7 +39,7 @@ span.wqpmb_plain_input.hidden{display: none;}
 body.cart tr.woocommerce-cart-form__cart-item.cart_item .quantity.wqpmb_quantity,.quantity.wqpmb_quantity {
     display: inline-flex;
 }
-body .qib-button.qib-button-wrapper {
+body .qib-button-wrapper {
     display: flex;
     float: left;
     flex-wrap: nowrap;
@@ -48,14 +48,14 @@ body .qib-button.qib-button-wrapper {
     justify-content: center;
     gap: 0;
 }
-body .qib-button.qib-button-wrapper .minus.qib-button, 
-body .qib-button.qib-button-wrapper .plus.qib-button{
+body .qib-button-wrapper .minus.qib-button, 
+body .qib-button-wrapper .plus.qib-button{
     background: #a19f9f14;
 }
-body .qib-button.qib-button-wrapper .minus.qib-button:hover, body .qib-button.qib-button-wrapper .plus.qib-button:hover {
+body .qib-button-wrapper .minus.qib-button:hover, body .qib-button-wrapper .plus.qib-button:hover {
     background: #14141414;
 }
-.wpt-wrap .qib-button.qib-button-wrapper {
+.wpt-wrap .qib-button-wrapper {
     gap: 0;
   }
 .wpt-wrap .qib-button-wrapper div.quantity.wqpmb_quantity {
@@ -76,9 +76,14 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
 }
 
 .qib-button-wrapper input[type=number],
-.qib-button .quantity input[type=number], 
-.qib-button .quantity input[type=number]{ 
+.qib-button-wrapper .quantity input[type=number], 
+.qib-button-wrapper .quantity input[type=number]{ 
 -moz-appearance:textfield; /* Firefox */
+}
+
+
+.woocommerce-page div.product form.cart div.quantity.wqpmb_quantity, .woocommerce div.product form.cart .quantity.wqpmb_quantity, .woocommerce div.product .quantity.wqpmb_quantity{
+    margin: 0 !important;
 }
 
 @media only screen and (max-width: 600px) {
@@ -86,7 +91,7 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
         display: block;
     }
 
-    body .qib-button.qib-button-wrapper {
+    body .qib-button-wrapper {
         display: flex;
         float: right;
         margin-right: 0;

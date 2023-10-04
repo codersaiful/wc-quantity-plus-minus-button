@@ -1,5 +1,21 @@
 <?php
 
+/**
+ * Only for developer
+ * @author Fazle Bari <fazlebarisn@gmail.com>
+ */
+if( ! function_exists('dd') ){
+	function dd( ...$vals){
+		if( ! empty($vals) && is_array($vals) ){
+			foreach($vals as $val ){
+				echo "<pre>";
+				var_dump($val);
+				echo "</pre>";
+			}
+		}
+	}
+}
+
 if( !function_exists( 'wqpmb_locate_template' ) ){
     /**
      * Template selection for Quantity Button
@@ -226,6 +242,14 @@ if( !function_exists( 'wqpmb_header_css' ) ){
 }
 
 
+if( ! function_exists('wqpmb_doc_link') ){
+    
+    function wqpmb_doc_link( $url, $title='Helper doc' ){
+        ?>
+            <a href="<?php echo esc_url($url)?>" target="_blank" class="wpt-doc-lick"><i class="wcmmq_icon-help-circled-alt"></i><?php esc_html_e( $title ); ?></a>
+        <?php
+    }
+}
 /**
 * start the customisation
 */

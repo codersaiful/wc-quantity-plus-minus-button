@@ -9,11 +9,11 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.1.6
+ * Version: 1.1.8
  * Requires at least:    4.0.0
- * Tested up to:         6.2
+ * Tested up to:         6.3.1
  * WC requires at least: 3.7
- * WC tested up to: 	 7.4.0
+ * WC tested up to: 	 8.1.1
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
@@ -24,7 +24,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.7.0');
+    define( 'WQPMB_VERSION', '1.1.8.9');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
@@ -36,7 +36,8 @@ if ( !defined( 'WQPMB_BASE_NAME' ) ) {
 }
 
 if ( !defined( 'WQPMB_MENU_SLUG' ) ) {
-    define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+    // define( 'WQPMB_MENU_SLUG', 'ua-quanity-plus-minus-button' );
+    define( 'WQPMB_MENU_SLUG', 'wqpmb-settings' );
 }
 
 if ( !defined( 'WQPMB_MENU_NAME' ) ) {
@@ -193,7 +194,13 @@ class WQPMB_Button {
     }
 
     public function __construct() {
-        
+        // Declare compatibility with custom order tables for WooCommerce.
+        add_action( 'before_woocommerce_init', function(){
+                if (class_exists('\Automattic\WooCommerce\Utilities\FeaturesUtil')) {
+                    \Automattic\WooCommerce\Utilities\FeaturesUtil::declare_compatibility('custom_order_tables', __FILE__, true);
+                }
+            }
+        );
         $is_woocommerce = is_plugin_active( 'woocommerce/woocommerce.php' );
 
         if ( ! $is_woocommerce ) {
@@ -248,7 +255,13 @@ class WQPMB_Button {
         include_once $this->path('BASE_DIR', 'includes/admin-menu.php');
         include_once $this->path('BASE_DIR', 'includes/load-scripts.php');
 
+       if(is_admin()){
+        $admin_page = new \WQPMB\Admin\Page_Loader();
+        $admin_page->run();
+       }
+
        if( is_admin() && $is_woocommerce ){
+        //Recommedation is currently Off
         WQPMB\Framework\Recommeded::check();
        }
 

@@ -58,20 +58,38 @@ if ( $max_value && $min_value === $max_value ) {
 		$input_value = 0;
 	}
 
+
+	global $product;
+	$product_id =  0;
+	if( is_object( $product ) && method_exists( $product,'get_id' ) ){
+		$product_id =  $product->get_id();
+	}
+
+	
+	/**
+	 * @Hook Filter: wqpmb_show_plus_minus
+	 * To set any validation, Based on your saved data
+	 * use following Filter Hook.
+	 * @return bool Need True false Validation
+	 */
+	$plus_minus = apply_filters( 'wqpmb_show_plus_minus', true, $product_id );
+	
 	?>
-	<?php 
-		global $product;
-		$product_id =  0;
-		if( is_object( $product ) && method_exists( $product,'get_id' ) ){
-			$product_id =  $product->get_id();
-		}
-	?>
-	<div class="qib-button qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
+	<div class="qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
 	
 		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
-		
+			<?php if( $plus_minus ){ ?>
             <button type="button" class="minus qib-button">-</button>
+			<?php } ?>
 			<div class="quantity wqpmb_quantity">
+			<?php
+			/**
+			 * Hook to output something before the quantity input field.
+			 *
+			 * @since 7.2.0
+			 */
+			do_action( 'woocommerce_before_quantity_input_field' );
+			?>
 				<input
 					type="number"
 					id="<?php echo esc_attr( $input_id ); ?>"
@@ -90,10 +108,12 @@ if ( $max_value && $min_value === $max_value ) {
 				<?php do_action( 'woocommerce_after_quantity_input_field' ); ?>
 				
 			</div>
+
+			<?php if( $plus_minus ){ ?>
             <span class="wqpmb_plain_input hidden"><?php echo esc_html( $input_value ); ?></span>
 		
             <button type="button" class="plus qib-button">+</button>
-	
+			<?php } ?>
 	</div>
 	<?php
 }
