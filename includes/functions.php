@@ -142,6 +142,22 @@ if( !function_exists( 'wqpmb_submit_form' ) ){
      * @return Void
      */
     function wqpmb_form_submit( $datas ){
+
+        /*
+        * We need to verify this came from our screen and with proper authorization,
+        * because the save_post action can be triggered at other times.
+        */
+
+        if ( ! isset( $_POST['nonce'] ) ) { // Check if our nonce is set.
+            return;
+        }
+
+        // verify this came from the our screen and with proper authorization,
+        // because save_post can be triggered at other times
+        if( ! wp_verify_nonce( $_POST['nonce'], plugin_basename( WQPMB_BASE_DIR ) ) ) {
+            return;
+        }
+
         $option_key = WQPMB_Button::$option['option'];
         $css_key = WQPMB_Button::$option['css'];
         if( NULL !== filter_input( INPUT_POST, 'configure_submit' ) && !empty( $datas ) ){
