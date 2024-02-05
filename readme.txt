@@ -90,6 +90,7 @@ add_filter('wqpmb_template_base_dir', $template_base_dir);
 * [unikforceit](https://github.com/unikforceit) (1 commit 5 ++  )
 * [fazlebarisn](https://github.com/fazlebarisn) (1 commit 11 ++ )
 * [autocircled](https://github.com/autocircled) (1 commit 110 ++ )
+* [mdibrahimk48](https://github.com/mdibrahimk48/) (3 commit 5++)
 * 👉 [You can join here](https://github.com/codersaiful/wc-quantity-plus-minus-button/fork)
 
 **🥇 CONTRIBUTE 🥇**<br>
@@ -163,6 +164,11 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.1.9 =
+* Compatibility Shoptimizer Theme
+* Theme Pricon compability added
+* Nonce update
 
 = 1.1.9 =
 * Nonce issue fixed.
