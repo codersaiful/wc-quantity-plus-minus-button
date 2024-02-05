@@ -102,10 +102,6 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
 
 
 
-
-
-
-
 /* Compatibility Starting Here */
 
 /* Theme Pricon */
@@ -130,4 +126,11 @@ body.theme-pricom .qib-button-wrapper {
 }
 body.theme-pricom .qib-button-wrapper .quantity .input-text[type=number] {
     min-width: 56px;
+}
+
+
+/* Theme Shoptimizer */
+ajax_add_to_cart.add_to_cart_button, .single-product div.product form.cart .button {
+    width: 200px !important;
+    height: 45px !important;
 }
