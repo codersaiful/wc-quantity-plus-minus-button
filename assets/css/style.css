@@ -97,3 +97,37 @@ body.cart tr.woocommerce-cart-form__cart-item.cart_item .qib-button-wrapper{
         margin-right: 0;
     }
 }
+
+
+
+
+
+
+
+
+
+/* Compatibility Starting Here */
+
+/* Theme Pricon */
+body.theme-pricom .qib-button-wrapper .minus.qib-button, 
+body.theme-pricom .qib-button-wrapper .plus.qib-button,
+body.theme-pricom input.input-text.qty.text.wcmmq-qty-input-box {
+    background: #f5f5f5;
+    color: #7e7e7e;
+    border-radius: 0;
+    border: 0 none !important;
+}
+body.theme-pricom .qib-button-wrapper .minus.qib-button:hover, 
+body.theme-pricom .qib-button-wrapper .plus.qib-button:hover,
+body.theme-pricom input.input-text.qty.text.wcmmq-qty-input-box:hover {
+    color: #000;
+}
+
+body.theme-pricom .qib-button-wrapper {
+    border: 1px solid #ddd;
+    border-radius: 15px;
+	overflow: hidden;
+}
+body.theme-pricom .qib-button-wrapper .quantity .input-text[type=number] {
+    min-width: 56px;
+}
