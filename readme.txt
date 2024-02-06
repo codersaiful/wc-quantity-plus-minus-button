@@ -165,9 +165,9 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
-= 1.1.9 =
-* Compatibility Shoptimizer Theme
-* Theme Pricon compability added
+= 1.2.0 =
+* Compatibility Shoptimizer Theme added
+* Compatibility Pricon Theme added
 * Nonce update
 
 = 1.1.9 =

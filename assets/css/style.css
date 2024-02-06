@@ -130,7 +130,11 @@ body.theme-pricom .qib-button-wrapper .quantity .input-text[type=number] {
 
 
 /* Theme Shoptimizer */
-ajax_add_to_cart.add_to_cart_button, .single-product div.product form.cart .button {
+body.theme-shoptimizer .ajax_add_to_cart.add_to_cart_button, 
+body.theme-shoptimizer .single-product div.product form.cart .button {
+    margin-left: 0px !important;
+    margin-top: -2px !important;
     width: 200px !important;
-    height: 45px !important;
+    height: 50px !important;
+    width: 200px !important;
 }
