@@ -166,6 +166,7 @@ That's it. So easy, Right !!!
 == Change log ==
 
 = 1.2.0 =
+* Cart Page auto Update on change qty at Cart Page.
 * Compatibility Shoptimizer Theme added
 * Compatibility Pricon Theme added
 * Nonce update
