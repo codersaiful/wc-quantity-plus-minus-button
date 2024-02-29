@@ -32,6 +32,7 @@
     font-size: 20px;
     line-height: 20px;
     box-shadow: none;
+    margin: 0 !important;
 }
 
 span.wqpmb_plain_input.hidden{display: none;}
