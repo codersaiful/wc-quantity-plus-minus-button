@@ -127,7 +127,12 @@ body.theme-pricom .qib-button-wrapper {
 body.theme-pricom .qib-button-wrapper .quantity .input-text[type=number] {
     min-width: 56px;
 }
-
+.woocommerce div.product form.cart div.quantity .qty {
+    margin-top: 0 !important;
+    margin-right: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 0 !important;
+}
 
 /* Theme Shoptimizer */
 body.theme-shoptimizer .ajax_add_to_cart.add_to_cart_button, 
