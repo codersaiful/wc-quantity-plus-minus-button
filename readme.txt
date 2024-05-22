@@ -1,6 +1,6 @@
 === Quantity Plus Minus Button for WooCommerce by CodeAstrology ===
 
-Contributors: codersaiful, codeastrology, mdibrahimk48, unikforce, fazlebari, autocircled
+Contributors: codersaiful, codeastrology, mdibrahimk48, unikforce, fazlebari
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.5.3
