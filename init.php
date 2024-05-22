@@ -12,7 +12,7 @@
  * 
  * Version: 1.2.1
  * Requires at least:    4.0.0
- * Tested up to:         6.4.3
+ * Tested up to:         6.5.3
  * WC requires at least: 3.7
  * WC tested up to: 	 8.9.1
  */
