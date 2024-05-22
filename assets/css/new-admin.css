@@ -719,4 +719,7 @@ small.wqpmb-small-title {
     div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='ultraaddons-elementor-lite']{
         background-image: url('../images/products/ultraaddons-elementor-lite.png');
     }
+    div#wqpmb-recomendation-area .ca-notice.ca-reuire-plugin-notice.anwwhere-notice[data-notice_id='product-sync-master-sheet']{
+        background-image: url('../images/products/product-sync-master-sheet.png');
+    }
 }

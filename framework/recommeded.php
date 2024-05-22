@@ -13,6 +13,31 @@ class Recommeded
     {
         $randN = rand(1,2);
         $this_plugin = __( 'Plus Minus Button', 'wqpmb' );
+        $mmp_req_slug = 'product-sync-master-sheet/product-sync-master-sheet.php';
+        $mmp_tar_slug = self::$base_file;
+        $req_sync = new Require_Control($mmp_req_slug,$mmp_tar_slug);
+        $req_sync->set_args( ['Name' => __( 'Product Stock Sync with Google Sheet for WooCommerce', 'wcmmq' ) ] )
+        ->set_download_link('https://wordpress.org/plugins/product-sync-master-sheet/')
+        ->set_this_download_link('https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/');
+        $mmp_message = __('Easily Synchronize with Google Sheets and Bulk edit your products.','wcmmq');
+        $wpt_link = "";
+        $mmp_message = sprintf($mmp_message, $wpt_link);
+        $req_sync->set_message($mmp_message);
+        $req_sync->get_full_this_plugin_name($this_plugin);
+        // var_dump(method_exists($req_mmp, 'set_location'),$req_mmp);
+        // ->set_required();
+        if( method_exists($req_sync, 'set_location') ){
+            if($randN == 2){
+                $req_sync->set_location('wqpmb_plugin_recommend_top');
+                $req_sync->run();
+            }
+            
+
+            $req_sync->set_location('wqpmb_plugin_recommend_here'); //wpt_premium_image_bottom
+            $req_sync->run();
+        }
+
+        $this_plugin = __( 'Plus Minus Button', 'wqpmb' );
         
         $mmp_req_slug = 'woo-product-table/woo-product-table.php';
         $mmp_tar_slug = self::$base_file;
@@ -20,8 +45,8 @@ class Recommeded
         $req_mmp->set_args( ['Name' => 'Product Table for WooCoomerce by CodeAstrology'] )
         ->set_download_link('https://wordpress.org/plugins/woo-product-table/')
         ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
-        $mmp_message = __('%s Product Table plugin helps you to display your WooCommerce products in a searchable table layout with filters. Add a table on any page or post via a shortcode. You can create tables as many as you want.','wcmmq');
-        $wpt_link = "<a href='https://wooproducttable.com/' target='_blank'>(Woo Product Table)</a>";
+        $mmp_message = __('Display your WooCommerce products in a searchable table layout with filters using shortcode.','wcmmq');
+        $wpt_link = "";
         $mmp_message = sprintf($mmp_message, $wpt_link);
         $req_mmp->set_message($mmp_message);
         $req_mmp->get_full_this_plugin_name($this_plugin);
