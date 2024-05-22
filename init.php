@@ -2,6 +2,7 @@
 
 /**
  * Plugin Name: Quantity Plus Minus Button for WooCommerce by CodeAstrology
+ * Requires Plugins: woocommerce
  * Plugin URI: https://demo.wooproducttable.com/product/beanie/
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology Team
@@ -9,11 +10,11 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.1.8
+ * Version: 1.2.1
  * Requires at least:    4.0.0
- * Tested up to:         6.3.1
+ * Tested up to:         6.5.3
  * WC requires at least: 3.7
- * WC tested up to: 	 8.1.1
+ * WC tested up to: 	 8.9.1
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
@@ -24,7 +25,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.1.8.9');
+    define( 'WQPMB_VERSION', '1.2.1.0');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {

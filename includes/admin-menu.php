@@ -86,7 +86,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
      * @version 1.0.0
      */
     function wqpmb_enable_quantity_button(){
-        
+        return;
         $datas = filter_input_array(INPUT_POST);
         do_action( 'wqpmb_save_data', $datas );
         

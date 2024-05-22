@@ -29,6 +29,7 @@ $our_data = $this->data;
         <?php } ?>
 
         <form action="" method="POST">
+            <input type="hidden" name="nonce" value="<?php echo wp_create_nonce( plugin_basename( WQPMB_BASE_DIR ) ); ?>">
             <div class="wqpmb-section-panel no-background wqpmb-full-form-submit-wrapper">
                 
                 <button name="configure_submit" type="submit"

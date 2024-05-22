@@ -352,13 +352,13 @@ if( ! class_exists( 'CA_Framework\Require_Control' ) ){
             //Check User Permission 
             if ( ! current_user_can( 'activate_plugins' ) ) return;
 
-            $recommend = $this->required ? __( 'Requires', 'ca-framework' ) : __( 'Recommends', 'ca-framework' );
+            $recommend = $this->required ? __( 'Required for', 'ca-framework' ) : __( 'Recommended by', 'ca-framework' );
             $order_message = $this->get_order_message();
         
             $p_name = $this->get_full_plugin_name(); //Requried plugin full name, with strong or download link
             $this_p_name = $this->get_full_this_plugin_name(); //This onw plugin full name, with strong or download link
             
-            $message = "$this_p_name $recommend $p_name $order_message";
+            $message = "$p_name $recommend $this_p_name $order_message";
             if($this->message){
                 $message .= "<span class='ca-notice-custom-msg'>" . $this->message . "</span>";
             }

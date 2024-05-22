@@ -1,13 +1,11 @@
 === Quantity Plus Minus Button for WooCommerce by CodeAstrology ===
 
-Contributors: codersaiful, codeastrology, unikforce, fazlebari, autocircled
+Contributors: codersaiful, codeastrology, mdibrahimk48, unikforce, fazlebari
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
-Tested up to: 6.3
-Stable tag: 1.1.8
-Requires PHP: 7.0
-WC requires at least: 4.0
-WC tested up to: 7.4.0
+Tested up to: 6.5.3
+Stable tag: 1.2.1
+Requires PHP: 5.4
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
@@ -92,6 +90,7 @@ add_filter('wqpmb_template_base_dir', $template_base_dir);
 * [unikforceit](https://github.com/unikforceit) (1 commit 5 ++  )
 * [fazlebarisn](https://github.com/fazlebarisn) (1 commit 11 ++ )
 * [autocircled](https://github.com/autocircled) (1 commit 110 ++ )
+* [mdibrahimk48](https://github.com/mdibrahimk48/) (3 commit 5++)
 * 👉 [You can join here](https://github.com/codersaiful/wc-quantity-plus-minus-button/fork)
 
 **🥇 CONTRIBUTE 🥇**<br>
@@ -166,7 +165,14 @@ That's it. So easy, Right !!!
 
 == Change log ==
 
+= 1.2.0 =
+* Cart Page auto Update on change qty at Cart Page.
+* Compatibility Shoptimizer Theme added
+* Compatibility Pricon Theme added
+* Nonce update
+
 = 1.1.9 =
+* Nonce issue fixed.
 * Added: new setting field added for input box height and width.
 * Add input box width change option
 * Add input box height change option
