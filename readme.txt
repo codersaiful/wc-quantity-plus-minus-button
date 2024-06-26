@@ -9,7 +9,7 @@ Requires PHP: 5.4
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
 
-Easily add plus, minus button for WooCommerce Quantity Input box in everywhere with custom Design functionality. Quantity button design features available. Such: Single Page, In Loop Quantity input, Cart page etc with custom design. 
+Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page , everywhere. 
 
 == Description ==
 
@@ -41,47 +41,29 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere w
 
 
 Enable Ajax add to cart for Single Product Page.
-`
-add_filter('wqpmn_ajax_cart_single_page', '__return_true' );
+`add_filter('wqpmn_ajax_cart_single_page', '__return_true' );`
 
 On off checkbox in admin page using filter
-`
-add_filter('wqpmb_checkbox_row_validation', '__return_true' );
-`
+`add_filter('wqpmb_checkbox_row_validation', '__return_true' );`
 
 CSS validation using filter
-`
-add_filter('wqpmb_css_row_validation', '__return_true' );
-`
+`add_filter('wqpmb_css_row_validation', '__return_true' );`
 
 Use default WooCommerce template
-`
-add_filter('wqpmb_show_validation', '__return_true');
-`
+`add_filter('wqpmb_show_validation', '__return_true');`
 
 Hide on product page
-`
-add_filter('wqpmb_on_product_page', '__return_false');
-`
+`add_filter('wqpmb_on_product_page', '__return_false');`
 
 Hide on cart page
-`
-add_filter('wqpmb_on_cart_page', '__return_false');
-`
+`add_filter('wqpmb_on_cart_page', '__return_false');`
 
 Hide on Mini Cart page
-`
-add_filter('wqpmb_on_mini_cart_page', '__return_false');
-`
+`add_filter('wqpmb_on_mini_cart_page', '__return_false');`
 
 To Change Templae Base Directory, Use following Hook
 In that directory, template files folder will be locate
-`
-add_filter('wqpmb_template_base_dir', $template_base_dir);
-`
-
-== Action ==
-
+`add_filter('wqpmb_template_base_dir', $template_base_dir);`
 
 
 **👷 HONORABLE CONTRIBUTOR - [GitHub](https://github.com/codersaiful/wc-quantity-plus-minus-button/graphs/contributors) 👷**<br>
