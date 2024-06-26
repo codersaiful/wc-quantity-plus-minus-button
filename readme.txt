@@ -41,24 +41,31 @@ Easily add plus, minus button for WooCommerce Quantity Input box in everywhere. 
 
 
 Enable Ajax add to cart for Single Product Page.
+
 `add_filter('wqpmn_ajax_cart_single_page', '__return_true' );`
 
 On off checkbox in admin page using filter
+
 `add_filter('wqpmb_checkbox_row_validation', '__return_true' );`
 
 CSS validation using filter
+
 `add_filter('wqpmb_css_row_validation', '__return_true' );`
 
 Use default WooCommerce template
+
 `add_filter('wqpmb_show_validation', '__return_true');`
 
 Hide on product page
+
 `add_filter('wqpmb_on_product_page', '__return_false');`
 
 Hide on cart page
+
 `add_filter('wqpmb_on_cart_page', '__return_false');`
 
 Hide on Mini Cart page
+
 `add_filter('wqpmb_on_mini_cart_page', '__return_false');`
 
 To Change Templae Base Directory, Use following Hook
