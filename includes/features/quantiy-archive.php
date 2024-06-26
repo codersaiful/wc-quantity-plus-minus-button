@@ -69,14 +69,14 @@ class Quantiy_Archive
     public function wp_enqueue_scripts()
     {
         $ajax_cart = apply_filters('wqpmn_ajax_cart_single_page', false);
-        if(!$ajax_cart) return;
+        if( !$ajax_cart && is_product() ) return;
         wp_register_script( 'wqpmb-ajax-add-to-cart', WQPMB_BASE_URL . 'assets/js/ajax-add-to-cart.js', array( 'jquery' ), '1.0.0', true );
         wp_enqueue_script( 'wqpmb-ajax-add-to-cart' );
     }
 
     public function ajax_add_to_cart(){
         $ajax_cart = apply_filters('wqpmn_ajax_cart_single_page', false);
-        if(!$ajax_cart) return;
+        if( !$ajax_cart && is_product() ) return;
         $product_id = apply_filters('woocommerce_add_to_cart_product_id', absint($_POST['product_id']));
         $quantity = empty($_POST['quantity']) ? 1 : wc_stock_amount($_POST['quantity']);
         $variation_id = absint($_POST['variation_id']);
