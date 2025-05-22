@@ -53,6 +53,9 @@ if ( !defined( 'WQPMB_BASE_URL' ) ) {
     define( "WQPMB_BASE_URL", plugins_url() . '/'. plugin_basename( dirname( __FILE__ ) ) . '/' );
 }
 
+if ( !defined( 'WQPMB_MAIN_FILE' ) ) {
+    define( "WQPMB_MAIN_FILE", __FILE__ );
+}
 if ( !defined( 'WQPMB_BASE_DIR' ) ) {
     define( "WQPMB_BASE_DIR", str_replace( '\\', '/', dirname( __FILE__ ) ) );
 }

@@ -2,6 +2,8 @@
 namespace WQPMB\Admin;
 
 use WQPMB\Core\Base;
+use WQPMB\Admin\Appsero\Src\Client;
+use WQPMB\Admin\Appsero\Src\Insights;
 use WQPMB\Admin\Tracker;
 
 class Page_Loader extends Base
@@ -47,6 +49,8 @@ class Page_Loader extends Base
 
         //Live Support tawkto.code
         // add_action( 'admin_head', [$this,'tawkto_code'], 999 );
+        $client = new Client( 'b39316df-e8df-44aa-be77-277dac809411', 'Quantity Plus Minus Button for WooCommerce', __FILE__ );
+        $client->insights()->init();
         
     }
 
