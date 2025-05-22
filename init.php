@@ -7,7 +7,7 @@
  * Author: CodeAstrology Team
  * Author URI: https://codeastrology.com/
  *
- * Version: 1.2.4
+ * Version: 2.0.0
  * Requires at least:    4.0.0
  * Tested up to:         6.8
  * WC requires at least: 3.7
@@ -27,7 +27,7 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.2.4.1');
+    define( 'WQPMB_VERSION', '2.0.0.0' );
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
