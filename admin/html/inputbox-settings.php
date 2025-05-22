@@ -3,7 +3,7 @@
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Input Box Settings', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Input Box Settings', 'wc-quantity-plus-minus-button' ); ?></h3>
                 </div>
                 
             </th>
@@ -33,7 +33,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmn-inputbox-width" name="css_input[width]" 
-                            value="<?php echo isset( $css_input['width'] ) ? $css_input['width'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_input['width'] ?? '' ); ?>" 
                             placeholder="eg: 100px"
                             class="ua_input" />
                     </div>
@@ -54,7 +54,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmn-inputbox-height" name="css_input[height]" 
-                            value="<?php echo isset( $css_input['height'] ) ? $css_input['height'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_input['height'] ?? '' ); ?>" 
                             placeholder="eg: 41px"
                             class="ua_input" />
                     </div>
@@ -74,7 +74,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-input-bg-color-input" name="css_input[background-color]" 
-                            value="<?php echo isset( $css_input['background-color'] ) ? $css_input['background-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_input['background-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -94,7 +94,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-input-border-color-input" name="css_input[border-color]" 
-                            value="<?php echo isset( $css_input['border-color'] ) ? $css_input['border-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_input['border-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -113,7 +113,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-input-font-color-input" name="css_input[color]" 
-                            value="<?php echo isset( $css_input['color'] ) ? $css_input['color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_input['color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>

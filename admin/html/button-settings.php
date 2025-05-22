@@ -3,7 +3,7 @@
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Button Settings', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Button Settings', 'wc-quantity-plus-minus-button' ); ?></h3>
                 </div>
                 
             </th>
@@ -107,7 +107,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-btn-bg-color" name="css[background-color]" 
-                            value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css['background-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -127,7 +127,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
-                            value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css['border-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -146,7 +146,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
-                            value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css['color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -187,7 +187,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
-                            value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_hover['background-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -206,7 +206,7 @@
                         <label for="wqpmb-btn-border-colorcss_hover">Border</label>
                     </div>
                         <input type="text" id="wqpmb-btn-border-colorcss_hover" name="css_hover[border-color]" 
-                            value="<?php echo isset( $css_hover['border-color'] ) ? $css_hover['border-color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_hover['border-color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -225,7 +225,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmb-btn-font-colorcss_hover" name="css_hover[color]" 
-                            value="<?php echo isset( $css_hover['color'] ) ? $css_hover['color'] : '' ?>" 
+                            value="<?php echo esc_attr( $css_hover['color'] ?? '' ); ?>" 
                             class="ua_color_picker" />
                     </div>
                 </div>
@@ -266,7 +266,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmn-border-width" name="css[border-width]" 
-                            value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
+                            value="<?php echo esc_attr( $css['border-width'] ?? '' ); ?>" 
                             placeholder="eg: 1px"
                             class="ua_input" />
                     </div>
@@ -287,7 +287,7 @@
                     </div>
                     <div class="form-field col-lg-6">
                         <input type="text" id="wqpmn-border-radius" name="css[border-radius]" 
-                            value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
+                            value="<?php echo esc_attr( $css['border-radius'] ?? '' ); ?>" 
                             placeholder="eg: 4px"
                             class="ua_input" />
                     </div>

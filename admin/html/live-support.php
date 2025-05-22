@@ -6,7 +6,7 @@ $extra_info = $our_data['extra'] ?? [];
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Support & Tracker', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Support', 'wc-quantity-plus-minus-button' ); ?></h3>
                 </div>
                 
             </th>
@@ -26,37 +26,12 @@ $extra_info = $our_data['extra'] ?? [];
         * @ since 3.6.0
         * @ Author Fazle Bari 
         -->
-        <?php $live_support = isset( $extra_info['disable_live_support' ] ) && $extra_info['disable_live_support' ] == '1' ? 'checked' : false; ?>
+        
         <tr>
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
-                        <label for="_disable_live_support"><?php echo esc_html__('Live Support','wqpmb');?></label>
-                    </div>
-                    <div class="form-field col-lg-6">
-                        <label class="switch reverse">
-                            <input value="1" name="extra[disable_live_support]"
-                                <?php echo $live_support; /* finding checked or null */ ?> type="checkbox" id="_disable_live_support">
-                            <div class="slider round"><!--ADDED HTML -->
-                                <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
-                            </div>
-                        </label>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="wqpmb-form-info">
-                    <p>Here can need Reload,after change.</p>
-                    <?php wqpmb_doc_link('https://codeastrology.com/my-support', 'Customer Support'); ?>
-                    
-                </div> 
-            </td>
-        </tr>
-        <tr>
-            <td>
-                <div class="wqpmb-form-control">
-                    <div class="form-label col-lg-6">
-                        <label for="_disable_live_support"><?php echo esc_html__('Important Link','wqpmb');?></label>
+                        <label for="_disable_live_support"><?php echo esc_html__('Important Link','wc-quantity-plus-minus-button');?></label>
                     </div>
                     <div class="form-field col-lg-6">
                         <div class="wqpmb-important-link-area">
@@ -98,38 +73,7 @@ $extra_info = $our_data['extra'] ?? [];
             </td>
         </tr>
         
-        <?php $tracker = isset( $extra_info['tracker' ] ) && $extra_info['tracker' ] == '1' ? 'checked' : false; ?>
-        <tr style="display: none !important;">
-            <td>
-                <div class="wqpmb-form-control">
-                    <div class="form-label col-lg-6">
-                        <label for="_tracker" title="Help Us to Improve plugin based on user data."><?php echo esc_html__('Tracker','wqpmb');?><i class="wqpmb-optional">Optional</i></label>
-                    </div>
-                    <div class="form-field col-lg-6">
-                        
-                        <label class="switch">
-                            <input value="1" name="extra[tracker]"
-                                <?php echo $tracker; /* finding checked or null */ ?> type="checkbox" id="_tracker">
-                            <div class="slider round"><!--ADDED HTML -->
-                                <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
-                            </div>
-                        </label>
-                        <p class="warning-alert">
-                            Tracker will send some basic date to Plugin Author. such as: WordPress Version, MySQL Version,WooCommerce Version, site title, Min Max Plugin version, Theme Name etc.
-                            <i>If you don't want to share these info, Off this option.</i> We don't sale your data, We use your data as servey for our plugin improve and update. 
-                        </p>
-                    </div>
-                </div>
-            </td>
-            <td>
-                <div class="wqpmb-form-info">
-                    <p>
-                        <b>Help us</b> to improve our plugin by proding your basic data. 
-                    </p>
-                    
-                </div> 
-            </td>
-        </tr>
+        
         
     </tbody>
 

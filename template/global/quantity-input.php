@@ -77,7 +77,7 @@ if ( $max_value && $min_value === $max_value ) {
 	?>
 	<div class="qib-button-wrapper qib-button-wrapper-<?php echo esc_attr( $product_id ); ?>">
 	
-		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wqpmb' ); ?></label>
+		<label class="screen-reader-text" for="<?php echo esc_attr( $input_id ); ?>"><?php esc_html_e( 'Quantity', 'wc-quantity-plus-minus-button' ); ?></label>
 			<?php if( $plus_minus ){ ?>
             <button type="button" class="minus qib-button">-</button>
 			<?php } ?>
@@ -101,7 +101,7 @@ if ( $max_value && $min_value === $max_value ) {
 					max="<?php echo esc_attr( 0 < $max_value ? $max_value : '' ); ?>"
 					name="<?php echo esc_attr( $input_name ); ?>"
 					value="<?php echo esc_attr( $input_value ); ?>"
-					title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'wqpmb' ); ?>"
+					title="<?php echo esc_attr_x( 'Qty', 'Product quantity input tooltip', 'wc-quantity-plus-minus-button' ); ?>"
 					size="4"
 					placeholder="<?php echo esc_attr( $placeholder ); ?>"
 					inputmode="<?php echo esc_attr( $inputmode ); ?>" />

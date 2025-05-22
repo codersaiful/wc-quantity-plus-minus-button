@@ -84,9 +84,11 @@ jQuery(function ($) {
             }
             qty.val(Math.round(qty.val() * 100000) / 100000);
             qty.trigger('change');
-            setTimeout(function(){
-				$('button.button[name=update_cart]').trigger('click');
-			}, 800);
+
+            // Ajax call has been removed here.
+            // setTimeout(function(){
+			// 	$('button.button[name=update_cart]').trigger('click');
+			// }, 800);
             $("body").removeClass("sf-input-focused");
         });
     }

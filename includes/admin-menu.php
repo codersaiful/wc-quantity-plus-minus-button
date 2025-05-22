@@ -8,10 +8,10 @@ if( !function_exists( 'wqpmb_plugin_actions' ) ){
      * @return type
      */
     function wqpmb_plugin_actions( $actions ) {
-        $links[] = '<a href="' . admin_url( 'admin.php?page=' . WQPMB_MENU_SLUG ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
-        // $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '" target="_blank">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
-        $links[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
-        $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
+        $links[] = '<a href="' . admin_url( 'admin.php?page=' . WQPMB_MENU_SLUG ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wc-quantity-plus-minus-button' ) . '">' . esc_html__( 'Settings', 'wc-quantity-plus-minus-button' ).'</a>';
+        // $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wc-quantity-plus-minus-button' ) . '" target="_blank">' . esc_html__( 'Features', 'wc-quantity-plus-minus-button' ) . '</a>';
+        $links[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Demo','wc-quantity-plus-minus-button' ).'</a>';
+        $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Support','wc-quantity-plus-minus-button' ).'</a>';
         return array_merge( $links, $actions );
     }
     add_filter('plugin_action_links_' . WQPMB_BASE_NAME, 'wqpmb_plugin_actions' );
@@ -27,9 +27,9 @@ if( !function_exists( 'wqpmb_plugin_meta' ) ){
     function wqpmb_plugin_meta( $plugin_meta, $plugin_file ) {
         
         if( $plugin_file == WQPMB_BASE_NAME ){
-            // $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
-            $plugin_meta[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
-            $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wqpmb' ).'</a>';
+            // $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wc-quantity-plus-minus-button' ) . '">' . esc_html__( 'Features', 'wc-quantity-plus-minus-button' ) . '</a>';
+            $plugin_meta[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Demo','wc-quantity-plus-minus-button' ).'</a>';
+            $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wc-quantity-plus-minus-button' ).'</a>';
 
         }
         return $plugin_meta;
@@ -149,7 +149,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color" name="css[background-color]" 
-                                   value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -158,7 +158,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
-                                   value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-color'] ?? '' ); ?>"
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -167,7 +167,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
-                                   value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -179,7 +179,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color-hover">Button Background Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
-                                   value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -187,7 +187,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-colorcss_hover">Button Border Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-colorcss_hover" name="css_hover[border-color]" 
-                                   value="<?php echo isset( $css_hover['border-color'] ) ? $css_hover['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['border-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -195,7 +195,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-colorcss_hover">Button Font Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-colorcss_hover" name="css_hover[color]" 
-                                   value="<?php echo isset( $css_hover['color'] ) ? $css_hover['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -206,7 +206,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="">Border Width</label></th>
                         <td>
                             <input type="text" id="" name="css[border-width]" 
-                                   value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-width'] ?? '' ); ?>" 
                                    placeholder="eg: 1px"
                                    class="ua_input" />
                         </td>
@@ -215,7 +215,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="">Border Radius</label></th>
                         <td>
                             <input type="text" id="" name="css[border-radius]" 
-                                   value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-radius'] ?? '' ); ?>" 
                                    placeholder="eg: 4px"
                                    class="ua_input" />
                         </td>
@@ -229,7 +229,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color-input">Input Box Background Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color-input" name="css_input[background-color]" 
-                                   value="<?php echo isset( $css_input['background-color'] ) ? $css_input['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -237,7 +237,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-color-input">Input Box Border Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-color-input" name="css_input[border-color]" 
-                                   value="<?php echo isset( $css_input['border-color'] ) ? $css_input['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['border-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -245,7 +245,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-color-input">Input Box Font Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-color-input" name="css_input[color]" 
-                                   value="<?php echo isset( $css_input['color'] ) ? $css_input['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -343,38 +343,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     }
 }
 
-if( !function_exists( 'wqpmb_tawkto_code_header' ) ){
-    /**
-     * set class for Admin Body tag
-     * 
-     * @param type $classes
-     * @return String
-     */
-    function wqpmb_tawkto_code_header( $class_string ){
-        global $current_screen;
-        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
 
-        if( strpos( $s_id, 'quanity-plus-minus-button') !== false ){
-        ?>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/628f5d4f7b967b1179915ad7/1g4009033';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->      
-        <?php
-        }
-        
-    }
-}
-// add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
 
 function wqpmb_social_links(){
 ?>
@@ -384,7 +353,7 @@ function wqpmb_social_links(){
     $codeastrology = [
         'ticket'   => ['url' => 'https://codeastrology.com/my-support/?utm=Plugin_Social', 'title' => 'Create Ticket'],
         'web'   => ['url' => 'https://codeastrology.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
-        'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
+        'wc-quantity-plus-minus-button'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
         'min-max'   => ['url' => 'https://codeastrology.com/min-max-quantity/?utm=Plugin_Social', 'title' => 'CodeAstrology Min Max Step'],
         'linkedin'   => ['url' => 'https://www.linkedin.com/company/codeastrology'],
         'youtube'   => ['url' => 'https://www.youtube.com/c/codeastrology'],
@@ -424,7 +393,7 @@ function wqpmb_submit_issue_link(){
     ?>
     <p class="wpt-issue-submit">
 <?php
-$content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:', 'wcmmq' );
+$content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:','wc-quantity-plus-minus-button' );
 ?>
         <b>ISSUE SUBMIT:</b> If you founded any issue, Please inform us. That will be very helpful for us to Fix.
         <a href="https://github.com/codersaiful/wc-quantity-plus-minus-button/issues" target="_blank">SUBMIT ISSUE</a> or 
