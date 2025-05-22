@@ -41,29 +41,16 @@ class Page_Loader extends Base
 
     public function run()
     {
-        
-        add_action( 'admin_init', [$this,'admin_init_tracker'], 999 );
-        // var_dump($this);
+        //Add menu
         add_action( 'admin_menu', [$this, 'admin_menu'] );
         add_action( 'admin_enqueue_scripts', [$this, 'admin_enqueue_scripts'] );
 
         //Live Support tawkto.code
-        add_action( 'admin_head', [$this,'tawkto_code'], 999 );
+        // add_action( 'admin_head', [$this,'tawkto_code'], 999 );
         
     }
 
-    public function admin_init_tracker(){
-        /**
-         * Tracker Enable Only Based on Customer Approval
-         * You able to disbale/Enable from
-         * Dashboard -> Min Max Control -> Support & Tracker -> Tracker
-         * 
-         * @since 4.5.8
-         */
-        $tracker = new Tracker();
-        $tracker->run();
-        
-    }
+
 
     public function admin_menu()
     {
@@ -125,7 +112,8 @@ class Page_Loader extends Base
     {
         $rev_link = 'https://wordpress.org/support/plugin/wc-quantity-plus-minus-button/reviews/#new-post';
         $text = sprintf(
-			__( 'Thank you for using Plus Minus Button. <a href="%s" target="_blank">%sPlease review us</a>.' ),
+            /* translators: 1: link to the plugin review page 2: start icon */
+			__( 'Thank you for using Plus Minus Button. <a href="%1$s" target="_blank">%2$sPlease review us</a>.', 'wc-quantity-plus-minus-button' ),
 			$rev_link,
             '<i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i><i class="wqpmb_icon-star-filled"></i>'
 		);
