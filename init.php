@@ -7,7 +7,7 @@
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology Team
  * Author URI: https://codeastrology.com/
- * Text Domain: wqpmb
+ * Text Domain: wc-quantity-plus-minus-button
  * Domain Path: /languages/
  * 
  * Version: 1.2.4
