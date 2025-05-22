@@ -1,4 +1,4 @@
-=== Quantity Plus Minus Button for WooCommerce by CodeAstrology ===
+=== Quantity Plus Minus Button for WooCommerce ===
 
 Contributors: codersaiful, codeastrology, mdibrahimk48, unikforce, fazlebari
 Tags: woocommerce quantity, plus minus button, quantity, qty button
@@ -153,6 +153,13 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 1.2.4 =
+* Escapping update.
+* Sanitization update.
+* Security updated.
+*Code Optimized.
+* Bug Fixed.
 
 = 1.2.3 =
 * Fixed: Cart update on change qty for cart page has been fixed.
