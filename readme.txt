@@ -4,7 +4,7 @@ Contributors: codersaiful, codeastrology, mdibrahimk48, unikforce, fazlebari
 Tags: woocommerce quantity, plus minus button, quantity, qty button
 Requires at least: 4.0.0
 Tested up to: 6.8
-Stable tag: 1.2.4
+Stable tag: 2.0.0
 Requires PHP: 5.4
 License: GPL3+
 License URI: http://www.gnu.org/licenses/gpl.html
@@ -163,6 +163,10 @@ That's it. So easy, Right !!!
 10. Quantity button in WooCommerce cart page
 
 == Change log ==
+
+= 2.0.0 =
+* Fixed: fatal error issue has been fixed.
+* Bug fixed.
 
 = 1.2.4 =
 * Escapping update.

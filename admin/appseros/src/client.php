@@ -1,6 +1,6 @@
 <?php
 
-namespace WQPMB\Admin\Appsero\Src;
+namespace WQPMB\Admin\Appseros\Src;
 
 /**
  * Appsero Client
