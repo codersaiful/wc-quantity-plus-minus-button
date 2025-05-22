@@ -29,11 +29,11 @@ if ( ! defined( 'UltraAddons' ) ) {
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.2.4.0');
+    define( 'WQPMB_VERSION', '1.2.4.1');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
-    define( 'WQPMB_NAME', 'Quantity Plus Minus Button for WooCommerce by CodeAstrology');
+    define( 'WQPMB_NAME', 'Quantity Plus Minus Button for WooCommerce');
 }
 
 if ( !defined( 'WQPMB_BASE_NAME' ) ) {
