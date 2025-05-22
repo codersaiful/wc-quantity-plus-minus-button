@@ -149,7 +149,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color">Button Background Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color" name="css[background-color]" 
-                                   value="<?php echo isset( $css['background-color'] ) ? $css['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -158,7 +158,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-color">Button Border Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-color" name="css[border-color]" 
-                                   value="<?php echo isset( $css['border-color'] ) ? $css['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-color'] ?? '' ); ?>"
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -167,7 +167,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-color">Button Font Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-color" name="css[color]" 
-                                   value="<?php echo isset( $css['color'] ) ? $css['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -179,7 +179,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color-hover">Button Background Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color-hover" name="css_hover[background-color]" 
-                                   value="<?php echo isset( $css_hover['background-color'] ) ? $css_hover['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -187,7 +187,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-colorcss_hover">Button Border Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-colorcss_hover" name="css_hover[border-color]" 
-                                   value="<?php echo isset( $css_hover['border-color'] ) ? $css_hover['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['border-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -195,7 +195,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-colorcss_hover">Button Font Color Hover</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-colorcss_hover" name="css_hover[color]" 
-                                   value="<?php echo isset( $css_hover['color'] ) ? $css_hover['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_hover['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -206,7 +206,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="">Border Width</label></th>
                         <td>
                             <input type="text" id="" name="css[border-width]" 
-                                   value="<?php echo isset( $css['border-width'] ) ? $css['border-width'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-width'] ?? '' ); ?>" 
                                    placeholder="eg: 1px"
                                    class="ua_input" />
                         </td>
@@ -215,7 +215,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="">Border Radius</label></th>
                         <td>
                             <input type="text" id="" name="css[border-radius]" 
-                                   value="<?php echo isset( $css['border-radius'] ) ? $css['border-radius'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css['border-radius'] ?? '' ); ?>" 
                                    placeholder="eg: 4px"
                                    class="ua_input" />
                         </td>
@@ -229,7 +229,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-bg-color-input">Input Box Background Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-bg-color-input" name="css_input[background-color]" 
-                                   value="<?php echo isset( $css_input['background-color'] ) ? $css_input['background-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['background-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -237,7 +237,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-border-color-input">Input Box Border Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-border-color-input" name="css_input[border-color]" 
-                                   value="<?php echo isset( $css_input['border-color'] ) ? $css_input['border-color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['border-color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -245,7 +245,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
                         <th><label for="wqpmb-btn-font-color-input">Input Box Font Color</label></th>
                         <td>
                             <input type="text" id="wqpmb-btn-font-color-input" name="css_input[color]" 
-                                   value="<?php echo isset( $css_input['color'] ) ? $css_input['color'] : '' ?>" 
+                                   value="<?php echo esc_attr( $css_input['color'] ?? '' ); ?>" 
                                    class="ua_color_picker" />
                         </td>
                     </tr>
@@ -343,38 +343,7 @@ if( !function_exists( 'wqpmb_enable_quantity_button' ) ){
     }
 }
 
-if( !function_exists( 'wqpmb_tawkto_code_header' ) ){
-    /**
-     * set class for Admin Body tag
-     * 
-     * @param type $classes
-     * @return String
-     */
-    function wqpmb_tawkto_code_header( $class_string ){
-        global $current_screen;
-        $s_id = isset( $current_screen->id ) ? $current_screen->id : '';
 
-        if( strpos( $s_id, 'quanity-plus-minus-button') !== false ){
-        ?>
-<!--Start of Tawk.to Script-->
-<script type="text/javascript">
-var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/628f5d4f7b967b1179915ad7/1g4009033';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
-</script>
-<!--End of Tawk.to Script-->      
-        <?php
-        }
-        
-    }
-}
-// add_filter( 'admin_head', 'wqpmb_tawkto_code_header', 999 );
 
 function wqpmb_social_links(){
 ?>
