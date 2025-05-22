@@ -6,7 +6,7 @@ $extra_info = $our_data['extra'] ?? [];
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Support & Tracker', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Support & Tracker', 'wc-quantity-plus-minus-button' ); ?></h3>
                 </div>
                 
             </th>
@@ -31,14 +31,14 @@ $extra_info = $our_data['extra'] ?? [];
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
-                        <label for="_disable_live_support"><?php echo esc_html__('Live Support','wqpmb');?></label>
+                        <label for="_disable_live_support"><?php echo esc_html__('Live Support','wc-quantity-plus-minus-button');?></label>
                     </div>
                     <div class="form-field col-lg-6">
                         <label class="switch reverse">
                             <input value="1" name="extra[disable_live_support]"
                                 <?php echo $live_support; /* finding checked or null */ ?> type="checkbox" id="_disable_live_support">
                             <div class="slider round"><!--ADDED HTML -->
-                                <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
+                                <span class="on"><?php echo esc_html__('ON','wc-quantity-plus-minus-button');?></span><span class="off"> <?php echo esc_html__('OFF','wc-quantity-plus-minus-button');?></span><!--END-->
                             </div>
                         </label>
                     </div>
@@ -56,7 +56,7 @@ $extra_info = $our_data['extra'] ?? [];
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
-                        <label for="_disable_live_support"><?php echo esc_html__('Important Link','wqpmb');?></label>
+                        <label for="_disable_live_support"><?php echo esc_html__('Important Link','wc-quantity-plus-minus-button');?></label>
                     </div>
                     <div class="form-field col-lg-6">
                         <div class="wqpmb-important-link-area">
@@ -103,7 +103,7 @@ $extra_info = $our_data['extra'] ?? [];
             <td>
                 <div class="wqpmb-form-control">
                     <div class="form-label col-lg-6">
-                        <label for="_tracker" title="Help Us to Improve plugin based on user data."><?php echo esc_html__('Tracker','wqpmb');?><i class="wqpmb-optional">Optional</i></label>
+                        <label for="_tracker" title="Help Us to Improve plugin based on user data."><?php echo esc_html__('Tracker','wc-quantity-plus-minus-button');?><i class="wqpmb-optional">Optional</i></label>
                     </div>
                     <div class="form-field col-lg-6">
                         
@@ -111,7 +111,7 @@ $extra_info = $our_data['extra'] ?? [];
                             <input value="1" name="extra[tracker]"
                                 <?php echo $tracker; /* finding checked or null */ ?> type="checkbox" id="_tracker">
                             <div class="slider round"><!--ADDED HTML -->
-                                <span class="on"><?php echo esc_html__('ON','wqpmb');?></span><span class="off"> <?php echo esc_html__('OFF','wqpmb');?></span><!--END-->
+                                <span class="on"><?php echo esc_html__('ON','wc-quantity-plus-minus-button');?></span><span class="off"> <?php echo esc_html__('OFF','wc-quantity-plus-minus-button');?></span><!--END-->
                             </div>
                         </label>
                         <p class="warning-alert">

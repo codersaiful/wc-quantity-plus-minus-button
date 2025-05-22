@@ -3,7 +3,7 @@
         <tr>
             <th class="wqpmb-inside">
                 <div class="wqpmb-table-header-inside">
-                    <h3><?php echo esc_html__( 'Input Box Settings', 'wqpmb' ); ?></h3>
+                    <h3><?php echo esc_html__( 'Input Box Settings', 'wc-quantity-plus-minus-button' ); ?></h3>
                 </div>
                 
             </th>

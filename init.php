@@ -10,22 +10,22 @@
  * Text Domain: wqpmb
  * Domain Path: /languages/
  * 
- * Version: 1.2.3
+ * Version: 1.2.4
  * Requires at least:    4.0.0
- * Tested up to:         6.6.2
+ * Tested up to:         6.8
  * WC requires at least: 3.7
- * WC tested up to: 	 9.3.3
+ * WC tested up to: 	 9.8.5
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
 }
 
 if ( ! defined( 'UltraAddons' ) ) {
-    define( 'UltraAddons', __( 'UltraAddons', 'wqpmb' ));
+    define( 'UltraAddons', __( 'UltraAddons', 'wc-quantity-plus-minus-button' ));
 }
 
 if ( !defined( 'WQPMB_VERSION' ) ) {
-    define( 'WQPMB_VERSION', '1.2.3.0');
+    define( 'WQPMB_VERSION', '1.2.4.0');
 }
 
 if ( !defined( 'WQPMB_NAME' ) ) {
@@ -42,7 +42,7 @@ if ( !defined( 'WQPMB_MENU_SLUG' ) ) {
 }
 
 if ( !defined( 'WQPMB_MENU_NAME' ) ) {
-    define( 'WQPMB_MENU_NAME', __( '(+-) Plus Minus button', 'wqpmb' ) );
+    define( 'WQPMB_MENU_NAME', __( '(+-) Plus Minus button', 'wc-quantity-plus-minus-button' ) );
 }
 
 if ( !defined( 'WQPMB_BASE_URL' ) ) {
@@ -218,7 +218,7 @@ class WQPMB_Button {
         add_action(
 	'plugins_loaded',
 	function () {
-		load_plugin_textdomain( 'wqpmb', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
+		load_plugin_textdomain( 'wc-quantity-plus-minus-button', false, dirname( plugin_basename( __FILE__ ) ) . '/languages/' );
 	});
         
         
@@ -261,10 +261,7 @@ class WQPMB_Button {
         $admin_page->run();
        }
 
-       if( is_admin() && $is_woocommerce ){
-        //Recommedation is currently Off
-        WQPMB\Framework\Recommeded::check();
-       }
+       
 
        WQPMB\Includes\Feature_Loader::run();
     }
@@ -275,9 +272,9 @@ class WQPMB_Button {
             unset($_GET['activate']);
         
         $message = sprintf(
-                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'wqpmb'),
+                esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'wc-quantity-plus-minus-button'),
                 '<strong>' . WQPMB_NAME . '</strong>',
-                '<strong><a href="' . esc_url('https://wordpress.org/plugins/woocommerce/') . '" target="_blank">' . esc_html__('WooCommerce', 'wqpmb') . '</a></strong>'
+                '<strong><a href="' . esc_url('https://wordpress.org/plugins/woocommerce/') . '" target="_blank">' . esc_html__('WooCommerce', 'wc-quantity-plus-minus-button') . '</a></strong>'
         );
 
         printf('<div class="notice notice-error is-dismissible"><p>%1$s</p></div>', $message);
@@ -289,9 +286,9 @@ class WQPMB_Button {
 
            $message = sprintf(
                    /* translators: 1: Plugin name 2: PHP 3: Required PHP version */
-                   esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wqpmb' ),
+                   esc_html__( '"%1$s" requires "%2$s" version %3$s or greater.', 'wc-quantity-plus-minus-button' ),
                    '<strong>' . WQPMB_NAME . '</strong>',
-                   '<strong>' . esc_html__( 'PHP', 'wqpmb' ) . '</strong>',
+                   '<strong>' . esc_html__( 'PHP', 'wc-quantity-plus-minus-button' ) . '</strong>',
                     self::MINIMUM_PHP_VERSION
            );
 

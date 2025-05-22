@@ -95,7 +95,7 @@ if( ! class_exists( 'CA_Framework\Notice' ) ){
         {
             $defl = array(
                 'type'      =>  'primary',
-                'text'      =>  __( 'Click here', 'ca-framework' ),
+                'text'      =>  __( 'Click here', 'wc-quantity-plus-minus-button' ),
                 'target'    =>  '_blank',
                 'link'      =>  '#'
             );

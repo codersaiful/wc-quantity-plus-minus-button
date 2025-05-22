@@ -36,7 +36,7 @@ $our_data = $this->data;
                     class="wqpmb-btn wqpmb-has-icon configure_submit">
                     <span><i class="wqpmb_icon-floppy"></i></span>
                     <strong class="form-submit-text">
-                    <?php echo esc_html__('Save Change','wqpmb');?>
+                    <?php echo esc_html__('Save Change','wc-quantity-plus-minus-button');?>
                     </strong>
                 </button>
             </div>
@@ -72,14 +72,14 @@ $our_data = $this->data;
                     class="wqpmb-btn wqpmb-has-icon configure_submit">
                     <span><i class="wqpmb_icon-floppy"></i></span>
                     <strong class="form-submit-text">
-                    <?php echo esc_html__('Save Change','wqpmb');?>
+                    <?php echo esc_html__('Save Change','wc-quantity-plus-minus-button');?>
                     </strong>
                 </button>
                 <button name="reset_button" 
                     class="wqpmb-btn reset wqpmb-has-icon reset_button"
                     onclick="return confirm('If you continue with this action, you will reset all options in this page.\nAre you sure?');">
                     <span><i class="wqpmb_icon-arrows-cw "></i></span>
-                    <?php echo esc_html__( 'Reset Settings', 'wqpmb' ); ?>
+                    <?php echo esc_html__( 'Reset Settings', 'wc-quantity-plus-minus-button' ); ?>
                 </button>
                 
             </div>
@@ -91,7 +91,7 @@ $our_data = $this->data;
                     <tr>
                         <th class="wqpmb-inside">
                             <div class="wqpmb-table-header-inside">
-                                <h3><?php echo esc_html__('Recommendation Area', 'wpt'); ?> <small class="wqpmb-small-title">To increase Sale</small></h3>
+                                <h3><?php echo esc_html__('Recommendation Area', 'wc-quantity-plus-minus-button'); ?> <small class="wqpmb-small-title">To increase Sale</small></h3>
                             </div>
 
                         </th>

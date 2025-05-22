@@ -326,9 +326,9 @@ if( ! class_exists( 'CA_Framework\Require_Control' ) ){
 
         public function get_order_message()
         {
-            if( $this->status == 'install' ) return __( 'to be Install and Activated.', 'ca-framework' );
-            if( $this->status == 'activate' ) return __( 'to be Activated.', 'ca-framework' );
-            if( $this->status == 'upgrade' ) return __( 'to be Upgrade Version.', 'ca-framework' );
+            if( $this->status == 'install' ) return __( 'to be Install and Activated.', 'wc-quantity-plus-minus-button' );
+            if( $this->status == 'activate' ) return __( 'to be Activated.', 'wc-quantity-plus-minus-button' );
+            if( $this->status == 'upgrade' ) return __( 'to be Upgrade Version.', 'wc-quantity-plus-minus-button' );
         }
 
 
@@ -352,7 +352,7 @@ if( ! class_exists( 'CA_Framework\Require_Control' ) ){
             //Check User Permission 
             if ( ! current_user_can( 'activate_plugins' ) ) return;
 
-            $recommend = $this->required ? __( 'Required for', 'ca-framework' ) : __( 'Recommended by', 'ca-framework' );
+            $recommend = $this->required ? __( 'Required for', 'wc-quantity-plus-minus-button' ) : __( 'Recommended by', 'wc-quantity-plus-minus-button' );
             $order_message = $this->get_order_message();
         
             $p_name = $this->get_full_plugin_name(); //Requried plugin full name, with strong or download link

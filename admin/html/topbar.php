@@ -7,7 +7,7 @@ $min_max_img = $this->base_url . 'assets/images/plus-minus-small.png';
  * 
  */
 
-$topbar_sub_title = __( 'Manage and Settings', 'wqpmb' );
+$topbar_sub_title = __( 'Manage and Settings', 'wc-quantity-plus-minus-button' );
 if( isset( $this->topbar_sub_title ) && ! empty( $this->topbar_sub_title ) ){
     $topbar_sub_title = $this->topbar_sub_title;
 }
@@ -20,7 +20,7 @@ if( isset( $this->topbar_sub_title ) && ! empty( $this->topbar_sub_title ) ){
                     <img src="<?php echo esc_url( $min_max_img ); ?>" class="wqpmb-brand-logo">
                 </div>
                 <div class="wqpmb-main-title">
-                    <h2 class="wqpmb-ntitle"><?php _e("Plus Minus Button", "wqpmb");?></h2>
+                    <h2 class="wqpmb-ntitle"><?php _e("Plus Minus Button", 'wc-quantity-plus-minus-button');?></h2>
                 </div>
                 
                 <div class="wqpmb-main-title wqpmb-main-title-secondary">

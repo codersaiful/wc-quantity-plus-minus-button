@@ -8,10 +8,10 @@ if( !function_exists( 'wqpmb_plugin_actions' ) ){
      * @return type
      */
     function wqpmb_plugin_actions( $actions ) {
-        $links[] = '<a href="' . admin_url( 'admin.php?page=' . WQPMB_MENU_SLUG ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wqpmb' ) . '">' . esc_html__( 'Settings', 'wqpmb' ).'</a>';
-        // $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '" target="_blank">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
-        $links[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
-        $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Support','wqpmb' ).'</a>';
+        $links[] = '<a href="' . admin_url( 'admin.php?page=' . WQPMB_MENU_SLUG ) . '" title="' . esc_attr__( 'WC Quantity Plus Minus', 'wc-quantity-plus-minus-button' ) . '">' . esc_html__( 'Settings', 'wc-quantity-plus-minus-button' ).'</a>';
+        // $links[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wc-quantity-plus-minus-button' ) . '" target="_blank">' . esc_html__( 'Features', 'wc-quantity-plus-minus-button' ) . '</a>';
+        $links[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Demo','wc-quantity-plus-minus-button' ).'</a>';
+        $links[] = '<a href="https://codeastrology.com/support/" title="' . esc_attr__( 'Support', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Support','wc-quantity-plus-minus-button' ).'</a>';
         return array_merge( $links, $actions );
     }
     add_filter('plugin_action_links_' . WQPMB_BASE_NAME, 'wqpmb_plugin_actions' );
@@ -27,9 +27,9 @@ if( !function_exists( 'wqpmb_plugin_meta' ) ){
     function wqpmb_plugin_meta( $plugin_meta, $plugin_file ) {
         
         if( $plugin_file == WQPMB_BASE_NAME ){
-            // $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wqpmb' ) . '">' . esc_html__( 'Features', 'wqpmb' ) . '</a>';
-            $plugin_meta[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Demo','wqpmb' ).'</a>';
-            $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wqpmb' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wqpmb' ).'</a>';
+            // $plugin_meta[] = '<a href="https://wcquantity.com/wc-quantity-plus-minus-button/" title="' . esc_attr__( 'Plugin Features', 'wc-quantity-plus-minus-button' ) . '">' . esc_html__( 'Features', 'wc-quantity-plus-minus-button' ) . '</a>';
+            $plugin_meta[] = '<a href="https://demo.wooproducttable.com/product/beanie/" title="' . esc_attr__( 'Plugin Demo', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Demo','wc-quantity-plus-minus-button' ).'</a>';
+            $plugin_meta[] = '<a href="mailto:codersaiful@gmail.com" title="' . esc_attr__( 'Mail to Developer', 'wc-quantity-plus-minus-button' ) . '" target="_blank">'.esc_html__( 'Contact to Developer','wc-quantity-plus-minus-button' ).'</a>';
 
         }
         return $plugin_meta;
@@ -384,7 +384,7 @@ function wqpmb_social_links(){
     $codeastrology = [
         'ticket'   => ['url' => 'https://codeastrology.com/my-support/?utm=Plugin_Social', 'title' => 'Create Ticket'],
         'web'   => ['url' => 'https://codeastrology.com/?utm=Plugin_Social', 'title' => 'CodeAstrology'],
-        'wpt'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
+        'wc-quantity-plus-minus-button'   => ['url' => 'https://wooproducttable.com/?utm=Plugin_Social', 'title' => 'Woo Product Table'],
         'min-max'   => ['url' => 'https://codeastrology.com/min-max-quantity/?utm=Plugin_Social', 'title' => 'CodeAstrology Min Max Step'],
         'linkedin'   => ['url' => 'https://www.linkedin.com/company/codeastrology'],
         'youtube'   => ['url' => 'https://www.youtube.com/c/codeastrology'],
