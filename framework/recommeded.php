@@ -16,7 +16,7 @@ class Recommeded
         $mmp_req_slug = 'product-sync-master-sheet/product-sync-master-sheet.php';
         $mmp_tar_slug = self::$base_file;
         $req_sync = new Require_Control($mmp_req_slug,$mmp_tar_slug);
-        $req_sync->set_args( ['Name' => __( 'Product Stock Sync with Google Sheet for WooCommerce', 'wcmmq' ) ] )
+        $req_sync->set_args( ['Name' => __( 'Product Stock Sync with Google Sheet for WooCommerce','wc-quantity-plus-minus-button' ) ] )
         ->set_download_link('https://wordpress.org/plugins/product-sync-master-sheet/')
         ->set_this_download_link('https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/');
         $mmp_message = __('Easily Synchronize with Google Sheets and Bulk edit your products.','wcmmq');

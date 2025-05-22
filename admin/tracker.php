@@ -331,7 +331,7 @@ document.addEventListener("DOMContentLoaded",function(){var t=document.querySele
     public function allow_notice()
     {
         $message = sprintf(
-                esc_html__( 'You are just one step away - %1$s', 'wcmmq' ),
+                esc_html__( 'You are just one step away - %1$s','wc-quantity-plus-minus-button' ),
                 '<b><a href="' . $this->menu_url . '">' . esc_html( $this->plugin_name ) . ' - Activate Now </a></b>'
         );
 

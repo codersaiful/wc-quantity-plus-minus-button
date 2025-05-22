@@ -393,7 +393,7 @@ function wqpmb_submit_issue_link(){
     ?>
     <p class="wpt-issue-submit">
 <?php
-$content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:', 'wcmmq' );
+$content_of_mail = __( 'I have found an issue with your Quantity Plus Minus Button plugin. I will explain here with screenshot.Issues And Screenshots:','wc-quantity-plus-minus-button' );
 ?>
         <b>ISSUE SUBMIT:</b> If you founded any issue, Please inform us. That will be very helpful for us to Fix.
         <a href="https://github.com/codersaiful/wc-quantity-plus-minus-button/issues" target="_blank">SUBMIT ISSUE</a> or 
