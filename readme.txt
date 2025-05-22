@@ -158,7 +158,7 @@ That's it. So easy, Right !!!
 * Escapping update.
 * Sanitization update.
 * Security updated.
-*Code Optimized.
+* Code Optimized.
 * Bug Fixed.
 
 = 1.2.3 =
