@@ -1,5 +1,4 @@
 <?php
-
 /**
  * Plugin Name: Quantity Plus Minus Button for WooCommerce
  * Requires Plugins: woocommerce
@@ -7,7 +6,6 @@
  * Description: Easily add plus,minus button for WooCommerce Quantity Input box in everywhere. Such: Single Page, In Loop Quantity input, Cart page etc. 
  * Author: CodeAstrology Team
  * Author URI: https://codeastrology.com/
- * 
  *
  * Version: 1.2.4
  * Requires at least:    4.0.0
@@ -17,8 +15,8 @@
  * 
  * Text Domain: wc-quantity-plus-minus-button
  * Domain Path: /languages
- * License: GPLv2 or later
- * License URI: http://www.gnu.org/licenses/gpl-2.0.html
+ * License: GPL3+
+ * License URI: http://www.gnu.org/licenses/gpl.html
  */
 if ( ! defined( 'ABSPATH' ) ) {
     die();
