@@ -49,7 +49,7 @@ class Page_Loader extends Base
 
         //Live Support tawkto.code
         // add_action( 'admin_head', [$this,'tawkto_code'], 999 );
-        $client = new Client( 'b39316df-e8df-44aa-be77-277dac809411', 'Quantity Plus Minus Button for WooCommerce', __FILE__ );
+        $client = new Client( 'b39316df-e8df-44aa-be77-277dac809411', 'Quantity Plus Minus Button', WQPMB_MAIN_FILE );
         $client->insights()->init();
         
     }
@@ -158,3 +158,15 @@ class Page_Loader extends Base
        
     }
 }
+
+function wppdabd_appsero_init_tracker_wc_quantity_plus_minus_button() {
+
+
+    $client = new Client( 'b39316df-e8df-44aa-be77-277dac809411', 'Quantity Plus Minus Button for WooCommerce by CodeAstrology', __FILE__ );
+
+    // Active insights
+    $client->insights()->init();
+
+}
+
+wppdabd_appsero_init_tracker_wc_quantity_plus_minus_button();
