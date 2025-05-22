@@ -19,7 +19,7 @@ class Recommeded
         $req_sync->set_args( ['Name' => __( 'Product Stock Sync with Google Sheet for WooCommerce','wc-quantity-plus-minus-button' ) ] )
         ->set_download_link('https://wordpress.org/plugins/product-sync-master-sheet/')
         ->set_this_download_link('https://wordpress.org/plugins/woo-min-max-quantity-step-control-single/');
-        $mmp_message = __('Easily Synchronize with Google Sheets and Bulk edit your products.','wcmmq');
+        $mmp_message = __('Easily Synchronize with Google Sheets and Bulk edit your products.','wc-quantity-plus-minus-button');
         $wpt_link = "";
         $mmp_message = sprintf($mmp_message, $wpt_link);
         $req_sync->set_message($mmp_message);
@@ -45,7 +45,7 @@ class Recommeded
         $req_mmp->set_args( ['Name' => 'Product Table for WooCoomerce by CodeAstrology'] )
         ->set_download_link('https://wordpress.org/plugins/woo-product-table/')
         ->set_this_download_link('https://wordpress.org/plugins/wc-quantity-plus-minus-button');
-        $mmp_message = __('Display your WooCommerce products in a searchable table layout with filters using shortcode.','wcmmq');
+        $mmp_message = __('Display your WooCommerce products in a searchable table layout with filters using shortcode.','wc-quantity-plus-minus-button');
         $wpt_link = "";
         $mmp_message = sprintf($mmp_message, $wpt_link);
         $req_mmp->set_message($mmp_message);

@@ -272,6 +272,7 @@ class WQPMB_Button {
             unset($_GET['activate']);
         
         $message = sprintf(
+                /* translators: 1: Plugin name 2: Plugin name */
                 esc_html__('"%1$s" requires "%2$s" to be installed and activated.', 'wc-quantity-plus-minus-button'),
                 '<strong>' . WQPMB_NAME . '</strong>',
                 '<strong><a href="' . esc_url('https://wordpress.org/plugins/woocommerce/') . '" target="_blank">' . esc_html__('WooCommerce', 'wc-quantity-plus-minus-button') . '</a></strong>'
